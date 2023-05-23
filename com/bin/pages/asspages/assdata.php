@@ -38,7 +38,18 @@ class asdata extends Connections
             return $data;
         }
     }
-
+  //furniture class
+    public function getassType($val){
+        $query = "SELECT DISTINCT assetType FROM assetref WHERE subCategory = '$val' ";                   
+        $result = $this->connect()->query($query);
+        $num_rows = $result->num_rows;
+        if ($num_rows > 0) {
+            while ($rows = $result->fetch_assoc()) {
+                $data[] =$rows;
+            }
+            return $data;
+        }
+    }
 
 
     // =======

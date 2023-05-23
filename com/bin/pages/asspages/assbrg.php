@@ -10,5 +10,13 @@
         echo '<option value = '. $subcat['subCategory'] . '>' . strtoupper($subcat['subCategory']) . '</option>';
        }
     }
+    if(isset($_POST['Categ'])){
+      $val = $_POST['Categ'];
+       $subcats = $alist ->getassType($val);
+        // echo '<option> --Select-- </option>';
+        foreach($subcats as $subcat){
+         echo '<option value = '. $subcat['assetType'] . '>' . strtoupper($subcat['assetType']) . '</option>';
+        }
+     }
 ?>
 

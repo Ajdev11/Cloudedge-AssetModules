@@ -96,9 +96,8 @@
             <label for="" class="">Asset Type</label>
           </div>
           <div class="col-5 my-2">
-          <select class="form-select" name="subcateg" id="subcateg">
-          
-          </select>
+            <!-- pass showmeType function to onchange event -->
+          <select class="form-select" name="subcateg" id="subcateg" onchange="showmeType(this.value)"> </select>
           </div>
        </div>
         <div class="row">
@@ -106,10 +105,19 @@
             <label for="" class="qty">Asset Name</label>
           </div>
           <div class="col-5">
-          <select class="form-select" name="assetType" id="assetType" aria-label="Default select example">
+          <select class="form-select" name="assetName" id="assetName">
             <option selected>Select Asset Name</option>
-            
           </select>
+          <!-- write a script for the function showmeType -->
+          <script type="text/javascript">
+            function showmeType(val){
+              $.post("assbrg.php", { 
+                    Categ: val
+                }, function(data, status) { 
+                    document.getElementById("assetName").innerHTML= data;
+                })
+            }
+          </script>
           </div>
           </div> 
 
