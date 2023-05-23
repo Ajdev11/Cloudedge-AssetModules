@@ -39,8 +39,6 @@ class asdata extends Connections
         }
     }
 
-// furniture classes
-
 
 
     // =======

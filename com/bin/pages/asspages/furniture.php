@@ -50,7 +50,6 @@
       
     </button> &nbsp; <a href="assetfur.php"> <button class="btn btn-success" value="View ICT Assets">View Assets</button></a>
     <center>
-        <!-- <a href="ict.php" class="btn btn-dark mb-3">Add New Asset</a> &nbsp;&nbsp; -->
         <a href="assetsreport.php" class="btn btn-dark mb-3">Asset Report</a> &nbsp;&nbsp;
         <a href="editict.php" class="btn btn-dark mb-3">Edit/Delete Asset</a> &nbsp;&nbsp;
     </center> 
