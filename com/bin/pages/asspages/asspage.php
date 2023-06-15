@@ -7,15 +7,6 @@ $sessionStorage["aogroup"] = 'RUMUIGBO';
 $sessionStorage["agroup"] = 'MGBUOBA';
 $sessionStorage["district"] = 'AGANORLU';
 $sessionStorage["loc"] = 'CHINDA';
-//session_start();
-// $SESSION["auser"] = 'abuloma.group';
-// $SESSION["acountry"] = 'NIGERIA';
-// $SESSION["astate"] = 'RIVERS';
-// $SESSION["aregion"] = 'PORT-HARCOURT';
-// $SESSION["aogroup"] = 'RUMUIGBO';
-// $SESSION["agroup"] = 'MGBUOBA';
-// $SESSION["district"] = 'AGANORLU';
-// $SESSION["loc"] = 'CHINDA';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,14 +17,27 @@ $sessionStorage["loc"] = 'CHINDA';
     <meta name="viewport" content="width=div, initial-scale=1.0">
     <title>Asset Homepage</title>
     <?php
-  require  "../../hed/sandls.php";
-  require "header.php";
-  ?>
-
-
-
+    require  "../../hed/sandls.php";
+    require "header.php";
+    ?>
     <script src="https://kit.fontawesome.com/1d2533baae.js" crossorigin="anonymous"></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+    h4 {
+        text-transform: uppercase;
+        clip-path: polygon(0 1%, 100% 1%, 100% 100%, 0% 100%);
+        line-height: 1.8rem;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    .char {
+        transform: translateY(-115px);
+        transition: transform 0.5s;
+    }
+    </style>
 </head>
+
 
 <body>
     <div id="cont" class="container-fluid">
@@ -45,7 +49,7 @@ $sessionStorage["loc"] = 'CHINDA';
                         <div class="card-body">
                         </div>
                         <div class="card-footer text-center">
-                            <h4>LAND</h4>
+                            <h4 id="my-text">LAND</h4>
                         </div>
                     </div>
                 </a>
@@ -57,7 +61,7 @@ $sessionStorage["loc"] = 'CHINDA';
                         <div class="card-body">
                         </div>
                         <div class="card-footer text-center">
-                            <h4>BUILDING</h4>
+                            <h4 id="my-text">BUILDING</h4>
                         </div>
                     </div>
                 </a>
@@ -69,14 +73,11 @@ $sessionStorage["loc"] = 'CHINDA';
                         <div class="card-body">
                         </div>
                         <div class="card-footer text-center">
-                            <h4>FURNITURES</h4>
+                            <h4 id="my-text">FURNITURES</h4>
                         </div>
                     </div>
                 </a>
             </div>
-
-
-            <!-- <br> -->
 
             <div id="row" class="row row-cols-1 row-cols-md-3 g-2">
                 <div class="col">
@@ -86,7 +87,7 @@ $sessionStorage["loc"] = 'CHINDA';
                             <div class="card-body">
                             </div>
                             <div class="card-footer text-center">
-                                <h4>MUSICAL</h4>
+                                <h4 id="my-text">MUSICAL</h4>
                             </div>
                         </div>
                     </a>
@@ -98,7 +99,7 @@ $sessionStorage["loc"] = 'CHINDA';
                             <div class="card-body">
                             </div>
                             <div class="card-footer text-center">
-                                <h4>VEHICLES</h4>
+                                <h4 id="my-text">VEHICLES</h4>
                             </div>
                         </div>
                     </a>
@@ -110,25 +111,26 @@ $sessionStorage["loc"] = 'CHINDA';
                             <div class="card-body">
                             </div>
                             <div class="card-footer text-center">
-                                <h4>ICT&ELECT/ELECT</h4>
+                                <h4 id="my-text">ICT&ELECT/ELECT</h4>
                             </div>
                         </div>
                 </div>
                 </a>
             </div>
-            <!-- <div class="col">
-        <a class="text-decoration-none" href="admin.php">
-          <div class="card h-100 w-100 bg-info">
-            <img src="img/admins.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-            </div>
-            <div class="card-footer text-center text-light">
-              <h4>ADMIN</h4>
-            </div>
-          </div>
-      </div>
-      </a>
-    </div> -->
+        </div>
+        <script src="https://unpkg.com/split-type"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
+            integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+        const myText = new SplitType("#my-text");
+        gsap.to('.char', {
+            y: 0,
+            stagger: 0.05,
+            delay: 1,
+            duration: 0.1
+        })
+        </script>
 </body>
 
 </html>

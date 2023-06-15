@@ -40,9 +40,9 @@ if (isset($_GET['del'])) {
 
 
         <div class="table-responsive">
-            <table id="mytable" class="table table-bordred table-striped">
-                <thead>
-                    <th>#</th>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <th>SN</th>
                     <!-- <th>Asset Name</th> -->
                     <th>location Address</th>
                     <th>No of Plots</th>
