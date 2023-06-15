@@ -39,7 +39,7 @@ if (isset($_GET['del'])) {
                 <a class="back" href="asspage.php">
                     <button id="btn" class="btn btn-dark mb-3 bg-primary">BACK</button></a>
                 <a onclick="showopts('cal')" class="btn btn-dark mb-3 bg-success">View Asset</a>
-                <a href="music.php" class="btn btn-dark mb-3 bg-success text-white">Add New Asset</a>
+                <a href="music.php" class="btn btn-dark mb-3 bg-success text-white">Add Asset</a>
             </div>
         </center>
         <div id="tricaldiv">
