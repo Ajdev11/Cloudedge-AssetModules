@@ -11,182 +11,195 @@
       integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
       crossorigin="anonymous"
     />
+    <?php           
+      require "../../../bin/hed/sandls.php";
+    ?>
   </head>
   <style>
     form {
       margin-top: 5vh;
       padding-bottom: 1px;
     }
-    .cont{
-      display:block;
-      width: 98%;
-      margin:auto;
-      background-color: #ddd;
+
+    .cont {
+      display: block;
+      width: 95%;
+      height: 120vh;
+      margin: auto;
     }
+
+    .back {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    #btn {
+      width: 20%;
+      margin-left: 5px;
+      background: #000;
+    }
+
+    #btnRCS {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
     /* desktop screen */
-    @media only screen  and (min-width: 600px) {
-      .cont{
-      width: 50%;
-    }
+    @media only screen and (min-width: 600px) {
+      .cont {
+        width: 45%;
+      }
+      #hed {
+        font-size: 15px;
+        width: 100%;
+      }
+
+      #btn {
+        width: 10%;
+      }
     }
   </style>
   <body> 
-  <nav class="navbar navbar-light justify-content-center fs-3 mb-5" style="background-color:#00ff5573;">
-    <img id="logo"  src="img/clogo.png" width="5%">&nbsp;&nbsp;&nbsp;&nbsp;Music Asset Management
-  </nav>
-     <!-- back button -->
-     <button class = "btn btn-info my-2">
-      <a class="back" href="asspage.php">BACK</a>
-    </button>
+  
+    <div class="container-fluid cont bg-secondary text-white">
     <center>
-        <a href="music.php" class="btn btn-dark mb-3">Add New Music Asset</a> &nbsp;&nbsp;
-        <a href="assetType.php" class="btn btn-dark mb-3">Asset Report</a> &nbsp;&nbsp;
-        <a href="editmusic.php" class="btn btn-dark mb-3">Edit/Delete Music Asset</a> &nbsp;&nbsp;
-        <!-- <a href="editict.php" class="btn btn-dark mb-3">Delete ICT Asset</a>-->
-    </center> 
-    <div class="container-fluid cont">
-      <center>
-      <h2>Deeper Life Bible Church</h2>
-      <h3>Port Harcourt Region</h3>
-      <h4>Rumuigbo District</h4>
-      <h4>Asset Entry Form</h4>
+        <h2>DEEPER LIFE BIBLE CHURCH</h2>
+       <font color="brown"> <h6 id="hed"> </h6> </font>
+        <h4>ASSET ENTRY FORM</h4>
       </center>
-      <form action="">
-        <!-- <div class="mb-3">
-          <label for="cty" class="cty">Country</label>&nbsp;&nbsp;
-          <label for="state" class="state">State</label>&nbsp;&nbsp;
-          <label for="reg" class="reg">Region</label>&nbsp;&nbsp;
-          <label for="old-grp" class="old_grp">Old Group</label>&nbsp;&nbsp;
-          <label for="grp" class="grp">Group</label>&nbsp;&nbsp;
-          <label for="grp" class="grp">District</label>&nbsp;&nbsp;
-          <label for="grp" class="grp">Location</label>
-        </div> -->
-        <!-- <div class="row">  
-          <div class="col-5">
-            <label for="" class="">Address</label>
-          </div>
-          <div class="col-5 my-2">
-            <textarea class="form-control form-control-md"></textarea>
-          </div>
-          </div> -->
+      <form action="music.php" method="post">
+      <?php 
+          require_once "../../../../com/sess/mods/connect.php";
+          require_once "assdata.php";
+          $alist = new asdata;          
+         // $alist2 = new asdata2;
+         
+           $cat1 = $alist->get1Cat('music');
+           $aloc = $alist->getAssetLoc('');
+        ?>
+       
          <div class="row">
-         <div class="col-5">
+         <div class="col-7">
             <label for="" class="">Item Category</label>
           </div>          
           <div class="col-5 my-2">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Select Item Category</option>
-            <option value="ICT">ICT</option>
-            <option value="Electronics">Electronics</option>
-            <option value="Electricals">Electricals</option>
+          <select class="form-select" aria-label="Default select example"   name="categoryName" id="categoryName"  onchange="showme(this.value)">
+            <option selected>--Select--</option> 
+            <?php
+                foreach($cat1 as $cat){
+                  echo '<option value = '. $cat['categoryName'] . '>' . strtoupper($cat['categoryName']) . '</option>';
+                }
+             ?>
           </select>
+          <script type="text/javascript">
+            function showme(val){ 
+              $.post("assbrg1.php", { 
+                    Categ: val
+                }, function(data, status) {                    
+                    document.getElementById("subcateg").innerHTML= data;
+                })
+
+            }
+          </script>
           </div>
          </div>
        <div class="row">
-       <div class="col-5">
-            <label for="" class="">Item Type</label>
+       <div class="col-7">
+            <label for="" class="">Sub Category</label>
           </div>
           <div class="col-5 my-2">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Select Item Type</option>
-            <option value="STRINGS">STRINGS</option>
-            <option value="BRASS">BRASS</option>
-            <option value="WOODWIND">WOODWIND</option>
-            <option value="KEYBOARDS">KEYBOARDS</option>
-            <option value="PERCUSSION">PERCUSSION</option>
+          <select class="form-select" aria-label="Default select example"  name="subcateg" id="subcateg"  onchange="showme2(this.value)">
+            <option selected>--Select--</option> 
+            <?php
+                foreach($cat1 as $cat){
+                  echo '<option value = '. $cat['subCategory'] . '>' . strtoupper($cat['subCategory']) . '</option>';
+                }
+             ?>
+          </select>
+          <script type="text/javascript">
+            function showme2(val){ 
+              $.post("assbrg1.php", { 
+                    Categ: val
+                }, function(data, status) {  
+                    document.getElementById("assetName").innerHTML= data;
+                })
+
+            }
+          </script>
+          </div>
+       </div>
+       <div class="row">
+       <div class="col-7">
+            <label for="" class="">Asset Name</label>
+          </div>
+          <div class="col-5 my-2">
+          <select class="form-select" aria-label="Default select example"  name="assetName" id="assetName">
+            <option selected>--Select--</option> 
           </select>
           </div>
        </div>
        <div class="row">
-       <div class="col-5">
-            <label for="" class="">Item Name</label>
+          <div class="col-7">
+            <label for="add" class="add">Manufacturer</label>
           </div>
           <div class="col-5 my-2">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Select Item Name</option>
-            <option value="ICT">VIOLIN</option>
-            <option value="Electronics">VIOLA</option>
-            <option value="Electricals">CELLO</option>
-            <option value="Electronics">DOUBLE BASS</option>
-            <option value="Electricals">HARP</option>
-            <option value="Electronics">LEAD GUITAR</option>
-            <option value="Electricals">BASS GUITAR</option>
-            <option value="Electronics">ACOUSTIC GUITAR</option>
-            <!-- <option value="Electricals">CELLO</option> -->
-          </select>
-          </div>
-       </div>
-       <div class="row">
-          <div class="col-5">
-            <label for="add" class="add">OEM</label>
-          </div>
-          <div class="col-5 my-2">
-            <input class="form-control form-control-md" placeholder="Enter Original Equipment Manufacturer" type="text" />
+            <input class="form-control form-control-md" name="manufacturer"   type="text" />
           </div>
           </div>
           <div class="row">
-          <div class="col-5">
+          <div class="col-7">
             <label for="" class="">Model</label>
           </div>
           <div class="col-5 my-2">
-            <input class="form-control form-control-md" placeholder="Enter Model" type="text" />
+            <input class="form-control form-control-md" name="model"   type="text" />
           </div>
           </div>
           <div class="row">
-          <div class="col-5">
+          <div class="col-7">
             <label for="" class="">Serial Number</label>
           </div>
           <div class="col-5 my-2">
-            <input class="form-control form-control-md" placeholder="Enter Serial Number" type="text" />
+            <input class="form-control form-control-md" name="sn"  type="text" />
           </div>
           </div>
           <div class="row">
-          <div class="col-5">
+          <div class="col-7">
             <label for="" class="">Date of Purchase</label>
           </div>
           <div class="col-5 my-2">
-            <input class="form-control form-control-md" type="date" />
+            <input class="form-control form-control-md" name="dop"  type="date" />
           </div>
           </div>
           <div class="row">
-          <div class="col-5">
+          <div class="col-7">
             <label for="" class="">Cost at Purchase</label>
           </div>
           <div class="col-5 my-2">
-            <input class="form-control form-control-md" placeholder="Enter Cost at Purchase" type="text" />
+            <input class="form-control form-control-md" name="cap"  type="text" />
           </div>
           </div>
           <div class="row">
-          <div class="col-5">
+          <div class="col-7">
             <label for="" class="">Asset Location</label>
           </div>
           <div class="col-5 my-2">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Select Asset Location</option>
-            <option value="Children Church">Children Church</option>
-            <option value="Adult Church">Adult Church</option>
-            <option value="Campus Church">Campus Church</option>
-            <option value="Campus Church">Pastor's Office</option>
-            <option value="Campus Church">Admin Office</option>
-            <option value="Campus Church">Accounts Office</option>
-            <option value="Campus Church">General Office</option>
-            <option value="Campus Church">Kitchen</option>
-            <option value="Campus Church">Security Gate</option>
-            <option value="Campus Church">Bookshop</option>
-            <option value="Campus Church">IBTC</option>
-            <option value="Campus Church">Hostel</option>
-            <option value="Campus Church">Restaurant/Canteen</option>
-            <option value="Campus Church">Camp Ground</option>
-            <option value="Campus Church">Others</option>
+          <select class="form-select" aria-label="Default select example" name="assetLocation" >
+            <option selected>--Select--</option>
+            <?php
+            foreach ($aloc as $loc) {
+              echo '<option value = ' . $loc['assloc'] . '>' . strtoupper($loc['assloc']) . '</option>';
+            }
+            ?>
           </select>
           </div>
           </div>
           <div class="row">
-          <div class="col-5">
+          <div class="col-7">
             <label for="" class="">Asset Status</label>
           </div>
           <div class="col-5 my-2">
-          <select class="form-select" aria-label="Default select example">
+          <select class="form-select" aria-label="Default select example" name="assetStatus">
             <option selected>Select Asset Status</option>
             <option value="In Use">In Use</option>
             <option value="Bad">Bad</option>
@@ -196,19 +209,51 @@
           </div>
           </div>
           <!-- buttons -->
-          <div class = "row my-5">
-        <div class =' col-3'>
-        <button class = "btn btn-danger">Reset</button>
-        </div>
-        <div class =' col-6'>
         
-        </div>
-        <div class =' col-3'>
-        <button class = "btn btn-success">Submit</button>
-        </div>
+          <!-- buttons -->
+         
+      <div id="btnRCS">
+        <a href="musicassets.php" class="btn btn-danger">Close</a>
+        <button class="btn btn-success" name="submit">Submit</button>
       </div>
       </form>
+      <?php
+        if (isset($_POST['submitM'])) {
+          $assetCategory = $_POST['categoryName'];
+          $subCategory = $_POST['subcateg'];
+          $assetName = $_POST['assetName'];
+          $manufacturer = $_POST['manufacturer']; 
+          $model = $_POST['model']; 
+          $sn = $_POST['sn']; 
+          $dop = $_POST['dop'];
+          $cap = $_POST['cap'];
+          $cap1 = number_format($cap);
+          $assetLocation = $_POST['assetLocation'];
+          $assetStatus = $_POST['assetStatus'];
+      
+          $assetInsert = $alist-> createMusicAsset($assetCategory, $subCategory, $assetName, $manufacturer,$model,$sn, $dop, $cap1, $assetLocation, $assetStatus);
+          if($assetInsert == 'Success'){
+           echo '<script> alert("Data Saved Successfully") </script>';
+      
+          }else{
+            echo '<script> alert("Unable to Save Data") </script>';
+          }
+        }
+      ?>
     </div>
+    <script>
+       var state = sessionStorage ['astate'];
+       var region = sessionStorage['aregion'];
+       var ogroup = sessionStorage ['aogroup'];
+       var ugroup = sessionStorage ['group'];
+       var district = sessionStorage ['district'];
+       var loc = sessionStorage ['loc'];
+      // alert(state + ogroup + ugroup + district+loc);
+      var msg = state + " | " + region + " | "+ogroup + " | " + ugroup +" | " + district +" DISTRICT";
+
+      document.getElementById('hed').innerHTML = msg; 
+</script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
