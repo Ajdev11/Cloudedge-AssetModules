@@ -1,7 +1,7 @@
 # DLCMA APPLICATION
 # ASSET MODULES
 
-### The asset modules is an updated feature added to the ongoing DLCMA appliaction `www.dlcma.org`
+### The asset modules is a new feature added to the ongoing DLCMA application `www.dlcma.org`
 ### The modules consists of
 
 + land asset
