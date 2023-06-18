@@ -1,8 +1,26 @@
-# DCMA APPLICATION
+# DLCMA APPLICATION
 # ASSET MODULES
 
-## Technologies Stacks
-- PHP
-- Jquery
-- Javascript
-- mySql
+### The asset modules is an updated feature added to the ongoing DLCMA appliaction `www.dlcma.org`
+### The modules consists of
+
++ land asset
++ Building asset
++ Furniture asset
++ Vehicle asset
++ Ict/electronics/electricals
+
+### The Asset modules allows a CRUD OPERATION
+  - Edit
+    - Delete
+      - Update
+        - Insert of items
+  
+  
+:100:
+Thanks for your time :+1:
+
+
+
+
+
