@@ -1,3 +1,7 @@
 # DCMA ASSET MODULES
 
-## Technologies Stacks  PHP, Jquery, Javascript, mySql
+## Technologies Stacks
+- PHP
+- Jquery
+- Javascript
+- mySql
