@@ -4,32 +4,32 @@ include_once("function.php");
 //Object
 $updatedata = new DB_con();
 if (isset($_POST['update'])) {
-  // Get the userid
-  $id = intval($_GET['id']);
-  $assetName = $_POST['assetName'];
-  $address = $_POST['address']; 
-  $costP = $_POST['costPrice'];
-  $currStatus = $_POST['status'];
-  $fenced = $_POST['fenced'];
-  $status = $_POST['status'];
-  $origOwnerName = $_POST['status'];
-  $origOwnerAddress = $_POST['status'];
-  $origOwnerPhone = $_POST['status'];
-  $buildingPlan = $_POST['status'];
-  $no_floors = $_POST['no_floors'];
-  $natGrid = $_POST['natGrid'];
-  $yearCompleted = $_POST['yearCompleted'];
-  $buildingState = $_POST['status'];
-  $assetHolder = $_POST['assetHolder'];
-  $usage = $_POST['usage'];
-  $buildingMaterial = $_POST['buildingMaterial']; 
-  $sql = $updatedata->updateBuilding_old($assetName, $address, $costP, $currStatus,$id);
-  // $assetInsert = $alist-> saveBuilding($assetCategory, $assetName, $address,$no_of_plots,$larea, $costPrice, $fenced, $currStatus, $origOwnerName, $origOwnerAddress, $origOwnerPhone, $buildingPlan, $no_floors, $natGrid, $estCost, $yearCompleted, $buildingState, $assetHolder, $usage, $buildingMaterial);
-  // $sql = $updatedata->updateBuilding($assetName, $address, $costP, $fenced, $currStatus, $origOwnerName, $origOwnerAddress, $origOwnerPhone, $buildingPlan, $no_floors, $natGrid, $yearCompleted, $buildingState, $assetHolder, $usage, $buildingMaterial,$id);
-  // Mesage after updation  
-  echo "<script>alert('Record Updated successfully');</script>";
-  // Code for redirection
-  echo "<script>window.location.href='buildingasset.php'</script>";
+    // Get the userid
+    $id = intval($_GET['id']);
+    $assetName = $_POST['assetName'];
+    $address = $_POST['address'];
+    $costP = $_POST['costPrice'];
+    $currStatus = $_POST['status'];
+    $fenced = $_POST['fenced'];
+    $status = $_POST['status'];
+    $origOwnerName = $_POST['status'];
+    $origOwnerAddress = $_POST['status'];
+    $origOwnerPhone = $_POST['status'];
+    $buildingPlan = $_POST['status'];
+    $no_floors = $_POST['no_floors'];
+    $natGrid = $_POST['natGrid'];
+    $yearCompleted = $_POST['yearCompleted'];
+    $buildingState = $_POST['status'];
+    $assetHolder = $_POST['assetHolder'];
+    $usage = $_POST['usage'];
+    $buildingMaterial = $_POST['buildingMaterial'];
+    $sql = $updatedata->updateBuilding_old($assetName, $address, $costP, $currStatus, $id);
+    // $assetInsert = $alist-> saveBuilding($assetCategory, $assetName, $address,$no_of_plots,$larea, $costPrice, $fenced, $currStatus, $origOwnerName, $origOwnerAddress, $origOwnerPhone, $buildingPlan, $no_floors, $natGrid, $estCost, $yearCompleted, $buildingState, $assetHolder, $usage, $buildingMaterial);
+    // $sql = $updatedata->updateBuilding($assetName, $address, $costP, $fenced, $currStatus, $origOwnerName, $origOwnerAddress, $origOwnerPhone, $buildingPlan, $no_floors, $natGrid, $yearCompleted, $buildingState, $assetHolder, $usage, $buildingMaterial,$id);
+    // Mesage after updation  
+    echo "<script>alert('Record Updated successfully');</script>";
+    // Code for redirection
+    echo "<script>window.location.href='buildingasset.php'</script>";
 }
 ?>
 
@@ -40,8 +40,8 @@ if (isset($_POST['update'])) {
     <meta charset="utf-8">
     <title>UPDATE LAND ASSET </title>
     <?php
-  require "../../../bin/hed/sandls.php";
-  ?>
+    require "../../../bin/hed/sandls.php";
+    ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
@@ -90,42 +90,36 @@ form {
 <body>
     <div class="container-fluid cont">
         <?php
-    // Get the userid
-    $id = intval($_GET['id']);
-    $onerecord = new DB_con();
-    $sql = $onerecord->fetchoneBuildingrecord($id);
-    $cnt = 1;
-    while ($row = mysqli_fetch_array($sql)) {
-    ?>
+        // Get the userid
+        $id = intval($_GET['id']);
+        $onerecord = new DB_con();
+        $sql = $onerecord->fetchoneBuildingrecord($id);
+        $cnt = 1;
+        while ($row = mysqli_fetch_array($sql)) {
+        ?>
 
         <form name="insertrecord" method="post">
 
 
             <?php } ?>
-            <div id="btnRCS">
-                <a href="buildingasset.php" class="btn btn-danger">Back</a>
-            </div>
+            <?php
+            require_once "../../../../com/sess/mods/connect.php";
+            require_once "assdata.php";
+            $alist = new asdata;
+
+            $aloc = $alist->getAssetLoc('');
+            $aloc = $alist->getAssetLoc('');
+
+            ?>
 
             <?php
-        require_once "../../../../com/sess/mods/connect.php";
-        require_once "assdata.php";
-        $alist = new asdata;      
-        
-        $aloc = $alist->getAssetLoc('');
-        $aloc = $alist->getAssetLoc('');
-
-        ?>
-
-            <?php
-    // Get the userid
-    $id = intval($_GET['id']);
-    $onerecord = new DB_con();
-    $sql = $onerecord->fetchoneBuildingrecord($id);
-    $cnt = 1;
-    while ($row = mysqli_fetch_array($sql)) {
-    ?>
-
-
+            // Get the userid
+            $id = intval($_GET['id']);
+            $onerecord = new DB_con();
+            $sql = $onerecord->fetchoneBuildingrecord($id);
+            $cnt = 1;
+            while ($row = mysqli_fetch_array($sql)) {
+            ?>
             <center>
                 <h2>DEEPER LIFE BIBLE CHURCH</h2>
                 <font color="brown">
@@ -192,6 +186,7 @@ form {
                 <div class="col-7">
                     <input style="background:orange" type="text" name="natGrid1"
                         value="<?php echo htmlentities($row['national_grid']); ?>" class="form-control" required>
+
                     <select class="form-select" name="natGrid" id="">
                         <option value="Select">--Select--</option>
                         <option value="Yes">Yes</option>
@@ -289,10 +284,10 @@ form {
                     <select name="usage" class="form-select " aria-label="Default select example">
                         <option selected>Select Asset Location</option>
                         <?php
-            foreach ($aloc as $loc) {
-              echo '<option value = ' . $loc['assloc'] . '>' . strtoupper($loc['assloc']) . '</option>';
-            }
-            ?>
+                            foreach ($aloc as $loc) {
+                                echo '<option value = ' . $loc['assloc'] . '>' . strtoupper($loc['assloc']) . '</option>';
+                            }
+                            ?>
                     </select>
                 </div>
             </div>
@@ -358,16 +353,10 @@ form {
                 </div>
                 <?php } ?>
                 <!-- buttons -->
-
                 <div id="btnRCS">
                     <a href="buildingasset.php" class="btn btn-danger">Close</a>
                     <button class="btn btn-success" name="update">Update</button>
                 </div>
-
-
-
-
-
         </form>
     </div>
 </body>

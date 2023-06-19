@@ -277,9 +277,9 @@ class asdata extends Connections
     } 
 }
 
-public function saveLand($assetCategory, $assetName, $address,$no_of_plots,$larea, $costPrice, $yearPurchased, $fenced, $currStatus, $origOwnerName, $origOwnerAddress, $origOwnerPhone,$transName,$transPhone, $surveyPlan, $deed,$receipt,$cofo, $natGrid, $assetHolder, $usage)
+public function saveLand($assetCategory, $assetName, $address,$no_of_plots,$larea, $costPrice, $yearPurchased, $litig, $fullypaid,  $fenced, $currStatus, $origOwnerName, $origOwnerAddress, $origOwnerPhone,$transName,$transPhone, $surveyPlan, $deed,$receipt,$cofo, $natGrid, $assetHolder, $usage)
     {
-        $sql = "INSERT INTO `assetlb`(`item_category`, `assetName`, `address`, `no_of_plots`, `larea`, `cost_price`, `year_of_purchase`, `fenced`, `current_status`, `orig_owner_name`, `orig_owner_address`, `orig_owner_phone`, `trans_by`, `trans_phone`, `attach_surveyplan`, `attach_deed`, `attach_receipt`, `attach_cofo`, `national_grid`,  `asset_holder`, `usage`) VALUES ('LAND', 'LAND', '$address','$no_of_plots','$larea', '$costPrice', '$yearPurchased', '$fenced', '$currStatus', '$origOwnerName', '$origOwnerAddress', '$origOwnerPhone','$transName','$transPhone', '$surveyPlan', '$deed','$receipt','$cofo', '$natGrid', '$assetHolder', '$usage')";
+        $sql = "INSERT INTO `assetlb`(`item_category`, `assetName`, `address`, `no_of_plots`, `larea`, `cost_price`, `year_of_purchase`, `litig`, `fullypaid` `fenced`, `current_status`, `orig_owner_name`, `orig_owner_address`, `orig_owner_phone`, `trans_by`, `trans_phone`, `attach_surveyplan`, `attach_deed`, `attach_receipt`, `attach_cofo`, `national_grid`,  `asset_holder`, `usage`) VALUES ('LAND', 'LAND', '$address','$no_of_plots','$larea', '$costPrice', '$yearPurchased', '$fenced', '$currStatus', '$origOwnerName', '$origOwnerAddress', '$origOwnerPhone','$transName','$transPhone', '$surveyPlan', '$deed','$receipt','$cofo', '$natGrid', '$assetHolder', '$usage')";
        if($result = $this->connect()->query($sql) == TRUE){
            return "Success";
     } 

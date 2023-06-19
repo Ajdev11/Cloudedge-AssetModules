@@ -49,6 +49,8 @@ if (isset($_GET['del'])) {
                     <th>Cost Price</th>
                     <th>Year Purchased</th>
                     <th>Fenced</th>
+                    <th>Under litigation?</th>
+                    <th>FullyPaid?</th>
                     <th>Status</th>
                     <th>Edit</th>
                     <th>Delete</th>
@@ -61,23 +63,20 @@ if (isset($_GET['del'])) {
                     $cnt = 1;
                     while ($row = mysqli_fetch_array($sql)) {
                     ?>
-                    <tr>
-                        <td><?php echo htmlentities($cnt); ?></td>
-                        <!-- <td><?php echo htmlentities($row['assetName']); ?></td -->
-                        <td><?php echo htmlentities($row['address']); ?></td>
-                        <td><?php echo htmlentities($row['no_of_plots']); ?></td>
-                        <td><?php echo htmlentities($row['cost_price']); ?></td>
-                        <td><?php echo htmlentities($row['year_of_purchase']); ?></td>
-                        <td><?php echo htmlentities($row['fenced']); ?></td>
-                        <td><?php echo htmlentities($row['current_status']); ?></td>
-                        <td><a href="updateland.php?id=<?php echo htmlentities($row['id']); ?>"><button
-                                    class="btn btn-primary btn-xs"><span
-                                        class="glyphicon glyphicon-pencil"></span></button></a></td>
-                        <td><a href="landasset.php?del=<?php echo htmlentities($row['id']); ?>"><button
-                                    class="btn btn-danger btn-xs"
-                                    onClick="return confirm('Do you really want to delete');"><span
-                                        class="glyphicon glyphicon-trash"></span></button></a></td>
-                    </tr>
+                        <tr>
+                            <td><?php echo htmlentities($cnt); ?></td>
+                            <!-- <td><?php echo htmlentities($row['assetName']); ?></td -->
+                            <td><?php echo htmlentities($row['address']); ?></td>
+                            <td><?php echo htmlentities($row['no_of_plots']); ?></td>
+                            <td><?php echo htmlentities($row['cost_price']); ?></td>
+                            <td><?php echo htmlentities($row['year_of_purchase']); ?></td>
+                            <td><?php echo htmlentities($row['litig']); ?></td>
+                            <td><?php echo htmlentities($row['fullypaid']); ?></td>
+                            <td><?php echo htmlentities($row['fenced']); ?></td>
+                            <td><?php echo htmlentities($row['current_status']); ?></td>
+                            <td><a href="updateland.php?id=<?php echo htmlentities($row['id']); ?>"><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                            <td><a href="landasset.php?del=<?php echo htmlentities($row['id']); ?>"><button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><span class="glyphicon glyphicon-trash"></span></button></a></td>
+                        </tr>
                     <?php
                         // for serial number increment
                         $cnt++;
