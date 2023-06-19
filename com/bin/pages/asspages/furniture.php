@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -43,6 +44,7 @@
       .cont {
         width: 45%;
       }
+
       #hed {
         font-size: 15px;
         width: 100%;
@@ -56,11 +58,11 @@
 </head>
 
 <body>
-  
+
   <div class="container-fluid cont my-4 bg-secondary text-white">
     <!-- form start here -->
     <form action="" method="POST">
-    <center>
+      <center>
         <h2>DEEPER LIFE BIBLE CHURCH</h2>
         <font color="brown">
           <h6 id="hed"> </h6>
@@ -106,17 +108,7 @@
         <div class="col-7 my-2">
           <!-- pass showmeType function to onchange event -->
           <select class="form-select" name="subCategory" id="subcateg" onchange="showmeType(this.value)">
-          <option value ="" >Select </option>
-         </select>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-5">
-          <label for="" class="qty">Asset Name</label>
-        </div>
-        <div class="col-7">
-          <select class="form-select" name="assetName" id="assetName">
-            <option selected>Select asset name</option>
+            <option selected>Select Asset Type</option>
           </select>
           <!-- write a script for the function showmeType -->
           <script type="text/javascript">
@@ -130,7 +122,16 @@
           </script>
         </div>
       </div>
-
+      <div class="row">
+        <div class="col-5">
+          <label for="" class="qty">Asset Name</label>
+        </div>
+        <div class="col-7">
+          <select class="form-select" name="assetName" id="assetName">
+            <option selected> Select Asset Name </option>
+          </select>
+        </div>
+      </div>
       <div class="row">
         <div class="col-5">
           <label for="">Quantity</label>
@@ -160,7 +161,7 @@
           <label for="" class="">Asset Location</label>
         </div>
         <div class="col-7 my-2">
-          <select class="form-select" name="location" aria-label="Default select example">            
+          <select class="form-select" name="location" aria-label="Default select example">
             <option selected>Select Asset Location</option>
             <?php
             foreach ($aloc as $loc) {
@@ -214,11 +215,10 @@
     $location = $_POST['location'];
     $status = $_POST['status'];
 
-    $assetInsert = $alist-> createAsset($assetCategory, $subCategory, $assetName, $quantity, $dop, $cap, $location, $status);
-    if($assetInsert == 'Success'){
-     echo '<script> alert("Data saved successfully") </script>';
-
-    }else{
+    $assetInsert = $alist->createAsset($assetCategory, $subCategory, $assetName, $quantity, $dop, $cap, $location, $status);
+    if ($assetInsert == 'Success') {
+      echo '<script> alert("Data saved successfully") </script>';
+    } else {
       echo '<script> alert("Unable to save data") </script>';
     }
   }

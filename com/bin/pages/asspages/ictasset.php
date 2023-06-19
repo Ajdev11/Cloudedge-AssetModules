@@ -17,9 +17,10 @@
     <div id="cont" class="container-fluid">
         <center>
             <div class="listBtn">
+                <a href=" " class="btn btn-dark mb-3 bg-dark text-white">Home</a>
                 <a class="back" href="asspage.php">
-                    <button id="btn" class="btn btn-dark mb-3 bg-primary">Home</button></a>
-                <a href="ictasset.php" class="btn btn-dark mb-3 bg-dark">View All Asset</a>
+                    <button id="btn" class="btn btn-dark mb-3 bg-primary">Asset Page</button></a>
+                <!-- <a href="ictasset.php" class="btn btn-dark mb-3 bg-dark">View All Asset</a> -->
                 <a onclick="showopts('cal')" class="btn btn-dark mb-3 bg-success">Electrical List</a>
                 <a onclick="showopts('nic')" class="btn btn-dark mb-3 bg-warning">Electronics List</a>
                 <a onclick="showopts('ict')" class="btn btn-dark mb-3 bg-danger">ICT List</a>
@@ -159,25 +160,25 @@
         </div>
     </div> <!--  ------- -->
     <script type="text/javascript">
-    hideopts();
-
-    function hideopts() {
-        // $("#test").hide();
-        $("#tricaldiv").hide();
-        $("#tronivdiv").hide();
-        $("#ictdiv").hide();
-    }
-
-    function showopts(opt) {
         hideopts();
-        if (opt == 'cal') {
-            $("#tricaldiv").show();
-        } else if (opt == 'nic') {
-            $("#tronivdiv").show();
-        } else if (opt == 'ict') {
-            $("#ictdiv").show();
+
+        function hideopts() {
+            // $("#test").hide();
+            $("#tricaldiv").hide();
+            $("#tronivdiv").hide();
+            $("#ictdiv").hide();
         }
-    }
+
+        function showopts(opt) {
+            hideopts();
+            if (opt == 'cal') {
+                $("#tricaldiv").show();
+            } else if (opt == 'nic') {
+                $("#tronivdiv").show();
+            } else if (opt == 'ict') {
+                $("#ictdiv").show();
+            }
+        }
     </script>
 </body>
 

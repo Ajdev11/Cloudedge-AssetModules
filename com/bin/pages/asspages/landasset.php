@@ -31,9 +31,9 @@ if (isset($_GET['del'])) {
     <div class="container-fluid">
         <center>
             <div class="listBtn">
+                <a href=" " class="btn btn-dark mb-3 bg-dark text-white">Home</a>
                 <a class="back" href="asspage.php">
-                    <button id="btn" class="btn btn-dark mb-3 bg-primary">Home</button></a>
-                <!-- <a onclick="showopts('cal')" class="btn btn-dark mb-3 bg-success">Land Asset List</a> -->
+                    <button id="btn" class="btn btn-dark mb-3 bg-primary">Asset Page</button></a>
                 <a href="land.php" class="btn btn-dark mb-3 bg-success text-white">Add New</a>
             </div>
         </center>

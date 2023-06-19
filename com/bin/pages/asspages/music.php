@@ -212,9 +212,6 @@ form {
                 </div>
             </div>
             <!-- buttons -->
-
-            <!-- buttons -->
-
             <div id="btnRCS">
                 <a href="musicassets.php" class="btn btn-danger">Close</a>
                 <button class="btn btn-success" name="submit">Submit</button>
@@ -234,7 +231,7 @@ form {
           $assetLocation = $_POST['assetLocation'];
           $assetStatus = $_POST['assetStatus'];
       
-          $assetInsert = $alist-> createMusicAsset($assetCategory, $subCategory, $assetName, $manufacturer,$model,$sn, $dop, $cap1, $assetLocation, $assetStatus);
+          $assetInsert = $alist-> createMusicAsset($assetCategory, $subCategory, $assetName, $manufacturer, $model, $sn, $dop, $cap1, $assetLocation, $assetStatus);
           if($assetInsert == 'Success'){
            echo '<script> alert("Data Saved Successfully") </script>';
       

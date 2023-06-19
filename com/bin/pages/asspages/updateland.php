@@ -119,16 +119,17 @@ if (isset($_POST['update'])) {
                 </div>
             </div>
 
+
+
+
+
+
+
             <?php } ?>
             <div id="btnRCS">
                 <a href="landasset.php" class="btn btn-danger">Close</a>
                 <button class="btn btn-success" name="update">Update</button>
             </div>
-            <!-- <div class="row" style="margin-top:1%">
-  <div class="col-md-8">
-    <input type="submit" name="update" value="Update">
-  </div>
-</div> -->
         </form>
     </div>
 </body>

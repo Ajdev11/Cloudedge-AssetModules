@@ -36,9 +36,10 @@ if (isset($_GET['del'])) {
     <div id="cont" class="container-fluid">
         <center>
             <div class="listBtn">
+                <a href=" " class="btn btn-dark mb-3 bg-dark text-white">Home</a>
                 <a class="back" href="asspage.php">
-                    <button id="btn" class="btn btn-dark mb-3 bg-primary">BACK</button></a>
-                <a onclick="showopts('cal')" class="btn btn-dark mb-3 bg-success">View Asset</a>
+                    <button id="btn" class="btn btn-dark mb-3 bg-primary">Asset Page</button></a>
+                <!-- <a onclick="showopts('cal')" class="btn btn-dark mb-3 bg-success">View Asset</a> -->
                 <a href="music.php" class="btn btn-dark mb-3 bg-success text-white">Add Asset</a>
             </div>
         </center>
@@ -77,13 +78,8 @@ if (isset($_GET['del'])) {
                             echo '<td>' . $asslist['dop'] . '</td>';
                             echo '<td>' . number_format($asslist['cap']) . '</td>';
                             echo '<td>' . $asslist['status'] . '</td>'; ?>
-                        <td><a href="updatemusic.php?id=<?php echo htmlentities($asslist['id']); ?>"><button
-                                    class="btn btn-primary btn-xs"><span
-                                        class="glyphicon glyphicon-pencil"></span></button></a></td>
-                        <td><a href="musicassets.php?del=<?php echo htmlentities($asslist['id']); ?>"><button
-                                    class="btn btn-danger btn-xs"
-                                    onClick="return confirm('Do you really want to delete');"><span
-                                        class="glyphicon glyphicon-trash"></span></button></a></td>
+                            <td><a href="updatemusic.php?id=<?php echo htmlentities($asslist['id']); ?>"><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                            <td><a href="musicassets.php?del=<?php echo htmlentities($asslist['id']); ?>"><button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><span class="glyphicon glyphicon-trash"></span></button></a></td>
                         <?php echo '</tr>';
                         }
 
@@ -215,29 +211,29 @@ if (isset($_GET['del'])) {
         </div> -->
     </div>
     <script type="text/javascript">
-    hideopts();
+        hideopts();
 
-    // function hideopts() {
-    //     // $("#test").hide();
-    $("#tricaldiv").hide();
-    //     $("#tronivdiv").hide();
-    //     $("#wooddiv").hide();
-    //     $("#ictdiv").hide();
-    // }
+        // function hideopts() {
+        //     // $("#test").hide();
+        $("#tricaldiv").hide();
+        //     $("#tronivdiv").hide();
+        //     $("#wooddiv").hide();
+        //     $("#ictdiv").hide();
+        // }
 
-    // function showopts(opt) {
-    //      hideopts();
-    //     if (opt == 'cal') {
-    //         $("#tricaldiv").show();
-    //     }
-    //     } else if (opt == 'nic') {
-    //         $("#tronivdiv").show();
-    //     } else if (opt == 'brass') {
-    //         $("#ictdiv").show();
-    //     } else if (opt == 'woodwind') {
-    //         $("#wooddiv").show();
-    //     }
-    // }
+        // function showopts(opt) {
+        //      hideopts();
+        //     if (opt == 'cal') {
+        //         $("#tricaldiv").show();
+        //     }
+        //     } else if (opt == 'nic') {
+        //         $("#tronivdiv").show();
+        //     } else if (opt == 'brass') {
+        //         $("#ictdiv").show();
+        //     } else if (opt == 'woodwind') {
+        //         $("#wooddiv").show();
+        //     }
+        // }
     </script>
 </body>
 

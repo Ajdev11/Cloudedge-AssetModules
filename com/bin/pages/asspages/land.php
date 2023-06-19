@@ -375,12 +375,8 @@
             $location = $_POST['location'];
             $transName = $_POST['transName'];
             $transPhone = $_POST['transPhone'];
-
-            // `item_category`, `assetName`, `address`, `no_of_plots`, `larea`, `cost_price`, `year_of_purchase`, `fenced`, `current_status`, `orig_owner_name`, `orig_owner_address`, `orig_owner_phone`, `trans_by`, `trans_phone`, `attach_surveyplan`, `attach_deed`, `attach_receipt`, `attach_cofo`, `national_grid`,  `asset_holder`, `usage`
-
-            // `item_category`, `assetName`, `address`, `no_of_plots`, `larea`, `cost_price`, `fenced`, `current_status`, `orig_owner_name`, `orig_owner_address`, `orig_owner_phone`, `building_plan`, `no_of_floors`, `national_grid`, `estimated_cost`, `year_completed`, `building_state`, `asset_holder`, `usage`, `building_material`
-            // $sql= "INSERT INTO `assetlb`(`id`, `country`, `state`, `region`, `ogroup`, `ugroup`, `district`, `loc`,`building_plan`, `address`, `fenced`, `current_status`, `orig_owner_name`, `orig_owner_address`, `orig_owner_phone`,`no_of_floors`, `national_grid`, `estimated_cost`, `year_completed`, `building_state`, `asset_holder`, `usage`, `building_material`) values (null,'Nigeria','Rivers','Port-Harcourt','Rumuigbo','Mgbuoba','Aganorlu','Aganorlu','$plan','$address', '$fenced', '$currStatus','$origOwnerName', '$origOwnerAddress','$origOwnerPhone', '$no_floors', '$natGrid', '$estCost','$yearCompleted','$buildingState','$assetHolder','$usage','$buildingMaterial')";
-            $assetInsert = $alist->saveLand($assetCategory, $assetName, $address, $no_of_plots, $larea, $cp, $yearPurchased,  $litig,  $fullypaid, $fenced, $currStatus, $origOwnerName, $origOwnerAddress, $origOwnerPhone, $transName, $transPhone, $surveyPlan, $deed, $receipt, $cofo, $natGrid, $assetHolder, $usage);
+            
+            $assetInsert = $alist->saveLand($assetCategory, $assetName, $address, $no_of_plots, $larea, $cp, $yearPurchased, $litig, $fullypaid, $fenced, $currStatus, $origOwnerName, $origOwnerAddress, $origOwnerPhone, $transName, $transPhone, $surveyPlan, $deed, $receipt, $cofo, $natGrid, $assetHolder, $usage);
             if ($assetInsert == 'Success') {
                 echo '<script> alert("Data Saved Successfully") </script>';
             } else {

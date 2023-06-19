@@ -27,8 +27,8 @@ if (isset($_GET['del'])) {
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1d2533baae.js" crossorigin="anonymous"></script>
     <?php
-  require "../../../bin/hed/sandls.php";
-   require  "header.php";
+    require "../../../bin/hed/sandls.php";
+    require  "header.php";
     ?>
 </head>
 
@@ -37,10 +37,10 @@ if (isset($_GET['del'])) {
 
         <center>
             <div class="listBtn">
+                <a href=" " class="btn btn-dark mb-3 bg-dark text-white">Home</a>
                 <a class="back" href="asspage.php">
-                    <button id="btn" class="btn btn-dark mb-3 bg-primary">BACK</button></a>
-                <a href="furasset.php" class="btn btn-dark mb-3 bg-dark">View All Asset</a>
-                <!--  -->
+                    <button id="btn" class="btn btn-dark mb-3 bg-primary">Asset Page</button></a>
+                <!-- <a href="furasset.php" class="btn btn-dark mb-3 bg-dark">View All Asset</a> -->
                 <a href="furniture.php" class="btn btn-dark mb-3 bg-success text-white">Add New</a>
             </div>
         </center>
@@ -64,64 +64,59 @@ if (isset($_GET['del'])) {
 
                 <tbody id="chairs">
                     <?php
-          require "../../../../com/sess/mods/connect.php";
-          require "assdata.php";
-          $asscl = new asdata;
-          $alist = $asscl->getFurAssets('Furniture');
-          $sn = 0;
-          if (!is_null($alist)) {
-            foreach ($alist as $asslist) {
-              $sn = $sn + 1;
-              echo '<tr>';
-              echo '<td>' . $sn . '</td>';
-              echo '<td>' . $asslist['item_category'] . '</td>';
-              echo '<td>' . $asslist['item_type'] . '</td>';
-              echo '<td>' . $asslist['assetName'] . '</td>';
-              echo '<td>' . $asslist['sn'] . '</td>';
-              echo '<td>' . $asslist['dop'] . '</td>';
-              echo '<td>' . number_format($asslist['cap']) . '</td>';
-              echo '<td>' . $asslist['location'] . '</td>';
-              echo '<td>' . $asslist['status'] . '</td>'; ?>
-                    <td><a href="updatefurniture.php?id=<?php echo htmlentities($asslist['id']); ?>"><button
-                                class="btn btn-primary btn-xs"><span
-                                    class="glyphicon glyphicon-pencil"></span></button></a></td>
-                    <td><a href="furasset.php?del=<?php echo htmlentities($asslist['id']); ?>"><button
-                                class="btn btn-danger btn-xs"
-                                onClick="return confirm('Do you really want to delete');"><span
-                                    class="glyphicon glyphicon-trash"></span></button></a></td>
-                    <!-- echo '<td><a class="link-dark" href="furniture.php"><i class="fa-regular fa-pen-to-square fs-5 me-3"></i></a>
+                    require "../../../../com/sess/mods/connect.php";
+                    require "assdata.php";
+                    $asscl = new asdata;
+                    $alist = $asscl->getFurAssets('Furniture');
+                    $sn = 0;
+                    if (!is_null($alist)) {
+                        foreach ($alist as $asslist) {
+                            $sn = $sn + 1;
+                            echo '<tr>';
+                            echo '<td>' . $sn . '</td>';
+                            echo '<td>' . $asslist['item_category'] . '</td>';
+                            echo '<td>' . $asslist['item_type'] . '</td>';
+                            echo '<td>' . $asslist['assetName'] . '</td>';
+                            echo '<td>' . $asslist['sn'] . '</td>';
+                            echo '<td>' . $asslist['dop'] . '</td>';
+                            echo '<td>' . number_format($asslist['cap']) . '</td>';
+                            echo '<td>' . $asslist['location'] . '</td>';
+                            echo '<td>' . $asslist['status'] . '</td>'; ?>
+                            <td><a href="updatefurniture.php?id=<?php echo htmlentities($asslist['id']); ?>"><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                            <td><a href="furasset.php?del=<?php echo htmlentities($asslist['id']); ?>"><button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><span class="glyphicon glyphicon-trash"></span></button></a></td>
+                            <!-- echo '<td><a class="link-dark" href="furniture.php"><i class="fa-regular fa-pen-to-square fs-5 me-3"></i></a>
                           </td>';
               echo '<td><a class="link-dark" href=""><i class="fa-solid fa-trash fs-5 me-3"></i></a>
                           </td>'; -->
                     <?php
-              echo '</tr>';
-            }
-          }
-          ?>
+                            echo '</tr>';
+                        }
+                    }
+                    ?>
                 </tbody>
 
             </table>
         </div>
     </div>
     <script type="text/javascript">
-    //  hideopts();
-    // function hideopts(){
-    //   // $("#test").hide();
-    //     $("#chairs").hide();
-    //     //  $("#tables").hide();
-    //     //  $("#pulpit").hide();  
-    // }
-    function showopts(opts) {
-        if (opts == 'chairs ') {
+        //  hideopts();
+        // function hideopts(){
+        //   // $("#test").hide();
+        //     $("#chairs").hide();
+        //     //  $("#tables").hide();
+        //     //  $("#pulpit").hide();  
+        // }
+        function showopts(opts) {
+            if (opts == 'chairs ') {
 
-            // $("#chairs").show();
-            alert();
-        } else if (opt == 'tables') {
-            //  $("#tables").show();
-        } else if (opt == 'pulpit') {
-            // $("#pulpit").show();
+                // $("#chairs").show();
+                alert();
+            } else if (opt == 'tables') {
+                //  $("#tables").show();
+            } else if (opt == 'pulpit') {
+                // $("#pulpit").show();
+            }
         }
-    }
     </script>
 </body>
 
