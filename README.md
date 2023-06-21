@@ -18,7 +18,7 @@
   
   
 :100:
-Thanks for your time :+1:
+
 
 
 
