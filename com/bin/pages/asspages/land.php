@@ -58,7 +58,15 @@
             </font>
             <h4>ASSET ENTRY FORM</h4>
         </center>
+        <!-- form  -->
         <form action="land.php" method="post">
+            <div class="mb-3">
+                <label for="cty" class="cty">Country</label>
+                <label for="state" class="state">State</label>
+                <label for="reg" class="reg">Region</label>
+                <label for="old-grp" class="old_grp">Old Group</label>
+                <label for="grp" class="grp">Group</label>
+            </div>
             <div class="accordion my-2" id="">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="">
@@ -145,8 +153,34 @@
                     </select>
                 </div>
             </div>
-
-            <!-- added under litigation -->
+            <div class="row">
+                <div class="col-6 my-2">
+                    <label for="" class="">Current Status</label>
+                </div>
+                <div class="col-6">
+                    <select name="status" class="form-select " aria-label="Default select example">
+                        <option selected>--Select--</option>
+                        <option value="Developed">Developed</option>
+                        <option value="Under-developement">Under-developement</option>
+                        <option value="Undeveloped">Undeveloped</option>
+                        <option value="Partly-developed">Partly-developed</option>
+                    </select>
+                </div>
+            </div>
+            <!-- fully paid -->
+            <div class="row">
+                <div class="col-5 my-2">
+                    <label for="" class="">Fully Paid</label>
+                </div>
+                <div class="col-7">
+                    <select name="fullypaid" class="form-select " aria-label="Default select example">
+                        <option selected>--Select--</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+            <!-- under litigation -->
             <div class="row">
                 <div class="col-5 my-2">
                     <label for="" class="">Under Litigation</label>
@@ -159,47 +193,6 @@
                     </select>
                 </div>
             </div>
-            <!-- added fully paid -->
-            <div class="row">
-                <div class="col-5 my-2">
-                    <label for="" class="">Fully paid</label>
-                </div>
-                <div class="col-7">
-                    <select name="fullypaid" class="form-select " aria-label="Default select example">
-                        <option selected>--Select--</option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                    </select>
-                </div>
-            </div>
-            <!-- added current status -->
-            <div class="row">
-                <div class="col-5 my-2">
-                    <label for="" class="">Current Status</label>
-                </div>
-                <div class="col-7">
-                    <select name="status" class="form-select " aria-label="Default select example">
-                        <option selected>--Select--</option>
-                        <option value="Abandoned">fully developed</option>
-                        <option value="Completed">developed</option>
-                        <option value="Uncompleted">Under development</option>
-                        <option value="">undeveloped</option>
-                    </select>
-                </div>
-            </div>
-            <!-- <div class="row">
-                <div class="col-6 my-2">
-                    <label for="" class="">Current Status</label>
-                </div>
-                <div class="col-6">
-                    <select name="status" class="form-select " aria-label="Default select example">
-                        <option selected>--Select--</option>
-                        <option value="Abandoned">Abandoned</option>
-                        <option value="Completed">Completed</option>
-                        <option value="Uncompleted">Uncompleted</option>
-                    </select>
-                </div>
-            </div> -->
             <div class="row">
                 <div class="col-6 my-2">
                     <label for="" class="">National Grid</label>
@@ -340,28 +333,28 @@
                     <!-- buttons -->
                     <div id="btnRCS">
                         <a href="landasset.php" class="btn btn-danger">Close</a>
-                        <button class="btn btn-success" name="submit">Save</button>
+                        <button class="btn btn-success" name="submitL">Submit</button>
                     </div>
+                </div>
         </form>
         <?php
         if (isset($_POST['submitL'])) {
-
             require_once "../../../../com/sess/mods/connect.php";
             require_once "assdata.php";
             $alist = new asdata;
 
             $assetCategory = "LAND";
             $assetName = "LAND";
+            $location = $_POST['location'];
             $address = $_POST['address'];
-            $fenced = $_POST['fenced'];
             $no_of_plots = $_POST['plots'];
             $larea = $_POST['larea'];
             $costPrice = $_POST['cost'];
-            $cp = number_format($costPrice);
             $yearPurchased = $_POST['yearPurchased'];
-            $litig = $_POST['litig'];
-            $fullypaid = $_POST['fullypaid'];
+            $fenced = $_POST['fenced'];
             $currStatus = $_POST['status'];
+            $fullypaid = $_POST['fullypaid'];
+            $litig = $_POST['litig'];
             $natGrid = $_POST['natGrid'];
             $assetHolder = $_POST['assetHolder'];
             $usage = $_POST['usage'];
@@ -372,11 +365,10 @@
             $deed = $_POST['deed'];
             $cofo = $_POST['cofo'];
             $receipt = $_POST['receipt'];
-            $location = $_POST['location'];
             $transName = $_POST['transName'];
             $transPhone = $_POST['transPhone'];
-            
-            $assetInsert = $alist->saveLand($assetCategory, $assetName, $address, $no_of_plots, $larea, $cp, $yearPurchased, $litig, $fullypaid, $fenced, $currStatus, $origOwnerName, $origOwnerAddress, $origOwnerPhone, $transName, $transPhone, $surveyPlan, $deed, $receipt, $cofo, $natGrid, $assetHolder, $usage);
+
+            $assetInsert = $alist->saveLand($assetCategory, $assetName, $location, $address, $no_of_plots, $larea, $costPrice, $yearPurchased, $fenced, $currStatus, $fullypaid, $litig,$natGrid, $assetHolder, $usage, $origOwnerName, $origOwnerAddress, $origOwnerPhone, $surveyPlan, $deed, $cofo, $receipt, $transName, $transPhone);
             if ($assetInsert == 'Success') {
                 echo '<script> alert("Data Saved Successfully") </script>';
             } else {
@@ -385,20 +377,9 @@
         }
         ?>
     </div>
-    <script>
-        var state = sessionStorage['astate'];
-        var region = sessionStorage['aregion'];
-        var ogroup = sessionStorage['aogroup'];
-        var ugroup = sessionStorage['group'];
-        var district = sessionStorage['district'];
-        var loc = sessionStorage['loc'];
-        // alert(state + ogroup + ugroup + district+loc);
-        var msg = state + " | " + region + " | " + ogroup + " | " + ugroup + " | " + district + " DISTRICT";
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"     ></script>
 
-        document.getElementById('hed').innerHTML = msg;
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous">
-    </script>
+
 </body>
 
 </html>

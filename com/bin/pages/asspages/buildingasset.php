@@ -39,7 +39,6 @@ if (isset($_GET['del'])) {
                 <a href=" " class="btn btn-dark mb-3 bg-dark text-white">Home</a>
                 <a class="back" href="asspage.php">
                     <button id="btn" class="btn btn-dark mb-3 bg-primary">Asset Page</button></a>
-                <!-- <a href="buildingasset.php" class="btn btn-dark mb-3 bg-dark">Building Asset</a> -->
                 <a href="building.php" class="btn btn-dark mb-3 bg-success text-white">Add New</a>
             </div>
         </center>
