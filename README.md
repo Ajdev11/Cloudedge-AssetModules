@@ -1,6 +1,6 @@
 `DCMA APPLICATION`
 
-## The DCMA application is an ongoing App built with Php, JavaScript, jquery and mysql(DB). It provides a real-time messaging experience for users, allowing them to communicate with each other seamlessly. This README will guide you through the setup process and explain the features of the application.
+## The DCMA application is an ongoing App built with Php, JavaScript, jquery and mysql(DB). It provides a feature added to the existing application `www.dcma.org` real-time messaging experience for users, allowing them to communicate with each other seamlessly. This README will guide you through the setup process and explain the features of the application.
 
 ## Getting Started
 
