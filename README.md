@@ -2,9 +2,6 @@
 
 ## The DLCMA application is an ongoing App built with Php, JavaScript, jquery and mysql(DB). This README provides codes to a asset feature added to the main application. This README will guide you through the asset modules processes of the application.
 
-- PHP (version >= 7.0)
-- MySQL (or any other compatible database)
-- Web server (e.g., Apache, Nginx)
 
 `Installation`
 
