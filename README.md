@@ -11,7 +11,6 @@
 - Rename the db file to your prefer named db and update the database connection details accordingly.
 - Start your web server, and you're ready to go 🚀
 
-. User registration and authentication
 . Real-time messaging using web sockets
 . Typing indicator and message read status
 . Online/offline status indication
