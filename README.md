@@ -1,6 +1,5 @@
 `DLCMA APPLICATION`
 
-
 ## The DLCMA application is an ongoing App built with Php, JavaScript, jquery and mysql(DB). This README provides codes to a asset feature added to the main application. This README will guide you through the asset modules processes of the application.
 
 - Clone this repository to your local machine using the following command:
@@ -11,8 +10,6 @@
 - Create a new MySQL database for the chat application.
 - Rename the db file to your prefer named db and update the database connection details accordingly.
 - Start your web server, and you're ready to go 🚀
-
-`Features`
 
 . User registration and authentication
 . Real-time messaging using web sockets
