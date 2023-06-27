@@ -43,20 +43,22 @@ return $oneresult;
 }
 public function fetchoneMusicrecord($id)
 {
-$oneresult=mysqli_query($this->dbh,"select * from assetg where id=$id");
+$oneresult=mysqli_query($this->dbh,"select * from assetg where id = $id");
 return $oneresult;
 }
+
 public function fetchoneFurniturerecord($id)
 {
 $oneresult=mysqli_query($this->dbh,"select * from assetg where id=$id");
 return $oneresult;
 } 
 //Data updation Function   
-public function updateFurniture($assetName, $categ, $subCateg, $qty,$dop,$cap,$loc, $status, $id)
+public function updateFurniture($id, $categ, $subCateg, $assetName, $qty, $dop, $cap, $loc, $status)
 	{
 	$updaterecord=mysqli_query($this->dbh,"update  assetg set assetName='$assetName',item_category='$categ',item_type='$subCateg',sn='$qty',dop='$dop',cap='$cap',location='$loc',status='$status' where id='$id' ");
 	return $updaterecord;
 	}
+
 	public function updateVehicle($assetName, $categ, $subCateg, $qty,$dop,$cap,$loc, $status, $id)
 	{
 	$updaterecord=mysqli_query($this->dbh,"update  assetg set assetName='$assetName',item_category='$categ',item_type='$subCateg',sn='$qty',dop='$dop',cap='$cap',location='$loc',status='$status' where id='$id' ");
@@ -87,11 +89,16 @@ public function updateBuilding_old($assetName,$address,$costP,$status,$id)
 	}
 
 	//Data updation Function
-public function updateMusic($oem,$model,$sn,$dop,$cap,$locat,$status,$categ,$subCateg,$assetName,$id)
+public function updateMusic($id, $assetCategory, $subCategory, $assetName, $oem, $model, $sn, $dop, $cap, $assetLocation, $assetStatus)
 {
-$updaterecord=mysqli_query($this->dbh,"update  assetg set oem='$oem',model='$model',sn='$sn',dop='$dop',cap='$cap',location='$locat',status='$status',item_category='$categ',item_type='$subCateg',assetName='$assetName' where id='$id' ");
+$updaterecord=mysqli_query($this->dbh,"update  assetg set oem='$oem', model='$model', sn='$sn',dop='$dop', cap='$cap', location='$assetLocation', status='$assetStatus',item_category='$assetCategory', item_type='$subCategory', assetName='$assetName' where id='$id' ");
 return $updaterecord;
 }
+
+
+
+
+
 //Data Deletion function Function  
 public function delete($rid)
 	{

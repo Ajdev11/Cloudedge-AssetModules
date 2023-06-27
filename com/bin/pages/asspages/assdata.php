@@ -2,11 +2,11 @@
 
 class asdata extends Connections
 {
-    // Function get assets
-    public function getIctAss($itype)
-    {
 
-        $query = "SELECT * FROM tblict WHERE item_type = '$itype'";
+    // functions for category, subcategory and assetname
+    public function getCat($opt1, $opt2, $opt3)
+    {
+        $query = "SELECT DISTINCT categoryName FROM assetref WHERE categoryName = '$opt1' OR  categoryName = '$opt2' OR categoryName = '$opt3' ";
         $result = $this->connect()->query($query);
         $num_rows = $result->num_rows;
         if ($num_rows > 0) {
@@ -17,9 +17,9 @@ class asdata extends Connections
         }
     }
 
-    public function getFurAssets($itype)
+    public function getsubCat($val)
     {
-        $query = "SELECT * FROM `assetg` WHERE item_category = '$itype'";
+        $query = "SELECT DISTINCT subCategory FROM assetref WHERE categoryName = '$val' ";
         $result = $this->connect()->query($query);
         $num_rows = $result->num_rows;
         if ($num_rows > 0) {
@@ -29,6 +29,59 @@ class asdata extends Connections
             return $data;
         }
     }
+    public function getassType($val)
+    {
+        $query = "SELECT DISTINCT assetName FROM assetref WHERE subCategory = '$val' ";
+        $result = $this->connect()->query($query);
+        $num_rows = $result->num_rows;
+        if ($num_rows > 0) {
+            while ($rows = $result->fetch_assoc()) {
+                $data[] = $rows;
+            }
+            return $data;
+        }
+    }
+
+    //function for furnitureassets, musicassets, land asset, buildingasset, vehicleassets
+
+    public function getFurAssets($opt1, $opt2, $opt3)
+    {
+        $query = "SELECT * FROM assetg WHERE item_category = '$opt1' OR item_category = '$opt2' OR item_category = '$opt3' ";
+        $result = $this->connect()->query($query);
+        $num_rows = $result->num_rows;
+        if ($num_rows > 0) {
+            while ($rows = $result->fetch_assoc()) {
+                $data[] = $rows;
+            }
+            return $data;
+        }
+    }
+    public function getMusicAss($opt1, $opt2, $opt3)
+    {
+
+        $query = "SELECT * FROM assetg WHERE item_category = '$opt1' OR item_category = '$opt2' OR item_category = '$opt3' ";
+        $result = $this->connect()->query($query);
+        $num_rows = $result->num_rows;
+        if ($num_rows > 0) {
+            while ($rows = $result->fetch_assoc()) {
+                $data[] = $rows;
+            }
+            return $data;
+        }
+    }
+//  public function get1Cat($val)
+//     {
+//         $query = "SELECT DISTINCT categoryName FROM assetref WHERE categoryName = '$val' ";
+//         $result = $this->connect()->query($query);
+//         $num_rows = $result->num_rows;
+//         if ($num_rows > 0) {
+//             while ($rows = $result->fetch_assoc()) {
+//                 $data[] = $rows;
+//             }
+//             return $data;
+//         }
+//     }
+
 
     public function getLandAss($itype)
     {
@@ -58,133 +111,25 @@ class asdata extends Connections
         }
     }
 
-  public function getassType($val)
-    {
-        $query = "SELECT * FROM assetref WHERE subCategory = '$val' ";
-        $result = $this->connect()->query($query);
-        $num_rows = $result->num_rows;
-        if ($num_rows > 0) {
-            while ($rows = $result->fetch_assoc()) {
-                $data[] = $rows;
-            }
-            return $data;
-        }
-    }
-    
-
-    public function getMusicAss($itype)
-    {
-
-        $query = "SELECT * FROM assetg WHERE item_category = '$itype'";
-        $result = $this->connect()->query($query);
-        $num_rows = $result->num_rows;
-        if ($num_rows > 0) {
-            while ($rows = $result->fetch_assoc()) {
-                $data[] = $rows;
-            }
-            return $data;
-        }
-    }
-
-
-
-    public function get1Cat($itype)
-    {
-        $query = "SELECT DISTINCT categoryName FROM assetref WHERE categoryName = '$itype' ";
-        $result = $this->connect()->query($query);
-        $num_rows = $result->num_rows;
-        if ($num_rows > 0) {
-            while ($rows = $result->fetch_assoc()) {
-                $data[] = $rows;
-            }
-            return $data;
-        }
-    }
-
-    public function get2Cat($itype)
-    {
-        $query = "SELECT * FROM assetref WHERE assetName = '$itype' ";
-        $result = $this->connect()->query($query);
-        $num_rows = $result->num_rows;
-        if ($num_rows > 0) {
-            while ($rows = $result->fetch_assoc()) {
-                $data[] = $rows;
-            }
-            return $data;
-        }
-    }
-
-    // Function get asset location
-    public function getAssetLoc($itype)
-    {
-        $query = "SELECT * FROM `assloc` ";
-        $result = $this->connect()->query($query);
-        $num_rows = $result->num_rows;
-        if ($num_rows > 0) {
-            while ($rows = $result->fetch_assoc()) {
-                $data[] = $rows;
-            }
-            return $data;
-        }
-    }
-
-    // function get subcategories
-
-    public function getsubCat1($val)
-    {
-        $query = "SELECT DISTINCT subCategory FROM assetref WHERE categoryName = '$val' ";
-        $result = $this->connect()->query($query);
-        $num_rows = $result->num_rows;
-        if ($num_rows > 0) {
-            while ($rows = $result->fetch_assoc()) {
-                $data[] = $rows;
-            }
-            return $data;
-        }
-    }
-    public function getsubCat($val)
-    {
-        $query = "SELECT DISTINCT subCategory FROM assetref WHERE subCategory = '$val' ";
-        $result = $this->connect()->query($query);
-        $num_rows = $result->num_rows;
-        if ($num_rows > 0) {
-            while ($rows = $result->fetch_assoc()) {
-                $data[] = $rows;
-            }
-            return $data;
-        }
-    }
-    public function getAssName($val)
-    {
-        $query = "SELECT DISTINCT assetName FROM assetref WHERE assetName = '$val' ";
-        $result = $this->connect()->query($query);
-        $num_rows = $result->num_rows;
-        if ($num_rows > 0) {
-            while ($rows = $result->fetch_assoc()) {
-                $data[] = $rows;
-            }
-            return $data;
-        }
-    }
-    
-  
 
     // function create and insert assets
-    public function createAsset($assetCategory, $subCategory, $assetName, $quantity, $dop, $cap, $location, $status)
+    public function createAsset($assetCategory, $subCategory, $assetName, $sn, $dop, $cap, $location, $status)
     {
-        $sql = "INSERT INTO `assetg`(`item_category`, `item_type`, `assetName`, `sn`, `dop`, `cap`, `location`, `status`) VALUES ('$assetCategory','$subCategory','$assetName','$quantity','$dop','$cap','$location','$status')";
+        $sql = "INSERT INTO `assetg`(`item_category`, `item_type`, `assetName`, `sn`, `dop`, `cap`, `location`, `status`) VALUES ('$assetCategory', '$subCategory','$assetName', '$sn', '$dop', '$cap', '$location', '$status')";
         if ($result = $this->connect()->query($sql) == TRUE) {
             return "Success";
         }
     }
 
-    public function createMusicAsset($assetCategory, $subCategory, $assetName, $manufacturer, $model, $sn, $dop, $cap, $assetLocation, $assetStatus)
+    public function createMusicAsset($assetCategory, $subCategory, $assetName, $oem, $model, $sn, $dop, $cap, $assetLocation, $assetStatus)
     {
-        $sql = "INSERT INTO `assetg`(`item_category`, `item_type`, `assetName`, `oem`, `model`, `sn`, `dop`, `cap`, `location`, `status`) VALUES ('$assetCategory', '$subCategory', '$assetName', '$manufacturer','$model','$sn', '$dop', '$cap', '$assetLocation', '$assetStatus')";
+        $sql = "INSERT INTO `assetg`(`item_category`, `item_type`, `assetName`, `oem`, `model`, `sn`, `dop`, `cap`, `location`, `status`) VALUES ('$assetCategory', '$subCategory', '$assetName', '$oem','$model','$sn', '$dop', '$cap', '$assetLocation', '$assetStatus')";
         if ($result = $this->connect()->query($sql) == TRUE) {
             return "Success";
         }
     }
+
+
 
     public function saveBuilding($assetCategory, $assetName, $address, $no_of_plots, $larea, $costPrice, $fenced, $currStatus, $origOwnerName, $origOwnerAddress, $origOwnerPhone, $buildingPlan, $no_floors, $natGrid, $estCost, $yearCompleted, $buildingState, $assetHolder, $usage, $buildingMaterial)
     {
@@ -224,7 +169,100 @@ class asdata extends Connections
         if ($result = $this->connect()->query($sql) == TRUE) {
             return "Success";
         }
-    } 
+    }
+
+    // Function get asset locations dropdown
+    public function getAssetLoc($itype)
+    {
+        $query = "SELECT * FROM `assloc` ";
+        $result = $this->connect()->query($query);
+        $num_rows = $result->num_rows;
+        if ($num_rows > 0) {
+            while ($rows = $result->fetch_assoc()) {
+                $data[] = $rows;
+            }
+            return $data;
+        }
+    }
+
+
+    //   public function getassType($val)
+    //     {
+    //         $query = "SELECT * FROM assetref WHERE subCategory = '$val' ";
+    //         $result = $this->connect()->query($query);
+    //         $num_rows = $result->num_rows;
+    //         if ($num_rows > 0) {
+    //             while ($rows = $result->fetch_assoc()) {
+    //                 $data[] = $rows;
+    //             }
+    //             return $data;
+    //         }
+    //     }
+
+    // public function get1Cat($val)
+    // {
+    //     $query = "SELECT DISTINCT categoryName FROM assetref WHERE categoryName = '$val' ";
+    //     $result = $this->connect()->query($query);
+    //     $num_rows = $result->num_rows;
+    //     if ($num_rows > 0) {
+    //         while ($rows = $result->fetch_assoc()) {
+    //             $data[] = $rows;
+    //         }
+    //         return $data;
+    //     }
+    // }
+
+
+
+
+
+    // function get subcategories
+
+    // public function getsubCat1($val)
+    // {
+    //     $query = "SELECT * FROM assetref WHERE subCategory = '$val' ";
+    //     $result = $this->connect()->query($query);
+    //     $num_rows = $result->num_rows;
+    //     if ($num_rows > 0) {
+    //         while ($rows = $result->fetch_assoc()) {
+    //             $data[] = $rows;
+    //         }
+    //         return $data;
+    //     }
+    // }
+
+
+    // public function getsubCat($val)
+    // {
+    //     $query = "SELECT * FROM assetref WHERE subCategory = '$val' ";
+    //     $result = $this->connect()->query($query);
+    //     $num_rows = $result->num_rows;
+    //     if ($num_rows > 0) {
+    //         while ($rows = $result->fetch_assoc()) {
+    //             $data[] = $rows;
+    //         }
+    //         return $data;
+    //     }
+    // }
+
+
+
+    // public function getAssName($val)
+    // {
+    //     $query = "SELECT DISTINCT assetName FROM assetref WHERE assetName = '$val' ";
+    //     $result = $this->connect()->query($query);
+    //     $num_rows = $result->num_rows;
+    //     if ($num_rows > 0) {
+    //         while ($rows = $result->fetch_assoc()) {
+    //             $data[] = $rows;
+    //         }
+    //         return $data;
+    //     }
+    // }
+
+
+
+
 }
 
 
@@ -275,8 +313,3 @@ class asdata extends Connections
     //         return $data;
     //     }
     // }
-?>
-
-
-
-

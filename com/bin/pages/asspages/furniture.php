@@ -73,8 +73,7 @@
       require_once "../../../../com/sess/mods/connect.php";
       require_once "assdata.php";
       $alist = new asdata;
-      // $cats = $alist->getCat('chair', 'tables', 'pulpit'); 
-      $cats = $alist->get1Cat('Furniture');
+      $cats = $alist->getCat('chair', 'tables', 'pulpit');
       $aloc = $alist->getAssetLoc('');
       ?>
       <div class="row">
@@ -82,7 +81,7 @@
           <label for="" class="">Asset Category</label>
         </div>
         <div class="col-7 my-2">
-          <select class="form-select" name="assetCategory" id="categoryName" aria-label="Default select example" onchange="showme(this.value)">
+          <select class="form-select" name="item_category" id="categoryName" aria-label="Default select example" onchange="showme(this.value)">
             <option selected>Select Asset Category</option>
             <?php
             foreach ($cats as $cat) {
@@ -107,19 +106,9 @@
         </div>
         <div class="col-7 my-2">
           <!-- pass showmeType function to onchange event -->
-          <select class="form-select" name="subCategory" id="subcateg" onchange="showmeType(this.value)">
+          <select class="form-select" name="item_type" id="subcateg" onchange="showmeType(this.value)">
             <option selected>Select Asset Type</option>
           </select>
-          <!-- write a script for the function showmeType -->
-          <script type="text/javascript">
-            function showmeType(val) {
-              $.post("assbrg.php", {
-                Categ: val
-              }, function(data, status) {
-                document.getElementById("assetName").innerHTML = data;
-              })
-            }
-          </script>
         </div>
       </div>
       <div class="row">
@@ -130,6 +119,15 @@
           <select class="form-select" name="assetName" id="assetName">
             <option selected> Select Asset Name </option>
           </select>
+          <script type="text/javascript">
+            function showmeType(val) {
+              $.post("assbrg.php", {
+                Categ: val
+              }, function(data, status) {
+                document.getElementById("assetName").innerHTML = data;
+              })
+            }
+          </script>
         </div>
       </div>
       <div class="row">
@@ -192,7 +190,7 @@
       </div>
     </form>
   </div>
-  <script>
+  <!-- <script>
     var state = sessionStorage['astate'];
     var region = sessionStorage['aregion'];
     var ogroup = sessionStorage['aogroup'];
@@ -202,20 +200,20 @@
     var msg = state + " | " + region + " | " + ogroup + " | " + ugroup + " | " + district + " DISTRICT";
 
     document.getElementById('hed').innerHTML = msg;
-  </script>
+  </script> -->
   <!--inserting into the database  -->
   <?php
   if (isset($_POST['submit'])) {
-    $assetCategory = $_POST['assetCategory'];
-    $subCategory = $_POST['subCategory'];
+    $assetCategory = $_POST['item_category'];
+    $subCategory = $_POST['item_type'];
     $assetName = $_POST['assetName'];
-    $quantity = $_POST['quantity'];
+    $sn = $_POST['quantity'];
     $dop = $_POST['dop'];
     $cap = $_POST['cap'];
     $location = $_POST['location'];
     $status = $_POST['status'];
 
-    $assetInsert = $alist->createAsset($assetCategory, $subCategory, $assetName, $quantity, $dop, $cap, $location, $status);
+    $assetInsert = $alist->createAsset($assetCategory, $subCategory, $assetName, $sn,$dop, $cap, $location, $status);
     if ($assetInsert == 'Success') {
       echo '<script> alert("Data saved successfully") </script>';
     } else {

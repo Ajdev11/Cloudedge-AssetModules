@@ -67,7 +67,7 @@ if (isset($_GET['del'])) {
                     require "../../../../com/sess/mods/connect.php";
                     require "assdata.php";
                     $asscl = new asdata;
-                    $alist = $asscl->getFurAssets('Furniture');
+                    $alist = $asscl->getFurAssets('chair', 'tables', 'pulpit');
                     $sn = 0;
                     if (!is_null($alist)) {
                         foreach ($alist as $asslist) {
@@ -106,17 +106,17 @@ if (isset($_GET['del'])) {
         //     //  $("#tables").hide();
         //     //  $("#pulpit").hide();  
         // }
-        function showopts(opts) {
-            if (opts == 'chairs ') {
+        // function showopts(opts) {
+        //     if (opts == 'chair') {
 
-                // $("#chairs").show();
-                alert();
-            } else if (opt == 'tables') {
-                //  $("#tables").show();
-            } else if (opt == 'pulpit') {
-                // $("#pulpit").show();
-            }
-        }
+        //         // $("#chairs").show();
+        //         alert();
+        //     } else if (opt == 'tables') {
+        //         //  $("#tables").show();
+        //     } else if (opt == 'pulpit') {
+        //         // $("#pulpit").show();
+        //     }
+        // }
     </script>
 </body>
 

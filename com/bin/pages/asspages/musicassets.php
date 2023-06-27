@@ -51,6 +51,7 @@ if (isset($_GET['del'])) {
                             <th scope="col">S/N</th>
                             <th scope="col">Asset Type</th>
                             <th scope="col">Asset Name</th>
+                            <th scope="col">Manufacturer</th>
                             <th scope="col">Model</th>
                             <th scope="col">Serial No</th>
                             <th scope="col">Date of Purchase</th>
@@ -65,24 +66,26 @@ if (isset($_GET['del'])) {
                         require "../../../../com/sess/mods/connect.php";
                         require "assdata.php";
                         $asscl = new asdata;
-                        $alist = $asscl->getMusicAss('MUSIC');
+                        $alist = $asscl->getMusicAss('musical', 'music-string', 'music-brass');
                         $sn = 0;
+                    if (!is_null($alist)) {
                         foreach ($alist as $asslist) {
                             $sn = $sn + 1;
                             echo '<tr>';
                             echo '<td>' . $sn . '</td>';
                             echo '<td>' . $asslist['item_type'] . '</td>';
                             echo '<td>' . $asslist['assetName'] . '</td>';
+                            echo '<td>' . $asslist['oem'] . '</td>';
                             echo '<td>' . $asslist['model'] . '</td>';
                             echo '<td>' . $asslist['sn'] . '</td>';
                             echo '<td>' . $asslist['dop'] . '</td>';
-                            echo '<td>' . number_format($asslist['cap']) . '</td>';
+                            echo '<td>' . $asslist['cap'] . '</td>';
                             echo '<td>' . $asslist['status'] . '</td>'; ?>
                             <td><a href="updatemusic.php?id=<?php echo htmlentities($asslist['id']); ?>"><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
                             <td><a href="musicassets.php?del=<?php echo htmlentities($asslist['id']); ?>"><button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><span class="glyphicon glyphicon-trash"></span></button></a></td>
                         <?php echo '</tr>';
                         }
-
+                    }
                         ?>
                     </tbody>
                 </table>

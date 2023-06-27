@@ -6,23 +6,21 @@ $updatedata = new DB_con();
 if (isset($_POST['update'])) {
     // Get the userid
     $id = intval($_GET['id']);
+    $categ = $_POST['item_category'];
+    $subCateg = $_POST['item_type'];
     $assetName = $_POST['assetName'];
-    $status = $_POST['status'];
-    $categ = $_POST['assetCategory'];
-    $subCateg = $_POST['subCategory'];
     $qty = $_POST['quantity'];
     $dop = $_POST['dop'];
     $cap = $_POST['cap'];
     $loc = $_POST['location'];
-    $sql = $updatedata->updateFurniture($assetName, $categ, $subCateg, $qty, $dop, $cap, $loc, $status, $id);
+    $status = $_POST['status'];
+    $sql = $updatedata->updateFurniture($id, $categ, $subCateg, $assetName, $qty, $dop, $cap, $loc, $status);
     // Mesage after updation
     echo "<script>alert('Record Updated successfully');</script>";
     // Code for redirection
     echo "<script>window.location.href='furasset.php'</script>";
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,51 +30,54 @@ if (isset($_POST['update'])) {
     <title>UPDATE FURNITURE ASSET </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
-</head>
-<style>
-    form {
-        margin-top: 5vh;
-    }
+    <?php
+    require "../../../bin/hed/sandls.php";
+    ?>
+    <style>
+        form {
+            margin-top: 5vh;
+        }
 
-    .cont {
-        display: block;
-        width: 98%;
-        margin: auto;
-        background-color: #ddd;
-    }
-
-    .back {
-        text-decoration: none;
-        color: #fff;
-    }
-
-    #btn {
-        width: 20%;
-        margin-left: 5px;
-        background: #000;
-    }
-
-    #btnRCS {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-    }
-
-    /* desktop screen */
-    @media only screen and (min-width: 600px) {
         .cont {
-            width: 50%;
+            display: block;
+            width: 98%;
+            margin: auto;
+            background-color: #ddd;
+        }
+
+        .back {
+            text-decoration: none;
+            color: #fff;
         }
 
         #btn {
-            width: 10%;
+            width: 20%;
+            margin-left: 5px;
+            background: #000;
         }
-    }
-</style>
+
+        #btnRCS {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        /* desktop screen */
+        @media only screen and (min-width: 600px) {
+            .cont {
+                width: 50%;
+            }
+
+            #btn {
+                width: 10%;
+            }
+        }
+    </style>
+</head>
 
 <body>
 
-    <div class="container-fluid cont">
+    <div class="container-fluid cont my-4 bg-secondary text-white">
         <?php
         // Get the userid
         $id = intval($_GET['id']);
@@ -85,28 +86,31 @@ if (isset($_POST['update'])) {
         $cnt = 1;
         while ($row = mysqli_fetch_array($sql)) {
         ?>
-            <h2 class="text-center">Edit Furniture Record</h2>
-            <hr>
-            <form action="" method="post">
+            <!-- form start here -->
+            <form action="" method="POST">
+                <center>
+                    <h2>DEEPER LIFE BIBLE CHURCH</h2>
+                    <font color="brown">
+                        <h6 id="hed"> </h6>
+                    </font>
+                    <h4>ASSET ENTRY FORM</h4>
+                </center>
                 <?php
                 require_once "../../../../com/sess/mods/connect.php";
                 require_once "assdata.php";
                 $alist = new asdata;
-                // $cats = $alist->getCat('chair', 'tables', 'pulpit'); 
-                $cats = $alist->get1Cat('Furniture');
-                $cats = $alist->get1Cat('Furniture');
-                $subs = $alist->getsubCat1('Furniture');
+                $cats = $alist->getCat('chair', 'tables', 'pulpit');
                 $aloc = $alist->getAssetLoc('');
                 ?>
-
                 <div class="row">
                     <div class="col-5">
                         <label for="" class="">Asset Category</label>
                     </div>
                     <div class="col-7 my-2">
                         <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['item_category']); ?>" class="form-control" required>
-                        <select class="form-select" name="assetCategory" id="categoryName" aria-label="Default select example" onchange="showme(this.value)">
-                            <option selected>Change Asset Category</option>
+
+                        <select class="form-select" name="item_category" id="categoryName" aria-label="Default select example" onchange="showme(this.value)">
+                            <option selected>Select Asset Category</option>
                             <?php
                             foreach ($cats as $cat) {
                                 echo '<option value = ' . $cat['categoryName'] . '>' . strtoupper($cat['categoryName']) . '</option>';
@@ -118,7 +122,7 @@ if (isset($_POST['update'])) {
                                 $.post("assbrg.php", {
                                     Categ: val
                                 }, function(data, status) {
-                                    document.getElementById("subCateg").innerHTML = data;
+                                    document.getElementById("subcateg").innerHTML = data;
                                 })
                             }
                         </script>
@@ -129,15 +133,22 @@ if (isset($_POST['update'])) {
                         <label for="" class="">Asset Type</label>
                     </div>
                     <div class="col-7 my-2">
+                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['item_type']); ?>" class="form-control" required>
                         <!-- pass showmeType function to onchange event -->
-                        <input style="background: orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['item_type']); ?>" class="form-control" required>
-                        <select class="form-select" name="subCategory" id="subcateg" onchange="showmeType(this.value)">
-                            <option selected>Change Asset type</option>
-                            <?php
-                            foreach ($subs as $cat) {
-                                echo '<option value = ' . $cat['subCategory'] . '>' . strtoupper($cat['subCategory']) . '</option>';
-                            }
-                            ?>
+                        <select class="form-select" name="item_type" id="subcateg" onchange="showmeType(this.value)">
+                            <option selected>Select Asset Type</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <label for="" class="qty">Asset Name</label>
+                    </div>
+                    <div class="col-7">
+                        <input style="background:orange" type="text" id="plan1" name="plan1" class="form-control" required value="<?php echo htmlentities($row['item_type']); ?>">
+                        <select class="form-select" name="assetName" id="assetName">
+                            <option selected>Select asset name</option>
+
                         </select>
                         <script type="text/javascript">
                             function showmeType(val) {
@@ -148,19 +159,6 @@ if (isset($_POST['update'])) {
                                 })
                             }
                         </script>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-5">
-                        <label for="" class="qty">Asset Name</label>
-                    </div>
-                    <div class="col-7">
-                        <input style="background:orange" type="text" id="plan1" name="plan1" class="form-control" required>
-                        <select class="form-select" name="assetName" id="assetName">
-                            <option selected>Change asset name</option>
-
-                        </select>
-
                     </div>
                 </div>
 
@@ -188,7 +186,7 @@ if (isset($_POST['update'])) {
                     </div>
                     <div class="col-7 my-2">
                         <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['cap']); ?>" class="form-control" required>
-                        <input placeholder="change Cost at purchase" class="form-control form-control-md" name="cap" type="text" />
+                        <input placeholder="Change Cost at purchase" class="form-control form-control-md" name="cap" type="text" />
                     </div>
                 </div>
                 <div class="row">
@@ -222,6 +220,7 @@ if (isset($_POST['update'])) {
                         </select>
                     </div>
                 </div>
+
             <?php } ?>
             <div id="btnRCS">
                 <a href="furasset.php" class="btn btn-danger">Close</a>

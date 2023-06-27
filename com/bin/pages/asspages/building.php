@@ -72,7 +72,7 @@ form {
         $alist = new asdata;      
         
         $aloc = $alist->getAssetLoc('');
-        $aloc = $alist->getAssetLoc('');
+        // $aloc = $alist->getAssetLoc('');
 
         ?>
             <center>

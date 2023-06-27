@@ -42,8 +42,6 @@ if (isset($_GET['del'])) {
                 <a href="building.php" class="btn btn-dark mb-3 bg-success text-white">Add New</a>
             </div>
         </center>
-        <p class="text-muted" align="center">To Update or Delete an Asset from the list, click under the "Action" column
-            of the row.</p>
         <div id="tricaldiv">
             <table class="table table-striped">
                 <thead class="table-dark">

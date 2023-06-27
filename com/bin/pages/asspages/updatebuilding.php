@@ -144,7 +144,7 @@ form {
                 <div class="col-9 my-2">
                     <input style="background:orange" type="text" id="plan1" name="plan1"
                         value="<?php echo htmlentities($row['building_plan']); ?>" class="form-control" required>
-                    <input class="form-control form-control-md" id="plan" onchange="repeatvalue()" type="text"
+                    <input class="form-control form-control-md" id="plan" placeholder="change building plan" onchange="repeatvalue()" type="text"
                         name="plan" />
                 </div>
                 <script>
@@ -163,7 +163,7 @@ form {
                     <input style="background:orange" type="text" name="fenced1"
                         value="<?php echo htmlentities($row['fenced']); ?>" class="form-control" required>
                     <select class="form-select" name="fenced" id="">
-                        <option value="Select">--Select--</option>
+                        <option value="Select">Change fence type</option>
                         <option value="Yes">Yes</option>
                         <option value="Yes">No</option>
                     </select>
@@ -176,7 +176,7 @@ form {
                 <div class="col-7 my-2">
                     <input style="background:orange" type="text" name="no_floors1"
                         value="<?php echo htmlentities($row['no_of_floors']); ?>" class="form-control" required>
-                    <input class="form-control form-control-md" name="no_floors" type="number" />
+                    <input class="form-control form-control-md" placeholder="change number of floor" name="no_floors" type="number" />
                 </div>
             </div>
             <div class="row">
@@ -188,7 +188,7 @@ form {
                         value="<?php echo htmlentities($row['national_grid']); ?>" class="form-control" required>
 
                     <select class="form-select" name="natGrid" id="">
-                        <option value="Select">--Select--</option>
+                        <option value="Select">Change national grid</option>
                         <option value="Yes">Yes</option>
                         <option value="Yes">No</option>
                     </select>
@@ -201,7 +201,7 @@ form {
                 <div class="col-7 my-2">
                     <input style="background:orange" type="text" name="costPrice1"
                         value="<?php echo htmlentities($row['cost_price']); ?>" class="form-control" required>
-                    <input class="form-control form-control-md" name="costPrice" type="text" />
+                    <input class="form-control form-control-md" placeholder="change cost of building" name="costPrice" type="text" />
                 </div>
             </div>
             <div class="row">
@@ -211,7 +211,7 @@ form {
                 <div class="col-9 my-2">
                     <input style="background:orange" type="text" name="address1"
                         value="<?php echo htmlentities($row['address']); ?>" class="form-control" required>
-                    <input class="form-control form-control-md" name="address" placeholder="Enter Address of Building"
+                    <input class="form-control form-control-md" name="address" placeholder="Change Address of Building"
                         type="text" />
                 </div>
             </div>
@@ -250,7 +250,7 @@ form {
                     <input style="background:orange" type="text" name="status1"
                         value="<?php echo htmlentities($row['current_status']); ?>" class="form-control" required>
                     <select name="status" class="form-select " aria-label="Default select example">
-                        <option selected>Select Current Status</option>
+                        <option selected>Change Current Status</option>
                         <option value="Abandoned">Abandoned</option>
                         <option value="Completed">Completed</option>
                         <option value="Non-completed3">Non-completed</option>
@@ -266,7 +266,7 @@ form {
                     <input style="background:orange" type="text" name="assetHolder1"
                         value="<?php echo htmlentities($row['asset_holder']); ?>" class="form-control" required>
                     <select name="assetHolder" class="form-select " aria-label="Default select example">
-                        <option selected>Select Asset Holder</option>
+                        <option selected>Change Asset Holder</option>
                         <option value="State">State</option>
                         <option value="Old District">Old District</option>
                         <option value="Group">Group</option>
@@ -282,7 +282,7 @@ form {
                     <input style="background:orange" type="text" name="usage1"
                         value="<?php echo htmlentities($row['usage']); ?>" class="form-control" required>
                     <select name="usage" class="form-select " aria-label="Default select example">
-                        <option selected>Select Asset Location</option>
+                        <option selected>Change Asset Location</option>
                         <?php
                             foreach ($aloc as $loc) {
                                 echo '<option value = ' . $loc['assloc'] . '>' . strtoupper($loc['assloc']) . '</option>';
@@ -299,7 +299,7 @@ form {
                     <input style="background:orange" type="text" name="buildingMaterial1"
                         value="<?php echo htmlentities($row['building_material']); ?>" class="form-control" required>
                     <select name="buildingMaterial" class="form-select " aria-label="Default select example">
-                        <option selected>Select Material Used</option>
+                        <option selected>Change Material Used</option>
                         <option value="Block">Block</option>
                         <option value="Wood">Wood</option>
                         <option value="Iron Sheet">Iron Sheet</option>
@@ -324,7 +324,7 @@ form {
                             <input style="background:orange" type="text" name="origOwnerName1"
                                 value="<?php echo htmlentities($row['orig_owner_name']); ?>" class="form-control"
                                 required>
-                            <input class="form-control form-control-md" name="origOwnerName" type="text" />
+                            <input class="form-control form-control-md" placeholder="Change owner name" name="origOwnerName" type="text" />
                         </div>
                         <div class="row">
                             <div class="col-3">
@@ -334,7 +334,7 @@ form {
                                 <input style="background:orange" type="text" name="origOwnerAddress1"
                                     value="<?php echo htmlentities($row['orig_owner_address']); ?>" class="form-control"
                                     required>
-                                <input class="form-control form-control-md" name="origOwnerAddress" type="text" />
+                                <input class="form-control form-control-md" placeholder="Change address" name="origOwnerAddress" type="text" />
                             </div>
                         </div>
                         <div class="row">
@@ -345,7 +345,7 @@ form {
                                 <input style="background:orange" type="text" name="origOwnerPhone1"
                                     value="<?php echo htmlentities($row['orig_owner_phone']); ?>" class="form-control"
                                     required>
-                                <input class="form-control form-control-md" name="origOwnerPhone" type="text" />
+                                <input class="form-control form-control-md" placeholder="Change phone number" name="origOwnerPhone" type="text" />
                             </div>
                         </div>
 
