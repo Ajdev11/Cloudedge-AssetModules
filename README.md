@@ -10,7 +10,7 @@ your web server to point to the cloned repository's directory.
 - Start your web server, and you're ready to go 🚀
 
 . Typing indicator and message read status
-. Online/offline status indication
+. Onlintion
 . Message history and conversation search
 . User profile management
 
