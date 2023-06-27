@@ -1,24 +1,47 @@
-# DLCMA APPLICATION
-# ASSET MODULES
+`DLCMA APPLICATION`
 
-### The asset modules is a new feature added to the ongoing DLCMA application `www.dlcma.org`
-## The modules consists of
+## The DLCMA application is an ongoing App built with Php, JavaScript, jquery and mysql(DB). This README provides codes to a asset feature added to the main application. This README will guide you through the asset modules processes of the application.
 
-+ land asset
-+ Building asset
-+ Furniture asset
-+ Vehicle asset
-+ Ict/electronics/electricals
-
-### The Asset modules allows a CRUD OPERATION
-  - Edit
-    - Delete
-      - Update
-        - Insert of items
+ this repository to your local machine using the following
+//github.com/ajdev11/chatApp.git`
   
-  
-:100:
-Thanks for your time :+1:
+- Configure your web server to point to the cloned repository's directory.
+- Create a new MySQL database for the chat application.
+- Rename the db file to your prefer named db and update the database connection details accordingly.
+- Start your web server, and you're ready to go 🚀
+
+. Typing indicator and message read status
+. Online/offline status indication
+. Message history and conversation search
+. User profile management
+
+`Usage`
+
+. Open the chat application in your web browser.
+. If you don't have an account, click on the "Sign Up" link to create a new account.
+. Log in using your credentials
+. Start chatting! You can send messages to other users and manage your profile.
+
+`Contributing`
+
+Contributions are always welcome 🙂! If you'd like to contribute to this project, please follow these steps:
+
+. Fork the repository and create your branch:
+
+`git checkout -b feature/YourFeature`
+
+. Commit your changes and push to the branch:
+
+`git commit -am 'Add some features or commit messages`
+
+`git push origin feature/YourFeature`
+
+
+That's it! Now you have an awesome chat application up and running. Enjoy 😃 seamless communication with your friends and colleagues. If you encounter any issues or have any questions, kindly reach out to me. Happy chatting!..
+
+
+
+
 
 
 
