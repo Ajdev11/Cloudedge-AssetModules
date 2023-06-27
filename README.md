@@ -12,7 +12,7 @@ your web server to point to the cloned repository's directory.
 . Typing indicator and message read status
 . Onlintion
 . Message history and conversation search
-. User profile management
+. User profile man
 
 `Usage`
 
