@@ -70,9 +70,9 @@ if (isset($_GET['del'])) {
                             <td><?php echo htmlentities($row['no_of_plots']); ?></td>
                             <td><?php echo htmlentities($row['cost_price']); ?></td>
                             <td><?php echo htmlentities($row['year_of_purchase']); ?></td>
+                            <td><?php echo htmlentities($row['fenced']); ?></td>
                             <td><?php echo htmlentities($row['litig']); ?></td>
                             <td><?php echo htmlentities($row['fullypaid']); ?></td>
-                            <td><?php echo htmlentities($row['fenced']); ?></td>
                             <td><?php echo htmlentities($row['current_status']); ?></td>
                             <td><a href="updateland.php?id=<?php echo htmlentities($row['id']); ?>"><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
                             <td><a href="landasset.php?del=<?php echo htmlentities($row['id']); ?>"><button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><span class="glyphicon glyphicon-trash"></span></button></a></td>

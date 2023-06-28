@@ -6,7 +6,7 @@ $updatedata = new DB_con();
 if (isset($_POST['update'])) {
     // Get the userid
     $id = intval($_GET['id']);
-    $assetCategory = $_POST['assetCategory'];
+    $assetCategory = $_POST['item_category'];
     $subCategory = $_POST['item_type'];
     $assetName = $_POST['assetName'];
     $oem = $_POST['oem'];
@@ -14,8 +14,8 @@ if (isset($_POST['update'])) {
     $sn = $_POST['sn'];
     $dop = $_POST['dop'];
     $cap = $_POST['cap'];
-    $assetLocation = $_POST['assetLocation'];
-    $assetStatus = $_POST['assetStatus'];
+    $assetLocation = $_POST['location'];
+    $assetStatus = $_POST['status'];
     $sql = $updatedata->updateMusic($id, $assetCategory, $subCategory, $assetName, $oem, $model, $sn, $dop, $cap, $assetLocation, $assetStatus);
     // Mesage after updation
     echo "<script>alert('Record Updated successfully');</script>";

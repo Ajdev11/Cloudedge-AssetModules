@@ -7,74 +7,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DCMA - BUILDINGS</title>
     <?php
-  require "../../../bin/hed/sandls.php";
-  ?>
-    <!-- <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
-      crossorigin="anonymous"
-    /> -->
+    require "../../../bin/hed/sandls.php";
+    ?>
 </head>
 <style>
-form {
-    margin-top: 5vh;
-    padding-bottom: 1px;
-}
-
-.cont {
-    display: block;
-    width: 95%;
-    height: 130vh;
-    margin: auto;
-}
-
-.back {
-    color: #fff;
-    text-decoration: none;
-}
-
-#btn {
-    width: 20%;
-    margin-left: 5px;
-    background: #000;
-}
-
-#btnRCS {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-/* desktop screen */
-@media only screen and (min-width: 600px) {
-    .cont {
-        width: 45%;
+    form {
+        margin-top: 5vh;
+        padding-bottom: 1px;
     }
 
-    #hed {
-        font-size: 15px;
-        width: 100%;
+    .cont {
+        display: block;
+        width: 95%;
+        height: 130vh;
+        margin: auto;
+    }
+
+    .back {
+        color: #fff;
+        text-decoration: none;
     }
 
     #btn {
-        width: 10%;
+        width: 20%;
+        margin-left: 5px;
+        background: #000;
     }
-}
+
+    #btnRCS {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    /* desktop screen */
+    @media only screen and (min-width: 600px) {
+        .cont {
+            width: 45%;
+        }
+
+        #hed {
+            font-size: 15px;
+            width: 100%;
+        }
+
+        #btn {
+            width: 10%;
+        }
+    }
 </style>
 
 <body>
     <div class="container-fluid cont my-4 bg-secondary">
         <form action="building.php" method="post">
             <?php
-        require_once "../../../../com/sess/mods/connect.php";
-        require_once "assdata.php";
-        $alist = new asdata;      
-        
-        $aloc = $alist->getAssetLoc('');
-        // $aloc = $alist->getAssetLoc('');
-
-        ?>
+            require_once "../../../../com/sess/mods/connect.php";
+            require_once "assdata.php";
+            $alist = new asdata;
+            $aloc = $alist->getAssetLoc('');
+            ?>
             <center>
                 <h2>DEEPER LIFE BIBLE CHURCH</h2>
                 <font color="brown">
@@ -82,7 +73,6 @@ form {
                 </font>
                 <h4>ASSET ENTRY FORM</h4>
             </center>
-
             <div class="row">
                 <div class="col-3">
                     <label for="" class="">Building plan</label>
@@ -136,8 +126,7 @@ form {
                     <label for="" class="">Address</label>
                 </div>
                 <div class="col-9 my-2">
-                    <input class="form-control form-control-md" name="address" placeholder="Enter Address of Building"
-                        type="text" />
+                    <input class="form-control form-control-md" name="address" placeholder="Enter Address of Building" type="text" />
                 </div>
             </div>
             <div class="row">
@@ -201,10 +190,10 @@ form {
                     <select name="usage" class="form-select " aria-label="Default select example">
                         <option selected>Select Asset Location</option>
                         <?php
-            foreach ($aloc as $loc) {
-              echo '<option value = ' . $loc['assloc'] . '>' . strtoupper($loc['assloc']) . '</option>';
-            }
-            ?>
+                        foreach ($aloc as $loc) {
+                            echo '<option value = ' . $loc['assloc'] . '>' . strtoupper($loc['assloc']) . '</option>';
+                        }
+                        ?>
                     </select>
                 </div>
             </div>
@@ -266,66 +255,47 @@ form {
                 </div>
         </form>
         <?php
-      if(isset($_POST['submit1']))
-{  
-  
-  require_once "../../../../com/sess/mods/connect.php";
-  require_once "assdata.php";
-  $alist = new asdata;      
-  
-  $aloc = $alist->getAssetLoc('');
- // $alist2 = new asdata2; 
-  //  $cat1 = $alist->get1Cat('music');   
+        if (isset($_POST['submit'])) {
+            $assetCategory = 'building';
+            $assetName = 'building';
+            $plan = $_POST['plan'];
+            $address = $_POST['address'];
+            $fenced = $_POST['fenced'];
+            $currStatus = $_POST['currStatus'];
+            $origOwnerName = $_POST['origOwnerName'];
+            $origOwnerAddress = $_POST['origOwnerAddress'];
+            $origOwnerPhone = $_POST['origOwnerPhone'];
+            $no_floors = $_POST['no_floors'];
+            $natGrid = $_POST['natGrid'];
+            $estCost = $_POST['estCost'];
+            $yearCompleted = $_POST['yearCompleted'];
+            $assetHolder = $_POST['assetHolder'];
+            $usage = $_POST['usage'];
+            $buildingMaterial = $_POST['buildingMaterial'];
 
-    $assetCategory = $_POST['item_category'];
-    $assetName = $_POST['assetName'];
-    $address = $_POST['address'];
-    $no_of_plots = $_POST['no_of_plots'];
-    $larea = $_POST['larea'];
-    $costPrice = $_POST['cost_price'];
-    $cp = number_format($costPrice);
-    $fenced = $_POST['fenced']; 
-    $currStatus = $_POST['currStatus'];
-    $origOwnerName = $_POST['origOwnerName'];
-    $origOwnerAddress = $_POST['origOwnerAddress'];
-    $origOwnerPhone = $_POST['origOwnerPhone'];
-    $buildingPlan = $_POST['plan'];
-    $no_floors = $_POST['no_floors'];
-    $natGrid = $_POST['natGrid'];
-    $estCost = $_POST['estCost'];
-    $yearCompleted = $_POST['yearCompleted'];
-    $buildingState = $_POST['currStatus'];
-    $assetHolder = $_POST['assetHolder'];
-    $usage = $_POST['usage'];
-    $buildingMaterial = $_POST['buildingMaterial'];
- 
-   // `item_category`, `assetName`, `address`, `no_of_plots`, `larea`, `cost_price`, `fenced`, `current_status`, `orig_owner_name`, `orig_owner_address`, `orig_owner_phone`, `building_plan`, `no_of_floors`, `national_grid`, `estimated_cost`, `year_completed`, `building_state`, `asset_holder`, `usage`, `building_material`
-    // $sql= "INSERT INTO `assetlb`(`id`, `country`, `state`, `region`, `ogroup`, `ugroup`, `district`, `loc`,`building_plan`, `address`, `fenced`, `current_status`, `orig_owner_name`, `orig_owner_address`, `orig_owner_phone`,`no_of_floors`, `national_grid`, `estimated_cost`, `year_completed`, `building_state`, `asset_holder`, `usage`, `building_material`) values (null,'Nigeria','Rivers','Port-Harcourt','Rumuigbo','Mgbuoba','Aganorlu','Aganorlu','$plan','$address', '$fenced', '$currStatus','$origOwnerName', '$origOwnerAddress','$origOwnerPhone', '$no_floors', '$natGrid', '$estCost','$yearCompleted','$buildingState','$assetHolder','$usage','$buildingMaterial')";
-    $assetInsert = $alist-> saveBuilding($assetCategory, $assetName, $address,$no_of_plots,$larea, $cp, $fenced, $currStatus, $origOwnerName, $origOwnerAddress, $origOwnerPhone, $buildingPlan, $no_floors, $natGrid, $estCost, $yearCompleted, $buildingState, $assetHolder, $usage, $buildingMaterial);
-    if($assetInsert == 'Success'){
-     echo '<script> alert("Data Saved Successfully") </script>';
-
-    }else{
-      echo '<script> alert("Unable to Save Data") </script>';
-    }
-  }
-?>
+            $assetInsert = $alist->saveBuilding($assetCategory, $assetName, $plan, $address, $fenced, $currStatus, $origOwnerName, $origOwnerAddress, $origOwnerPhone, $no_floors, $natGrid, $estCost, $yearCompleted, $assetHolder, $usage, $buildingMaterial);
+            if ($assetInsert == 'Success') {
+                echo '<script> alert("Data Saved Successfully") </script>';
+            } else {
+                echo '<script> alert("Unable to Save Data") </script>';
+            }
+        }
+        ?>
     </div>
     <script>
-    var state = sessionStorage['astate'];
-    var region = sessionStorage['aregion'];
-    var ogroup = sessionStorage['aogroup'];
-    var ugroup = sessionStorage['group'];
-    var district = sessionStorage['district'];
-    var loc = sessionStorage['loc'];
-    // alert(state + ogroup + ugroup + district+loc);
-    var msg = state + " | " + region + " | " + ogroup + " | " + ugroup + " | " + district + " DISTRICT";
+        var state = sessionStorage['astate'];
+        var region = sessionStorage['aregion'];
+        var ogroup = sessionStorage['aogroup'];
+        var ugroup = sessionStorage['group'];
+        var district = sessionStorage['district'];
+        var loc = sessionStorage['loc'];
+        // alert(state + ogroup + ugroup + district+loc);
+        var msg = state + " | " + region + " | " + ogroup + " | " + ugroup + " | " + district + " DISTRICT";
 
-    document.getElementById('hed').innerHTML = msg;
+        document.getElementById('hed').innerHTML = msg;
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous">
     </script>
 </body>
 

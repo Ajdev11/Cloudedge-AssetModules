@@ -38,9 +38,10 @@ public function fetchonerecord($id)
 //Data one record read Function
 public function fetchoneLandrecord($id)
 {
-$oneresult=mysqli_query($this->dbh,"select * from assetlb where id=$id");
+$oneresult=mysqli_query($this->dbh,"select * from assetlb where id = $id");
 return $oneresult;
 }
+
 public function fetchoneMusicrecord($id)
 {
 $oneresult=mysqli_query($this->dbh,"select * from assetg where id = $id");
@@ -49,9 +50,15 @@ return $oneresult;
 
 public function fetchoneFurniturerecord($id)
 {
-$oneresult=mysqli_query($this->dbh,"select * from assetg where id=$id");
+$oneresult=mysqli_query($this->dbh,"select * from assetg where id = $id");
 return $oneresult;
-} 
+}
+	public function fetchoneVehiclerecord($id)
+	{
+		$oneresult = mysqli_query($this->dbh, "select * from assetg where id = $id");
+		return $oneresult;
+	} 
+
 //Data updation Function   
 public function updateFurniture($id, $categ, $subCateg, $assetName, $qty, $dop, $cap, $loc, $status)
 	{
@@ -59,29 +66,33 @@ public function updateFurniture($id, $categ, $subCateg, $assetName, $qty, $dop, 
 	return $updaterecord;
 	}
 
-	public function updateVehicle($assetName, $categ, $subCateg, $qty,$dop,$cap,$loc, $status, $id)
+	public function updateVehicle($categ, $subCateg, $assetName,  $vehicleno, $dop, $cap, $loc, $status, $id)
 	{
-	$updaterecord=mysqli_query($this->dbh,"update  assetg set assetName='$assetName',item_category='$categ',item_type='$subCateg',sn='$qty',dop='$dop',cap='$cap',location='$loc',status='$status' where id='$id' ");
-	return $updaterecord;
+		$updaterecord = mysqli_query($this->dbh, "update  assetg set item_category = '$categ',item_type = '$subCateg', assetName= '$assetName', sn = '$vehicleno', dop = '$dop', cap = '$cap', location = '$loc', status = '$status' where id = '$id'");
+		return $updaterecord;
 	}
-public function updateLand($assetName,$address,$plots,$costP,$status,$id)
+
+
+	public function updateLand($id, $assetCategory, $assetName, $location, $address, $no_of_plots, $costPrice, $yearPurchased, $fenced, $fullypaid, $litig, $currStatus)
 	{
-	$updaterecord=mysqli_query($this->dbh,"update  assetlb set assetName='$assetName',address='$address',no_of_plots='$plots',cost_price='$costP',current_status='$status' where id='$id' ");
+	$updaterecord=mysqli_query($this->dbh,"update assetlb set item_category = '$assetCategory',assetName = '$assetName', location = '$location', address = '$address', no_of_plots = '$no_of_plots', cost_price = '$costPrice', year_of_Purchase = '$yearPurchased', fenced = '$fenced', fullypaid = '$fullypaid', litig= '$litig', current_status= '$currStatus' where id = '$id'");
 	return $updaterecord;
 	}
 
 //Data one record read Function - Building
 public function fetchoneBuildingrecord($id)
 {
-$oneresult=mysqli_query($this->dbh,"select * from assetlb where id=$id");
+$oneresult=mysqli_query($this->dbh,"select * from assetlb where id= $id ");
 return $oneresult;
 }
+
 //Data updation Function
 public function updateBuilding_old($assetName,$address,$costP,$status,$id)
 	{
 	$updaterecord=mysqli_query($this->dbh,"update  assetlb set assetName='$assetName',address='$address',cost_price='$costP',current_status='$status' where id='$id' ");
 	return $updaterecord;
 	}
+
 	public function updateBuilding($assetName, $address, $costPrice, $fenced, $currStatus, $origOwnerName, $origOwnerAddress, $origOwnerPhone, $buildingPlan, $no_floors, $natGrid, $yearCompleted, $buildingState, $assetHolder, $usage, $buildingMaterial,$id)
 	{
 	$updaterecord=mysqli_query($this->dbh,"update  assetlb set assetName='$assetName',address='$address',cost_price='$costPrice',fenced='$fenced',current_status='$currStatus',orig_owner_name='$origOwnerName',orig_owner_address='$origOwnerAddress',orig_owner_phone='$origOwnerPhone',building_plan='$buildingPlan',no_of_floors='$no_floors',national_grid='$natGrid', year_completed='$yearCompleted', building_state='$buildingState',asset_holder= '$assetHolder', usage='$usage', building_material='$buildingMaterial' where id='$id' ");
@@ -94,10 +105,6 @@ public function updateMusic($id, $assetCategory, $subCategory, $assetName, $oem,
 $updaterecord=mysqli_query($this->dbh,"update  assetg set oem='$oem', model='$model', sn='$sn',dop='$dop', cap='$cap', location='$assetLocation', status='$assetStatus',item_category='$assetCategory', item_type='$subCategory', assetName='$assetName' where id='$id' ");
 return $updaterecord;
 }
-
-
-
-
 
 //Data Deletion function Function  
 public function delete($rid)
@@ -119,12 +126,15 @@ return $deleterecord;
 	$deleterecord=mysqli_query($this->dbh,"delete from assetg where id=$rid");
 	return $deleterecord;
 	}
-
 	public function deleteVehicle($rid)
 	{
-	$deleterecord=mysqli_query($this->dbh,"delete from assetg where id=$rid");
-	return $deleterecord;
+		$deleterecord = mysqli_query($this->dbh, "delete from assetg where id=$rid");
+		return $deleterecord;
 	}
+	// public function deleteVehicle($rid)
+	// {
+	// $deleterecord=mysqli_query($this->dbh,"delete from assetg where id=$rid");
+	// return $deleterecord;
+	// }
 
 }
-?>

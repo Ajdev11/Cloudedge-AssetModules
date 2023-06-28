@@ -82,7 +82,7 @@
                     <label for="" class="">Item Category</label>
                 </div>
                 <div class="col-5 my-2">
-                    <select class="form-select" aria-label="Default select example" name="assetCategory" id="categoryName" onchange="showme(this.value)">
+                    <select class="form-select" name="assetCategory" id="categoryName" onchange="showme(this.value)">
                         <option selected>--Select--</option>
                         <?php
                         foreach ($cats as $cat) {

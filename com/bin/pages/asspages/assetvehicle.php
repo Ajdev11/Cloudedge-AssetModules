@@ -1,7 +1,6 @@
 <?php
 // include function file
 require_once 'function.php';
-
 //Deletion
 if (isset($_GET['del'])) {
     // Geeting deletion row id
@@ -27,9 +26,9 @@ if (isset($_GET['del'])) {
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1d2533baae.js" crossorigin="anonymous"></script>
     <?php
-  require "../../../bin/hed/sandls.php";
- require "header.php";
-  ?>
+    require "../../../bin/hed/sandls.php";
+    require "header.php";
+    ?>
 </head>
 
 <body>
@@ -38,90 +37,64 @@ if (isset($_GET['del'])) {
             <div class="listBtn">
                 <a class="back" href="asspage.php">
                     <button id="btn" class="btn btn-dark mb-3 bg-primary">BACK</button></a>
-                <a href="furasset.php" class="btn btn-dark mb-3 bg-dark">View Asset</a>
+                <a href="asspage.php" class="btn btn-dark mb-3 bg-dark">Asset Page</a>
                 <!--  -->
-                <a href="furniture.php" class="btn btn-dark mb-3 bg-success text-white">Add New</a>
+                <a href="vehicles.php" class="btn btn-dark mb-3 bg-success text-white">Add New</a>
             </div>
         </center>
         <div id="furdiv">
-            <table class="table table-hover text-center">
-                <thead class="table-dark">
-                    <tr>
-                        <th scope="col">SN</th>
-                        <th scope="col">Asset Category</th>
-                        <th scope="col">SubCategory</th>
-                        <th scope="col">Asset Name</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Date of Purchase</th>
-                        <th scope="col">Cost at Purchase</th>
-                        <th scope="col">Location</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Edit Asset</th>
-                        <th scope="col">Remove Asset</th>
-                    </tr>
-                </thead>
+            <div class="table-responsive">
+                <table class="table table-hover text-center">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">SN</th>
+                            <th scope="col">Asset Category</th>
+                            <th scope="col">SubCategory</th>
+                            <th scope="col">Asset Name</th>
+                            <th scope="col">Vehicle Numbers</th>
+                            <th scope="col">Date of Purchase</th>
+                            <th scope="col">Cost at Purchase</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Edit Asset</th>
+                            <th scope="col">Remove Asset</th>
+                        </tr>
+                    </thead>
 
-                <tbody id="chairs">
-                    <?php
-          require "../../../../com/sess/mods/connect.php";
-          require "assdata.php";
-          $asscl = new asdata;
-          $alist = $asscl->getFurAssets('Furniture');
-          $sn = 0;
-          if (!is_null($alist)) {
-            foreach ($alist as $asslist) {
-              $sn = $sn + 1;
-              echo '<tr>';
-              echo '<td>' . $sn . '</td>';
-              echo '<td>' . $asslist['item_category'] . '</td>';
-              echo '<td>' . $asslist['item_type'] . '</td>';
-              echo '<td>' . $asslist['assetName'] . '</td>';
-              echo '<td>' . $asslist['sn'] . '</td>';
-              echo '<td>' . $asslist['dop'] . '</td>';
-              echo '<td>' . number_format($asslist['cap']) . '</td>';
-              echo '<td>' . $asslist['location'] . '</td>';
-              echo '<td>' . $asslist['status'] . '</td>'; ?>
-                    <td><a href="updatevehicle.php?id=<?php echo htmlentities($asslist['id']); ?>"><button
-                                class="btn btn-primary btn-xs"><span
-                                    class="glyphicon glyphicon-pencil"></span></button></a></td>
-                    <td><a href="assetvehicle.php?del=<?php echo htmlentities($asslist['id']); ?>"><button
-                                class="btn btn-danger btn-xs"
-                                onClick="return confirm('Do you really want to delete');"><span
-                                    class="glyphicon glyphicon-trash"></span></button></a></td>
-                    <!-- echo '<td><a class="link-dark" href="furniture.php"><i class="fa-regular fa-pen-to-square fs-5 me-3"></i></a>
-                          </td>';
-              echo '<td><a class="link-dark" href=""><i class="fa-solid fa-trash fs-5 me-3"></i></a>
-                          </td>'; -->
-                    <?php
-              echo '</tr>';
-            }
-          }
-          ?>
-                </tbody>
+                    <tbody id="chairs">
+                        <?php
+                        require "../../../../com/sess/mods/connect.php";
+                        require "assdata.php";
+                        $asscl = new asdata;
+                        $alist = $asscl->getVehicleAssets('Vehicle');
+                        $sn = 0;
+                        if (!is_null($alist)) {
+                            foreach ($alist as $asslist) {
+                                $sn = $sn + 1;
+                                echo '<tr>';
+                                echo '<td>' . $sn . '</td>';
+                                echo '<td>' . $asslist['item_category'] . '</td>';
+                                echo '<td>' . $asslist['item_type'] . '</td>';
+                                echo '<td>' . $asslist['assetName'] . '</td>';
+                                echo '<td>' . $asslist['sn'] . '</td>';
+                                echo '<td>' . $asslist['dop'] . '</td>';
+                                echo '<td>' . number_format($asslist['cap']) . '</td>';
+                                echo '<td>' . $asslist['location'] . '</td>';
+                                echo '<td>' . $asslist['status'] . '</td>'; ?>
+                                <td><a href="updatevehicle.php?id=<?php echo htmlentities($asslist['id']); ?>"><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                                <td><a href="assetvehicle.php?del=<?php echo htmlentities($asslist['id']); ?>"><button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><span class="glyphicon glyphicon-trash"></span></button></a></td>
+                        <?php
+                                echo '</tr>';
+                            }
+                        }
+                        ?>
+                    </tbody>
 
-            </table>
+                </table>
+                </div>
+            </div>
         </div>
-    </div>
-    <script type="text/javascript">
-    //  hideopts();
-    // function hideopts(){
-    //   // $("#test").hide();
-    //     $("#chairs").hide();
-    //     //  $("#tables").hide();
-    //     //  $("#pulpit").hide();  
-    // }
-    function showopts(opts) {
-        if (opts == 'chairs ') {
 
-            // $("#chairs").show();
-            alert();
-        } else if (opt == 'tables') {
-            //  $("#tables").show();
-        } else if (opt == 'pulpit') {
-            // $("#pulpit").show();
-        }
-    }
-    </script>
 </body>
 
 </html>

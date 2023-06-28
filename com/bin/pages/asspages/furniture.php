@@ -73,7 +73,7 @@
       require_once "../../../../com/sess/mods/connect.php";
       require_once "assdata.php";
       $alist = new asdata;
-      $cats = $alist->getCat('chair', 'tables', 'pulpit');
+      $cats = $alist->getCat('pastor_office', 'kitchen', 'auditorium');
       $aloc = $alist->getAssetLoc('');
       ?>
       <div class="row">
@@ -81,7 +81,7 @@
           <label for="" class="">Asset Category</label>
         </div>
         <div class="col-7 my-2">
-          <select class="form-select" name="item_category" id="categoryName" aria-label="Default select example" onchange="showme(this.value)">
+          <select class="form-select" name="item_category" id="categoryName" onchange="showme(this.value)">
             <option selected>Select Asset Category</option>
             <?php
             foreach ($cats as $cat) {
@@ -159,7 +159,7 @@
           <label for="" class="">Asset Location</label>
         </div>
         <div class="col-7 my-2">
-          <select class="form-select" name="location" aria-label="Default select example">
+          <select class="form-select" name="location">
             <option selected>Select Asset Location</option>
             <?php
             foreach ($aloc as $loc) {
@@ -174,7 +174,7 @@
           <label for="" class="">Asset Status</label>
         </div>
         <div class="col-7 my-2">
-          <select class="form-select" name="status" aria-label="Default select example">
+          <select class="form-select" name="status">
             <option selected>Select Asset Status</option>
             <option value="In Use">In Use</option>
             <option value="Bad">Bad</option>

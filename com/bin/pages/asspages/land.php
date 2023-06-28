@@ -60,13 +60,13 @@
         </center>
         <!-- form  -->
         <form action="land.php" method="post">
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label for="cty" class="cty">Country</label>
                 <label for="state" class="state">State</label>
                 <label for="reg" class="reg">Region</label>
                 <label for="old-grp" class="old_grp">Old Group</label>
                 <label for="grp" class="grp">Group</label>
-            </div>
+            </div> -->
             <div class="accordion my-2" id="">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="">
@@ -93,11 +93,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-3">
+                <div class="col-9">
                     <label for="" class="">Fenced?</label>
                 </div>
-                <div class="col-9 my-2">
-                    <select name="fenced" class="form-select " aria-label="Default select example">
+                <div class="col-3 my-2">
+                    <select name="fenced" class="form-select">
                         <option selected>--Select--</option>
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
@@ -105,10 +105,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-3">
+                <div class="col-9">
                     <label for="" class="">No of Plots</label>
                 </div>
-                <div class="col-9 my-2">
+                <div class="col-3 my-2">
                     <input class="form-control form-control-md" name="plots" type="text" />
                 </div>
             </div>
@@ -133,32 +133,42 @@
                     <label for="" class="">Year of Purchase</label>
                 </div>
                 <div class="col-6">
-                    <select name="yearPurchased" class="form-select" aria-label="Default select example">
-                        <option selected>Select Date</option>
-                        <option value="2023">2023</option>
-                        <option value="2022">2022</option>
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                        <option value="2019">2019</option>
-                        <option value="2018">2018</option>
-                        <option value="2017">2017</option>
-                        <option value="2016">2016</option>
-                        <option value="2015">2015</option>
-                        <option value="2014">2014</option>
-                        <option value="2013">2013</option>
-                        <option value="2012">2012</option>
-                        <option value="2011">2011</option>
-                        <option value="2010">2010</option>
-                        <option value="2009">2009</option>
+                    <input type="date" name="yearPurchased" id="">
+                </div>
+            </div>
+            <!-- under litigation -->
+            <div class="row">
+                <div class="col-7 my-2">
+                    <label for="" class="">Under Litigation</label>
+                </div>
+                <div class="col-5">
+                    <select name="litig" class="form-select">
+                        <option selected>--Select--</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
             </div>
+            <!-- fully paid -->
+            <div class="row">
+                <div class="col-7 my-2">
+                    <label for="" class="">Fully Paid</label>
+                </div>
+                <div class="col-5">
+                    <select name="fullypaid" class="form-select">
+                        <option selected>--Select--</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-6 my-2">
                     <label for="" class="">Current Status</label>
                 </div>
                 <div class="col-6">
-                    <select name="status" class="form-select " aria-label="Default select example">
+                    <select name="status" class="form-select">
                         <option selected>--Select--</option>
                         <option value="Developed">Developed</option>
                         <option value="Under-developement">Under-developement</option>
@@ -167,38 +177,12 @@
                     </select>
                 </div>
             </div>
-            <!-- fully paid -->
-            <div class="row">
-                <div class="col-5 my-2">
-                    <label for="" class="">Fully Paid</label>
-                </div>
-                <div class="col-7">
-                    <select name="fullypaid" class="form-select " aria-label="Default select example">
-                        <option selected>--Select--</option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                    </select>
-                </div>
-            </div>
-            <!-- under litigation -->
-            <div class="row">
-                <div class="col-5 my-2">
-                    <label for="" class="">Under Litigation</label>
-                </div>
-                <div class="col-7">
-                    <select name="litig" class="form-select " aria-label="Default select example">
-                        <option selected>--Select--</option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                    </select>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-6 my-2">
                     <label for="" class="">National Grid</label>
                 </div>
                 <div class="col-6">
-                    <select name="natGrid" class="form-select " aria-label="Default select example">
+                    <select name="natGrid" class="form-select">
                         <option selected>--Select--</option>
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
@@ -210,7 +194,7 @@
                     <label for="" class="">Asset Holder</label>
                 </div>
                 <div class="col-6">
-                    <select name="assetHolder" class="form-select " aria-label="Default select example">
+                    <select name="assetHolder" class="form-select">
                         <option selected>--Select--</option>
                         <option value="District">District</option>
                         <option value="Group">Group</option>
@@ -333,16 +317,15 @@
                     <!-- buttons -->
                     <div id="btnRCS">
                         <a href="landasset.php" class="btn btn-danger">Close</a>
-                        <button class="btn btn-success" name="submitL">Submit</button>
+                        <button class="btn btn-success" name="submit">Submit</button>
                     </div>
                 </div>
         </form>
         <?php
-        if (isset($_POST['submitL'])) {
+        if (isset($_POST['submit'])) {
             require_once "../../../../com/sess/mods/connect.php";
             require_once "assdata.php";
             $alist = new asdata;
-
             $assetCategory = "LAND";
             $assetName = "LAND";
             $location = $_POST['location'];
@@ -368,7 +351,7 @@
             $transName = $_POST['transName'];
             $transPhone = $_POST['transPhone'];
 
-            $assetInsert = $alist->saveLand($assetCategory, $assetName, $location, $address, $no_of_plots, $larea, $costPrice, $yearPurchased, $fenced, $currStatus, $fullypaid, $litig,$natGrid, $assetHolder, $usage, $origOwnerName, $origOwnerAddress, $origOwnerPhone, $surveyPlan, $deed, $cofo, $receipt, $transName, $transPhone);
+            $assetInsert = $alist->saveLand($assetCategory, $assetName, $location, $address, $no_of_plots, $larea, $costPrice, $yearPurchased, $fenced, $currStatus, $fullypaid, $litig, $natGrid, $assetHolder, $usage, $origOwnerName, $origOwnerAddress, $origOwnerPhone, $surveyPlan, $deed, $cofo, $receipt, $transName, $transPhone);
             if ($assetInsert == 'Success') {
                 echo '<script> alert("Data Saved Successfully") </script>';
             } else {
