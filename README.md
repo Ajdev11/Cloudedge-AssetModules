@@ -2,7 +2,7 @@
 
 ## The DLCMA application is an ongoing App built with Php, JavaScript, jquery and mysql(DB). This README provides codes to a asset feature added to the main application. This README will guide you through the asset modules processes of the application.
 
- this repository to your local machine using the following
+ repository to your local machine using the following
 //github.com/ajdev11/chatApp.git`
 your web server to point to the cloned repository's directory.
 - Create a new MySQL database for the chat application.
