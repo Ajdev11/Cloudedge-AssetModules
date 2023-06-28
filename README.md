@@ -4,7 +4,7 @@
 
 
 
-local machine using the following
+cal machine using the following
 //github.com/ajdev11/chatApp.git`
 your web server to point to the cloned repository's directory.
 - Create a new MySQL database for the chat application.
