@@ -135,7 +135,8 @@ if (isset($_POST['update'])) {
                         <label for="" class="">Asset Type</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['item_type']); ?>" class="form-control" required>
+                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo 
+                        ($row['item_type']); ?>" class="form-control" required>
                         <!-- pass showmeType function to onchange event -->
                         <select class="form-select" name="item_type" id="subcateg" onchange="showmeType(this.value)">
                             <option selected>Select Asset Type</option>

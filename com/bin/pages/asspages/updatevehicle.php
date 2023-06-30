@@ -14,15 +14,13 @@ if (isset($_POST['update'])) {
     $cap = $_POST['cap'];
     $loc = $_POST['location'];
     $status = $_POST['status'];
-    $sql = $updatedata->updateVehicle($categ, $subCateg,$assetName,  $vehicleno, $dop, $cap, $loc, $status, $id);
+    $sql = $updatedata->updateVehicle($categ, $subCateg, $assetName,  $vehicleno, $dop, $cap, $loc, $status, $id);
     // Mesage after updation
     echo "<script>alert('Record Updated successfully');</script>";
     // Code for redirection
     echo "<script>window.location.href='assetvehicle.php'</script>";
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -126,7 +124,7 @@ if (isset($_POST['update'])) {
                         <label for="" class="">Asset Type</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="" name="" value="<?php echo htmlentities($row['item_type']); ?>" class="form-control">
+                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['item_type']); ?>" class="form-control">
                         <select class="form-select" name="subCategory" id="subcateg" onchange="showmeType(this.value)">
                             <option selected>Select subcategory</option>
                         </select>
@@ -137,7 +135,7 @@ if (isset($_POST['update'])) {
                         <label for="">Asset Name</label>
                     </div>
                     <div class="col-7">
-                        <input style="background:orange" type="text" id="" name="" value="<?php echo htmlentities($row['assetName']); ?>" class="form-control">
+                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['assetName']); ?>" class="form-control">
                         <select class="form-select" name="assetName" id="assetName">
                             <option selected>Select asset name</option>
                         </select>
@@ -152,7 +150,6 @@ if (isset($_POST['update'])) {
                         </script>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-5">
                         <label for="">Vehicle Number</label>

@@ -99,8 +99,6 @@ form {
         ?>
 
         <form name="insertrecord" method="post">
-
-
             <?php } ?>
             <?php
             require_once "../../../../com/sess/mods/connect.php";
@@ -108,8 +106,6 @@ form {
             $alist = new asdata;
 
             $aloc = $alist->getAssetLoc('');
-            $aloc = $alist->getAssetLoc('');
-
             ?>
 
             <?php
@@ -360,4 +356,4 @@ form {
         </form>
     </div>
 </body>
-</htm
+</html>

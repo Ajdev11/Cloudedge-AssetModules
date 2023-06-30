@@ -32,7 +32,7 @@ class asdata extends Connections
 
     public function getsubCat($val)
     {
-        $query = "SELECT DISTINCT subCategory FROM assetref WHERE categoryName = '$val' ";
+        $query = "SELECT DISTINCT subCategory FROM assetref WHERE categoryName = '$val'";
         $result = $this->connect()->query($query);
         $num_rows = $result->num_rows;
         if ($num_rows > 0) {
@@ -44,7 +44,7 @@ class asdata extends Connections
     }
     public function getassType($val)
     {
-        $query = "SELECT DISTINCT assetName FROM assetref WHERE subCategory = '$val' ";
+        $query = "SELECT DISTINCT assetName FROM assetref WHERE subCategory = '$val'";
         $result = $this->connect()->query($query);
         $num_rows = $result->num_rows;
         if ($num_rows > 0) {
