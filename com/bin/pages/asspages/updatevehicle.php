@@ -30,6 +30,9 @@ if (isset($_POST['update'])) {
     <title>UPDATE VEHICLE ASSET </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
+    <?php
+    require "../../../bin/hed/sandls.php";
+    ?>
 </head>
 <style>
     form {
@@ -99,7 +102,7 @@ if (isset($_POST['update'])) {
                         <label for="" class="">Asset Category</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="" name="" value="<?php echo htmlentities($row['item_category']); ?>" class="form-control">
+                        <input style="background:orange" type="text" id="plan1" name="" value="<?php echo htmlentities($row['item_category']); ?>" class="form-control">
                         <select class="form-select" name="assetCategory" id="categoryName" onchange="showme(this.value)">
                             <option selected>Select Asset Category</option>
                             <?php

@@ -21,6 +21,4 @@ if (isset($_POST['Categ'])) {
    }
 }
 
-
-   
 ?>
