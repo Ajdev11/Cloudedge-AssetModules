@@ -6,6 +6,7 @@
  `JavaScript` 
  `jquery`
  `mysql(DB)`
+ 
 This README provides description to a asset feature added to the main application. 
 
 
