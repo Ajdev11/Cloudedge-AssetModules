@@ -1,6 +1,6 @@
 `DLCMA APPLICATION`
 
-## The DLCMA application is an ongoing App built with Php, JavaScript, jquery and mysql(DB). This README provides codes to a asset feature added to the main application. This README will guide you through the asset modules processes of the application.
+## The DLCMA application is an ongoing App built with Php, JavaScript, jquery and mysql(DB). This README provides description to a asset feature added to the main application. 
 
 
 
