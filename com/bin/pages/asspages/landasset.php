@@ -75,7 +75,21 @@ if (isset($_GET['del'])) {
                             <td><?php echo htmlentities($row['fullypaid']); ?></td>
                             <td><?php echo htmlentities($row['current_status']); ?></td>
                             <td><a href="updateland.php?id=<?php echo htmlentities($row['id']); ?>"><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-                            <td><a href="landasset.php?del=<?php echo htmlentities($row['id']); ?>"><button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><span class="glyphicon glyphicon-trash"></span></button></a></td>
+                            <!-- <td><a href="delete.php?del=<?php echo htmlentities($row['id']); ?>"><button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><span class="glyphicon glyphicon-trash"></span></button></a></td> -->
+                            <td>
+                                <form action="delete.php" method="post">
+                                    <input type="hidden" name="id" value="<?php echo htmlentities($row['id']); ?>">
+                                    <input type="hidden" name="address" value="<?php echo htmlentities($row['address']); ?>">
+                                    <input type="hidden" name="no_of_plots" value="<?php echo htmlentities($row['no_of_plots']); ?>">
+                                    <input type="hidden" name="cost_price" value="<?php echo htmlentities($row['cost_price']); ?>">
+                                    <input type="hidden" name="year_of_purchase" value="<?php echo htmlentities($row['year_of_purchase']); ?>">
+                                    <input type="hidden" name="fenced" value="<?php echo htmlentities($row['fenced']); ?>">
+                                    <input type="hidden" name="litig" value="<?php echo htmlentities($row['litig']); ?>">
+                                    <input type="hidden" name="fullypaid" value="<?php echo htmlentities($row['fullypaid']); ?>">
+                                    <input type="hidden" name="current_status" value="<?php echo htmlentities($row['current_status']); ?>">
+                                    <button type="submit" class="btn btn-danger" onClick="return confirm('Do you really want to delete?');"><span class="glyphicon glyphicon-trash"></span></button>
+                                </form>
+                            </td>
                         </tr>
                     <?php
                         // for serial number increment
