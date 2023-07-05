@@ -173,7 +173,7 @@
           <label for="" class="">Chasis Number</label>
         </div>
         <div class="col-5 my-2">
-          <input class="form-control form-control-md" name="chasis" type="text" />
+          <input class="form-control form-control-md" name="chasis" type="number" min="0" step="1" />
         </div>
       </div>
       <div class="row">
@@ -189,7 +189,7 @@
           <label for="" class="">Cost at Purchase</label>
         </div>
         <div class="col-5 my-2">
-          <input class="form-control form-control-md" name="cap" type="text" />
+          <input class="form-control form-control-md" name="cap" type="number" min="0" step="1" />
         </div>
       </div>
       <div class="row">
@@ -228,7 +228,7 @@
         <div class="col-5 my-2">
           <textarea class="form-control form-control-md" name="details" id="" cols="30" rows="5" placeholder="Expiry Date|Renewal Date|Driver's Info"></textarea>
         </div>
-      </div> 
+      </div>
       <!-- buttons -->
       <div id="btnRCS">
         <a href="assetvehicle.php" class="btn btn-danger">Close</a>

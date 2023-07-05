@@ -135,7 +135,7 @@
           <label for="">Quantity</label>
         </div>
         <div class="col-7 my-2">
-          <input class="form-control form-control-md" name="quantity" type="text" />
+          <input class="form-control form-control-md" name="quantity" type="number" min="0" step="1" />
         </div>
       </div>
       <div class="row">
@@ -148,10 +148,10 @@
       </div>
       <div class="row">
         <div class="col-5">
-          <label for="" class="">Cost at Purchase</label>
+          <label for="" class="">Cost</label>
         </div>
         <div class="col-7 my-2">
-          <input class="form-control form-control-md" name="cap" type="text" />
+          <input class="form-control form-control-md" name="cap" type="number" min="0" step="1" />
         </div>
       </div>
       <div class="row">
@@ -160,7 +160,7 @@
         </div>
         <div class="col-7 my-2">
           <select class="form-select" name="location">
-            <option selected>Select Asset Location</option>
+            <option selected>Select Location</option>
             <?php
             foreach ($aloc as $loc) {
               echo '<option value = ' . $loc['assloc'] . '>' . strtoupper($loc['assloc']) . '</option>';
@@ -213,7 +213,7 @@
     $location = $_POST['location'];
     $status = $_POST['status'];
 
-    $assetInsert = $alist->createAsset($assetCategory, $subCategory, $assetName, $sn,$dop, $cap, $location, $status);
+    $assetInsert = $alist->createAsset($assetCategory, $subCategory, $assetName, $sn, $dop, $cap, $location, $status);
     if ($assetInsert == 'Success') {
       echo '<script> alert("Data saved successfully") </script>';
     } else {

@@ -98,7 +98,7 @@
                     <label for="" class="">No of Floors</label>
                 </div>
                 <div class="col-7 my-2">
-                    <input class="form-control form-control-md" name="no_floors" type="number" />
+                    <input class="form-control form-control-md" name="no_floors" min="0" step="1" type="number" />
                 </div>
             </div>
             <div class="row">
@@ -118,7 +118,7 @@
                     <label for="" class="">Estimated Cost</label>
                 </div>
                 <div class="col-7 my-2">
-                    <input class="form-control form-control-md" name="estCost" type="text" />
+                    <input class="form-control form-control-md" name="estCost" min="0" step="1" type="number" />
                 </div>
             </div>
             <div class="row">
@@ -188,7 +188,7 @@
                 </div>
                 <div class="col-5">
                     <select name="usage" class="form-select " aria-label="Default select example">
-                        <option selected>Select Asset Location</option>
+                        <option selected>Select Location</option>
                         <?php
                         foreach ($aloc as $loc) {
                             echo '<option value = ' . $loc['assloc'] . '>' . strtoupper($loc['assloc']) . '</option>';
@@ -240,7 +240,7 @@
                                 <label for="add" class="cty">Phone Number</label>
                             </div>
                             <div class="col-6 my-2">
-                                <input class="form-control form-control-md" name="origOwnerPhone" type="text" />
+                                <input class="form-control form-control-md" name="origOwnerPhone" min="0" step="1" type="number" />
                             </div>
                         </div>
 

@@ -36,7 +36,7 @@ if (isset($_GET['del'])) {
     <div id="cont" class="container-fluid">
         <center>
             <div class="listBtn">
-                <a href=" " class="btn btn-dark mb-3 bg-dark text-white">Home</a>
+                <a href=" " class="btn btn-dark mb-3 bg-dark text-white">BUILDING ASSET</a>
                 <a class="back" href="asspage.php">
                     <button id="btn" class="btn btn-dark mb-3 bg-primary">Asset Page</button></a>
                 <a href="building.php" class="btn btn-dark mb-3 bg-success text-white">Add New</a>
@@ -48,7 +48,7 @@ if (isset($_GET['del'])) {
                     <thead class="table-dark">
                         <tr>
                             <th scope="col">S/N</th>
-                            <th scope="col">Building Address</th>
+                            <th scope="col">Location</th>
                             <th scope="col">Fenced?</th>
                             <th scope="col">No of Floors</th>
                             <th scope="col">Use</th>

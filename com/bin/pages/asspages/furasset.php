@@ -37,7 +37,7 @@ if (isset($_GET['del'])) {
 
         <center>
             <div class="listBtn">
-                <a href=" " class="btn btn-dark mb-3 bg-dark text-white">Home</a>
+                <a href=" " class="btn btn-dark mb-3 bg-dark text-white">FURNITURE ASSET</a>
                 <a class="back" href="asspage.php">
                     <button id="btn" class="btn btn-dark mb-3 bg-primary">Asset Page</button></a>
                 <a href="furniture.php" class="btn btn-dark mb-3 bg-success text-white">Add New</a>
@@ -49,12 +49,12 @@ if (isset($_GET['del'])) {
                     <thead class="table-dark">
                         <tr>
                             <th scope="col">SN</th>
-                            <th scope="col">Asset Category</th>
-                            <th scope="col">SubCategory</th>
+                            <!-- <th scope="col">Asset Category</th>
+                            <th scope="col">SubCategory</th> -->
                             <th scope="col">Asset Name</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Date of Purchase</th>
-                            <th scope="col">Cost at Purchase</th>
+                            <th scope="col">Cost</th>
                             <th scope="col">Location</th>
                             <th scope="col">Status</th>
                             <th scope="col">Edit Asset</th>
@@ -74,8 +74,8 @@ if (isset($_GET['del'])) {
                                 $sn = $sn + 1;
                                 echo '<tr>';
                                 echo '<td>' . $sn . '</td>';
-                                echo '<td>' . $asslist['item_category'] . '</td>';
-                                echo '<td>' . $asslist['item_type'] . '</td>';
+                                // echo '<td>' . $asslist['item_category'] . '</td>';
+                                // echo '<td>' . $asslist['item_type'] . '</td>';
                                 echo '<td>' . $asslist['assetName'] . '</td>';
                                 echo '<td>' . $asslist['sn'] . '</td>';
                                 echo '<td>' . $asslist['dop'] . '</td>';

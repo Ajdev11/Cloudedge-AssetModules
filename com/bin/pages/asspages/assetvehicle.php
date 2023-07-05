@@ -35,8 +35,8 @@ if (isset($_GET['del'])) {
     <div class="container-fluid">
         <center>
             <div class="listBtn">
-                <a class="back" href="asspage.php">
-                    <button id="btn" class="btn btn-dark mb-3 bg-primary">BACK</button></a>
+                <a class="back" href="assetvehicle.php">
+                    <button id="btn" class="btn btn-dark mb-3 bg-primary">VEHICLE ASSET</button></a>
                 <a href="asspage.php" class="btn btn-dark mb-3 bg-dark">Asset Page</a>
                 <!--  -->
                 <a href="vehicles.php" class="btn btn-dark mb-3 bg-success text-white">Add New</a>
@@ -53,7 +53,7 @@ if (isset($_GET['del'])) {
                             <th scope="col">Asset Name</th>
                             <th scope="col">Vehicle Numbers</th>
                             <th scope="col">Date of Purchase</th>
-                            <th scope="col">Cost at Purchase</th>
+                            <th scope="col">Cost</th>
                             <th scope="col">Location</th>
                             <th scope="col">Status</th>
                             <th scope="col">Edit Asset</th>

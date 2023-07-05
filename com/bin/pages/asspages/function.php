@@ -73,9 +73,9 @@ public function updateFurniture($id, $categ, $subCateg, $assetName, $qty, $dop, 
 	}
 
 
-	public function updateLand($location, $address, $no_of_plots, $costPrice, $yearPurchased, $fenced, $fullypaid, $litig, $currStatus, $id)
+	public function updateLand($location, $address, $larea, $no_of_plots, $costPrice, $yearPurchased, $fenced, $fullypaid, $litig, $currStatus, $id)
 	{
-	$updaterecord=mysqli_query($this->dbh,"update assetlb set  location = '$location', address = '$address', no_of_plots = '$no_of_plots', cost_price = '$costPrice', year_of_Purchase = '$yearPurchased', fenced = '$fenced', fullypaid = '$fullypaid', litig= '$litig', current_status= '$currStatus' where id = '$id'");
+	$updaterecord=mysqli_query($this->dbh,"update assetlb set  location = '$location', address = '$address', larea = '$larea', no_of_plots = '$no_of_plots', cost_price = '$costPrice', year_of_Purchase = '$yearPurchased', fenced = '$fenced', fullypaid = '$fullypaid', litig= '$litig', current_status= '$currStatus' where id = '$id'");
 	return $updaterecord;
 	}
 

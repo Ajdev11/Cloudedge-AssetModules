@@ -109,7 +109,7 @@
                     <label for="" class="">No of Plots</label>
                 </div>
                 <div class="col-3 my-2">
-                    <input class="form-control form-control-md" name="plots" type="text" />
+                    <input class="form-control form-control-md" type="number" min="0" step="1" name="plots" type="text" />
                 </div>
             </div>
             <div class="row">
@@ -125,7 +125,7 @@
                     <label for="" class="">Cost Price</label>
                 </div>
                 <div class="col-6 my-2">
-                    <input class="form-control form-control-md" name="cost" type="text" />
+                    <input class="form-control form-control-md" name="cost" type="number" min="0" step="1" />
                 </div>
             </div>
             <div class="row">
@@ -241,7 +241,7 @@
                                 <label for="" class="">Phone Number</label>
                             </div>
                             <div class="col-6 my-2">
-                                <input class="form-control form-control-md" name="sellerPhone" type="text" />
+                                <input class="form-control form-control-md" name="sellerPhone" type="number" min="0" step="1" />
                             </div>
                         </div>
 
@@ -267,7 +267,7 @@
                                     <label for="" class="">Phone Number</label>
                                 </div>
                                 <div class="col-6 my-2">
-                                    <input class="form-control form-control-md" name="transPhone" type="text" />
+                                    <input class="form-control form-control-md" name="transPhone" type="number" min="0" step="1" />
                                 </div>
                             </div>
                         </div>

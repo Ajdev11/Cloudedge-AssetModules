@@ -103,13 +103,19 @@ if (isset($_POST['update'])) {
                 $aloc = $alist->getAssetLoc('');
                 ?>
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-5 my-2">
                         <label for="" class="">Asset Category</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['item_category']); ?>" class="form-control" required>
-
-                        <select class="form-select" name="item_category" id="categoryName" aria-label="Default select example" onchange="showme(this.value)">
+                        <input style="background: #ddd" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['item_category']); ?>" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 text-info my-2">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7 my-2">
+                        <select class="form-select" name="item_category" id="categoryName" onchange="showme(this.value)">
                             <option selected>Select Asset Category</option>
                             <?php
                             foreach ($cats as $cat) {
@@ -129,11 +135,18 @@ if (isset($_POST['update'])) {
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-5 my-2">
                         <label for="" class="">Asset Type</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['item_type']); ?>" class="form-control" required>
+                        <input style="background: #ddd" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['item_type']); ?>" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 text-info my-2">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7 my-2">
                         <!-- pass showmeType function to onchange event -->
                         <select class="form-select" name="item_type" id="subcateg" onchange="showmeType(this.value)">
                             <option selected>Select Asset Type</option>
@@ -141,11 +154,18 @@ if (isset($_POST['update'])) {
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-5 my-2">
                         <label for="" class="qty">Asset Name</label>
                     </div>
-                    <div class="col-7">
-                        <input style="background:orange" type="text" id="plan1" name="plan1" class="form-control" required value="<?php echo htmlentities($row['item_type']); ?>">
+                    <div class="col-7 my-2">
+                        <input style="background: #ddd" type="text" id="plan1" name="plan1" class="form-control" required value="<?php echo htmlentities($row['item_type']); ?>">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 text-info my-2">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7 my-2">
                         <select class="form-select" name="assetName" id="assetName">
                             <option selected>Select asset name</option>
 
@@ -161,41 +181,68 @@ if (isset($_POST['update'])) {
                         </script>
                     </div>
                 </div>
-
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-5 my-2">
                         <label for="">Quantity</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['sn']); ?>" class="form-control" required>
-                        <input class="form-control form-control-md" name="quantity" placeholder="change quantity" type="text" />
+                        <input style="background: #ddd" type="number" min="0" step="1" id="plan1" name="plan1" value="<?php echo htmlentities($row['sn']); ?>" class="form-control" required>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-5 text-info my-2">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7 my-2">
+                        <input class="form-control form-control-md" name="quantity" type="number" min="0" step="1" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2">
                         <label for="" class="">Date of Purchase</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['dop']); ?>" class="form-control" required>
+                        <input style="background: #ddd" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['dop']); ?>" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2 text-info">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7">
                         <input class="form-control form-control-md" name="dop" type="date" />
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-5">
-                        <label for="" class="">Cost at Purchase</label>
+                    <div class="col-5 my-2">
+                        <label for="" class="">Cost</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['cap']); ?>" class="form-control" required>
-                        <input placeholder="Change Cost at purchase" class="form-control form-control-md" name="cap" type="text" />
+                        <input style="background: #ddd" type="number" min="0" step="1" id="plan1" name="plan1" value="<?php echo htmlentities($row['cap']); ?>" class="form-control" required>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-5 text-info my-2">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7 my-2">
+                        <input class="form-control form-control-md" name="cap" type="number" min="0" step="1" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2">
                         <label for="" class="">Asset Location</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['location']); ?>" class="form-control" required>
-                        <select class="form-select" name="location" aria-label="Default select example">
+                        <input style="background: #ddd" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['location']); ?>" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2 text-info">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7 my-2">
+                        <select class="form-select" name="location">
                             <option selected>Change Asset Location</option>
                             <?php
                             foreach ($aloc as $loc) {
@@ -206,12 +253,19 @@ if (isset($_POST['update'])) {
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-5 my-2">
                         <label for="" class="">Asset Status</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['status']); ?>" class="form-control" required>
-                        <select class="form-select" name="status" aria-label="Default select example">
+                        <input style="background: #ddd" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['status']); ?>" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7 my-2">
+                        <select class="form-select" name="status">
                             <option selected>Change Asset Status</option>
                             <option value="In Use">In Use</option>
                             <option value="Bad">Bad</option>

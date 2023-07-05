@@ -31,7 +31,7 @@ if (isset($_GET['del'])) {
     <div class="container-fluid">
         <center>
             <div class="listBtn">
-                <a href=" " class="btn btn-dark mb-3 bg-dark text-white">Home</a>
+                <a href=" " class="btn btn-dark mb-3 bg-dark text-white">LAND ASSET</a>
                 <a class="back" href="asspage.php">
                     <button id="btn" class="btn btn-dark mb-3 bg-primary">Asset Page</button></a>
                 <a href="land.php" class="btn btn-dark mb-3 bg-success text-white">Add New</a>
@@ -44,9 +44,10 @@ if (isset($_GET['del'])) {
                 <thead class="table-dark">
                     <th>SN</th>
                     <!-- <th>Asset Name</th> -->
-                    <th>location Address</th>
+                    <th>Location</th>
+                    <th>LandArea(sqm)</th>
                     <th>No of Plots</th>
-                    <th>Cost Price</th>
+                    <th>Cost</th>
                     <th>Year Purchased</th>
                     <th>Fenced</th>
                     <th>Under litigation?</th>
@@ -67,8 +68,9 @@ if (isset($_GET['del'])) {
                             <td><?php echo htmlentities($cnt); ?></td>
                             <!-- <td><?php echo htmlentities($row['assetName']); ?></td -->
                             <td><?php echo htmlentities($row['address']); ?></td>
+                            <td><?php echo htmlentities($row['larea']); ?></td>
                             <td><?php echo htmlentities($row['no_of_plots']); ?></td>
-                            <td><?php echo htmlentities($row['cost_price']); ?></td>
+                            <td><?php echo htmlentities(number_format($row['cost_price'])); ?></td>
                             <td><?php echo htmlentities($row['year_of_purchase']); ?></td>
                             <td><?php echo htmlentities($row['fenced']); ?></td>
                             <td><?php echo htmlentities($row['litig']); ?></td>
@@ -80,6 +82,7 @@ if (isset($_GET['del'])) {
                                 <form action="delete.php" method="post">
                                     <input type="hidden" name="id" value="<?php echo htmlentities($row['id']); ?>">
                                     <input type="hidden" name="address" value="<?php echo htmlentities($row['address']); ?>">
+                                    <input type="hidden" name="larea" value="<?php echo htmlentities($row['larea']); ?>">
                                     <input type="hidden" name="no_of_plots" value="<?php echo htmlentities($row['no_of_plots']); ?>">
                                     <input type="hidden" name="cost_price" value="<?php echo htmlentities($row['cost_price']); ?>">
                                     <input type="hidden" name="year_of_purchase" value="<?php echo htmlentities($row['year_of_purchase']); ?>">

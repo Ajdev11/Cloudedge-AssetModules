@@ -36,7 +36,7 @@ if (isset($_GET['del'])) {
     <div id="cont" class="container-fluid">
         <center>
             <div class="listBtn">
-                <a href=" " class="btn btn-dark mb-3 bg-dark text-white">Home</a>
+                <a href=" " class="btn btn-dark mb-3 bg-dark text-white">MUSIC ASSET</a>
                 <a class="back" href="asspage.php">
                     <button id="btn" class="btn btn-dark mb-3 bg-primary">Asset Page</button></a>
                 <a href="music.php" class="btn btn-dark mb-3 bg-success text-white">Add Asset</a>
@@ -55,7 +55,7 @@ if (isset($_GET['del'])) {
                                 <th scope="col">Model</th>
                                 <th scope="col">Serial No</th>
                                 <th scope="col">Date of Purchase</th>
-                                <th scope="col">Cost at Purchase</th>
+                                <th scope="col">Cost</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Edit</th>
                                 <th scope="col">Delete</th>
@@ -79,7 +79,7 @@ if (isset($_GET['del'])) {
                                     echo '<td>' . $asslist['model'] . '</td>';
                                     echo '<td>' . $asslist['sn'] . '</td>';
                                     echo '<td>' . $asslist['dop'] . '</td>';
-                                    echo '<td>' . $asslist['cap'] . '</td>';
+                                    echo '<td>' . number_format($asslist['cap']) . '</td>';
                                     echo '<td>' . $asslist['status'] . '</td>'; ?>
                                     <td><a href="updatemusic.php?id=<?php echo htmlentities($asslist['id']); ?>"><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
                                     <td><a href="musicassets.php?del=<?php echo htmlentities($asslist['id']); ?>"><button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><span class="glyphicon glyphicon-trash"></span></button></a></td>

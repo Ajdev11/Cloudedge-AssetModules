@@ -10,6 +10,7 @@ if (isset($_POST['submit'])) {
     // $assetName = "LAND";
     $location = $_POST['location'];
     $address = $_POST['address'];
+    $larea = $_POST['larea'];
     $no_of_plots = $_POST['plots'];
     $costPrice = $_POST['cost'];
     $yearPurchased = $_POST['yearPurchased'];
@@ -18,7 +19,7 @@ if (isset($_POST['submit'])) {
     $litig = $_POST['litig'];
     $currStatus = $_POST['status'];
 
-    $sql = $updatedata->updateLand($location, $address, $no_of_plots, $costPrice, $yearPurchased, $fenced, $fullypaid, $litig, $currStatus, $id);
+    $sql = $updatedata->updateLand($location, $address, $larea, $no_of_plots, $costPrice, $yearPurchased, $fenced, $fullypaid, $litig, $currStatus, $id);
     // Mesage after updation
     echo "<script>alert('Record Updated successfully');</script>";
     // Code for redirection
@@ -37,7 +38,7 @@ if (isset($_POST['submit'])) {
     <style>
         .cont {
             display: block;
-            height: 140vh;
+            height: 150vh;
             margin: auto;
             background-color: #ddd;
         }
@@ -68,7 +69,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    <div class="container-fluid cont">
+    <div class="container-fluid cont bg-secondary text-white">
 
         <form name="insertrecord" method="post">
             <?php
@@ -86,45 +87,50 @@ if (isset($_POST['submit'])) {
             $cnt = 1;
             while ($row = mysqli_fetch_array($sql)) {
             ?>
-                <center>
-                    <h2>DEEPER LIFE BIBLE CHURCH</h2>
-                    <font color="brown">
-                        <h6 id="hed"> </h6>
-                    </font>
-                    <h4>EDIT ASSET FORM</h4>
-                </center>
+                <h2 class="text-center">Edit Land Record</h2>
                 <hr>
+
 
                 <div class="row">
                     <div class="col-5">
                         <label for="" class="">Location</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="" name="location1" value="<?php echo htmlentities($row['assetName']);  ?>" class="form-control" required>
-                        <div class="col-9">
-                            <input class="form-control form-control-md" type="text" name="location" />
-                        </div>
+                        <input style="background: #ddd" type="text" id="" name="location" value="<?php echo htmlentities($row['assetName']);  ?>" class="form-control" required>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-5 my-2">
                         <label for="" class="">Address</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="" name="address1" value="<?php echo htmlentities($row['address']); 
-                        ?>" class="form-control">
+                        <input style="background: #ddd" type="text" id="" name="address" value="<?php echo htmlentities($row['address']);
+                                                                                                ?>" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 text-info my-2">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7 my-2">
                         <input class="form-control form-control-md" type="text" name="address" />
                     </div>
                 </div>
-
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-5 my-2">
                         <label for="" class="qty">Fenced?</label>
                     </div>
                     <div class="col-7">
-                        <input style="background:orange" id="" name="fenced1" class="form-control" value="<?php echo htmlentities($row['fenced']);
-                         ?>">
+                        <input style="background: #ddd" id="" name="fenced1" class="form-control" value="<?php echo htmlentities($row['fenced']);
+                                                                                                            ?>">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 text-info my-2">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7 my-2">
                         <select name="fenced" class="form-select">
                             <option selected>--Select--</option>
                             <option value="Yes">Yes</option>
@@ -132,48 +138,73 @@ if (isset($_POST['submit'])) {
                         </select>
                     </div>
                 </div>
-
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-5 my-2">
                         <label for="">No of Plots</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="" name="plots1" value="<?php echo htmlentities($row['no_of_plots']); 
-                        ?>" class="form-control" required>
-                        <input class="form-control form-control-md" name="plots" type="text" />
+                        <input style="background: #ddd" type="number" min="0" step="1" id="" name="plots1" value="<?php echo htmlentities($row['no_of_plots']);
+                                                                                                                    ?>" class="form-control" required>
                     </div>
                 </div>
-
                 <div class="row">
-                    <div class="col-5">
-                        <label for="" class="">Cost at Purchase</label>
+                    <div class="col-5 my-2 text-info">
+                        <label for="">Change</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="" name="cost1" value="<?php echo htmlentities($row['cost_price']);
-                         ?>" class="form-control" required>
-                        <input class="form-control form-control-md" name="cost" type="text" />
+                        <input class="form-control form-control-md" name="plots" type="number" min="0" step="1" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2">
+                        <label for="" class="">Cost</label>
+                    </div>
+                    <div class="col-7 my-2">
+                        <input style="background: #ddd" type="number" min="0" step="1" id="" name="cost1" value="<?php echo htmlentities($row['cost_price']);
+                                                                                                                    ?>" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2 text-info">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7 my-2">
+                        <input class="form-control form-control-md" name="cost" type="number" min="0" step="1" />
                     </div>
                 </div>
 
-
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-5 my-2">
                         <label for="" class="">Year of Purchase</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" id="" name="yearPurchased1" value="<?php echo htmlentities($row['year_of_purchase']);
-                         ?>" class="form-control">
+                        <input style="background:" id="" name="yearPurchased1" value="<?php echo htmlentities($row['year_of_purchase']);
+                                                                                        ?>" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 text-info my-2">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7 my-2">
                         <input class="form-control form-control-md" name="yearPurchased" type="date" />
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-5 my-2">
                         <label for="" class="">Current Status</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="" name="status" value="<?php echo htmlentities($row['current_status']);
-                         ?>" class="form-control">
+                        <input style="background: #ddd" type="text" id="" name="status" value="<?php echo htmlentities($row['current_status']);
+                                                                                                ?>" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2 text-info">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7 my-2">
                         <select name="status" class="form-select ">
                             <option selected>--Select--</option>
                             <option value="Developed">Developed</option>
@@ -188,9 +219,16 @@ if (isset($_POST['submit'])) {
                     <div class="col-5 my-2">
                         <label for="" class="">Fully Paid</label>
                     </div>
-                    <div class="col-7">
-                        <input style="background:orange" type="text" id="" name="fullypaid1" value="<?php echo htmlentities($row['fullypaid']);
-                         ?>" class="form-control">
+                    <div class="col-7 my-2">
+                        <input style="background: #ddd" type="text" id="" name="fullypaid1" value="<?php echo htmlentities($row['fullypaid']);
+                                                                                                    ?>" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2 text-info">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7 my-2">
                         <select name="fullypaid" class="form-select">
                             <option selected>--Select--</option>
                             <option value="Yes">Yes</option>
@@ -202,9 +240,16 @@ if (isset($_POST['submit'])) {
                     <div class="col-5 my-2">
                         <label for="" class="">Under Litigation</label>
                     </div>
-                    <div class="col-7">
-                        <input style="background:orange" type="text" id="" name="litig1" value="<?php echo htmlentities($row['litig']);
-                         ?>" class="form-control">
+                    <div class="col-7 my-2">
+                        <input style="background: #ddd" type="text" id="" name="litig1" value="<?php echo htmlentities($row['litig']);
+                                                                                                ?>" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 text-info my-2">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7 my-2">
                         <select name="litig" class="form-select">
                             <option selected>--Select--</option>
                             <option value="Yes">Yes</option>

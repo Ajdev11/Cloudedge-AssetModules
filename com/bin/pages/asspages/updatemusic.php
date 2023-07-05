@@ -29,7 +29,7 @@ if (isset($_POST['update'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>UPDATE FURNITURE ASSET </title>
+    <title>UPDATE MUSIC ASSET </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
     <?php
@@ -90,13 +90,8 @@ if (isset($_POST['update'])) {
         ?>
             <!-- form start here -->
             <form action="" method="POST">
-                <center>
-                    <h2>DEEPER LIFE BIBLE CHURCH</h2>
-                    <font color="brown">
-                        <h6 id="hed"> </h6>
-                    </font>
-                    <h4>ASSET ENTRY FORM</h4>
-                </center>
+                <h2 class="text-center">Edit Music Record</h2>
+                <hr>
                 <?php
                 require_once "../../../../com/sess/mods/connect.php";
                 require_once "assdata.php";
@@ -109,8 +104,14 @@ if (isset($_POST['update'])) {
                         <label for="" class="">Asset Category</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['item_category']); ?>" class="form-control" required>
-
+                        <input style="background: #ddd" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['item_category']); ?>" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2 text-info">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7">
                         <select class="form-select" name="item_category" id="categoryName" aria-label="Default select example" onchange="showme(this.value)">
                             <option selected>Select Asset Category</option>
                             <?php
@@ -135,8 +136,14 @@ if (isset($_POST['update'])) {
                         <label for="" class="">Asset Type</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo 
-                        ($row['item_type']); ?>" class="form-control" required>
+                        <input style="background: #ddd" type="text" id="plan1" name="plan1" value="<?php echo ($row['item_type']); ?>" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2 text-info">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7">
                         <!-- pass showmeType function to onchange event -->
                         <select class="form-select" name="item_type" id="subcateg" onchange="showmeType(this.value)">
                             <option selected>Select Asset Type</option>
@@ -144,11 +151,18 @@ if (isset($_POST['update'])) {
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-5 my-2">
                         <label for="" class="qty">Asset Name</label>
                     </div>
                     <div class="col-7">
-                        <input style="background:orange" type="text" id="plan1" name="plan1" class="form-control" required value="<?php echo htmlentities($row['item_type']); ?>">
+                        <input style="background: #ddd" type="text" id="plan1" name="plan1" class="form-control" required value="<?php echo htmlentities($row['item_type']); ?>">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2 text-info">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7">
                         <select class="form-select" name="assetName" id="assetName">
                             <option selected>Select asset name</option>
 
@@ -170,8 +184,15 @@ if (isset($_POST['update'])) {
                         <label for="add" class="add">Manufacturer</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" name="oem" value="<?php echo htmlentities($row['oem']); ?>" class="form-control">
-                        <input class="form-control form-control-md" name="oem" type="text" placeholder="change manufacturer" />
+                        <input style="background: #ddd" type="text" name="oem" value="<?php echo htmlentities($row['oem']); ?>" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2 text-info">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7">
+                        <input class="form-control form-control-md" name="oem" type="text" />
                     </div>
                 </div>
                 <div class="row">
@@ -179,8 +200,15 @@ if (isset($_POST['update'])) {
                         <label for="" class="">Model</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" name="model" value="<?php echo htmlentities($row['model']); ?>" class="form-control">
-                        <input class="form-control form-control-md" placeholder="change model" name="model" type="text" />
+                        <input style="background: #ddd" type="text" name="model" value="<?php echo htmlentities($row['model']); ?>" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2 text-info">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7">
+                        <input class="form-control form-control-md" name="model" type="text" />
                     </div>
                 </div>
                 <div class="row">
@@ -188,8 +216,15 @@ if (isset($_POST['update'])) {
                         <label for="" class="">Serial Number</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" name="sn" value="<?php echo htmlentities($row['sn']); ?>" class="form-control">
-                        <input class="form-control form-control-md" placeholder="change seral number" name="sn" type="text" />
+                        <input style="background: #ddd" type="text" name="sn" value="<?php echo htmlentities($row['sn']); ?>" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2 text-info">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7">
+                        <input class="form-control form-control-md" name="sn" type="text" />
                     </div>
                 </div>
                 <div class="row">
@@ -197,17 +232,31 @@ if (isset($_POST['update'])) {
                         <label for="" class="">Date of Purchase</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['dop']); ?>" class="form-control">
+                        <input style="background: #ddd" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['dop']); ?>" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2 text-info">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7">
                         <input class="form-control form-control-md" name="dop" type="date" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-5">
-                        <label for="" class="">Cost at Purchase</label>
+                        <label for="" class="">Cost</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['cap']); ?>" class="form-control" required>
-                        <input placeholder="Change Cost at purchase" class="form-control form-control-md" name="cap" type="text" />
+                        <input style="background: #ddd" type="number" min="0" step="1" id="plan1" name="plan1" value="<?php echo htmlentities($row['cap']); ?>" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2 text-info">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7">
+                        <input class="form-control form-control-md" name="cap" type="number" min="0" step="1" />
                     </div>
                 </div>
                 <div class="row">
@@ -215,9 +264,16 @@ if (isset($_POST['update'])) {
                         <label for="" class="">Asset Location</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['location']); ?>" class="form-control">
+                        <input style="background: #ddd" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['location']); ?>" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2 text-info">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7">
                         <select class="form-select" name="location" aria-label="Default select example">
-                            <option selected>Change Asset Location</option>
+                            <option selected>Change Location</option>
                             <?php
                             foreach ($aloc as $loc) {
                                 echo '<option value = ' . $loc['assloc'] . '>' . strtoupper($loc['assloc']) . '</option>';
@@ -231,8 +287,15 @@ if (isset($_POST['update'])) {
                         <label for="" class="">Asset Status</label>
                     </div>
                     <div class="col-7 my-2">
-                        <input style="background:orange" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['status']); ?>" class="form-control">
-                        <select class="form-select" name="status" aria-label="Default select example">
+                        <input style="background: #ddd" type="text" id="plan1" name="plan1" value="<?php echo htmlentities($row['status']); ?>" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 my-2 text-info">
+                        <label for="">Change</label>
+                    </div>
+                    <div class="col-7">
+                        <select class="form-select" name="status">
                             <option selected>Change Asset Status</option>
                             <option value="In Use">In Use</option>
                             <option value="Bad">Bad</option>

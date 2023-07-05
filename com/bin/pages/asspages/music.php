@@ -20,7 +20,7 @@
     .cont {
         display: block;
         width: 95%;
-        height: 105vh;
+        height: 110vh;
         margin: auto;
     }
 
@@ -166,10 +166,10 @@
             </div>
             <div class="row">
                 <div class="col-7">
-                    <label for="" class="">Cost at Purchase</label>
+                    <label for="" class="">Cost</label>
                 </div>
                 <div class="col-5 my-2">
-                    <input class="form-control form-control-md" name="cap" type="text" />
+                    <input class="form-control form-control-md" name="cap" type="number" min="0" step="1" />
                 </div>
             </div>
             <div class="row">

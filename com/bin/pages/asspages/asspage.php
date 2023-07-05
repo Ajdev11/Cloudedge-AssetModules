@@ -22,19 +22,19 @@ $sessionStorage["loc"] = 'CHINDA';
     ?>
     <script src="https://kit.fontawesome.com/1d2533baae.js" crossorigin="anonymous"></script>
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
-    h4 {
-        text-transform: uppercase;
-        clip-path: polygon(0 1%, 100% 1%, 100% 100%, 0% 100%);
-        line-height: 1.8rem;
-        font-family: 'Josefin Sans', sans-serif;
-    }
+        h4 {
+            text-transform: uppercase;
+            clip-path: polygon(0 1%, 100% 1%, 100% 100%, 0% 100%);
+            line-height: 1.8rem;
+            font-family: 'Josefin Sans', sans-serif;
+        }
 
-    .char {
-        transform: translateY(-115px);
-        transition: transform 0.5s;
-    }
+        .char {
+            transform: translateY(-115px);
+            transition: transform 0.5s;
+        }
     </style>
 </head>
 
@@ -43,7 +43,7 @@ $sessionStorage["loc"] = 'CHINDA';
     <div id="cont" class="container-fluid">
         <div id="row" class="row row-cols-1 row-cols-md-3 g-2">
             <div class="col col-box">
-                <a class="text-decoration-none text-dark" href="landasset.php">
+                <a class="text-decoration-none text-dark" ondblclick="enterLand()">
                     <div class="card h-100 w-100 bg-light">
                         <img src="img/land.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -51,11 +51,16 @@ $sessionStorage["loc"] = 'CHINDA';
                         <div class="card-footer text-center">
                             <h4 id="my-text">LAND</h4>
                         </div>
+                        <script>
+                            function enterLand() {
+                                location.href = 'landasset.php';
+                            }
+                        </script>
                     </div>
                 </a>
             </div>
             <div class="col col-box">
-                <a class="text-decoration-none text-dark" href="buildingasset.php">
+                <a class="text-decoration-none text-dark" ondblclick="enterBuilding()">
                     <div class="card h-100 w-100 bg-light">
                         <img src="img/building.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -64,10 +69,15 @@ $sessionStorage["loc"] = 'CHINDA';
                             <h4 id="my-text">BUILDING</h4>
                         </div>
                     </div>
+                    <script>
+                        function enterBuilding() {
+                            location.href = 'buildingasset.php'
+                        }
+                    </script>
                 </a>
             </div>
             <div class="col">
-                <a class="text-decoration-none text-dark" href="furasset.php">
+                <a class="text-decoration-none text-dark" ondblclick="enterFurasset()">
                     <div class="card h-100 w-100 bg-light">
                         <img src="img/furnitures.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -76,12 +86,17 @@ $sessionStorage["loc"] = 'CHINDA';
                             <h4 id="my-text">FURNITURES</h4>
                         </div>
                     </div>
+                    <script>
+                        function enterFurasset() {
+                            location.href = 'furasset.php';
+                        }
+                    </script>
                 </a>
             </div>
 
             <div id="row" class="row row-cols-1 row-cols-md-3 g-2">
                 <div class="col">
-                    <a class="text-decoration-none text-dark" href="musicassets.php">
+                    <a class="text-decoration-none text-dark" ondblclick="enterMusicAssets()">
                         <div class="card h-100 w-100 bg-light">
                             <img src="img/music.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -90,10 +105,15 @@ $sessionStorage["loc"] = 'CHINDA';
                                 <h4 id="my-text">MUSICAL</h4>
                             </div>
                         </div>
+                        <script>
+                            function enterMusicAssets() {
+                                location.href = 'musicassets.php'
+                            }
+                        </script>
                     </a>
                 </div>
                 <div class="col">
-                    <a class="text-decoration-none text-dark" href="assetvehicle.php">
+                    <a class="text-decoration-none text-dark" ondblclick="assetVehicle()">
                         <div class="card h-100 w-100 bg-light">
                             <img src="img/vehicle.png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -102,10 +122,15 @@ $sessionStorage["loc"] = 'CHINDA';
                                 <h4 id="my-text">VEHICLES</h4>
                             </div>
                         </div>
+                        <script>
+                            function assetVehicle() {
+                                location.href = 'assetvehicle.php'
+                            }
+                        </script>
                     </a>
                 </div>
                 <div class="col">
-                    <a class="text-decoration-none text-dark" href="ictasset.php">
+                    <a class="text-decoration-none text-dark" href="ictasset.php" ondblclick="enterIctAsset()">
                         <div class="card h-100 w-100 bg-light">
                             <img src="img/ict.jpeg" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -115,21 +140,24 @@ $sessionStorage["loc"] = 'CHINDA';
                             </div>
                         </div>
                 </div>
+                <script>
+                    function enterIctAsset() {
+                        location.href = 'ictasset.php';
+                    }
+                </script>
                 </a>
             </div>
         </div>
         <script src="https://unpkg.com/split-type"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
-            integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js" integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
-        const myText = new SplitType("#my-text");
-        gsap.to('.char', {
-            y: 0,
-            stagger: 0.05,
-            delay: 1,
-            duration: 0.1
-        })
+            const myText = new SplitType("#my-text");
+            gsap.to('.char', {
+                y: 0,
+                stagger: 0.05,
+                delay: 1,
+                duration: 0.1
+            })
         </script>
 </body>
 
