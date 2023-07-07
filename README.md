@@ -16,7 +16,7 @@ This README provides description to a asset feature added to the main applicatio
 
 
 
-.com/ajdev11/chatApp.git`
+com/ajdev11/chatApp.git`
 your web server to point to the cloned repository's directory.
 - Create a new MySQL database for the chat application.
 - Rename the db file to your prefer named db and update the database connection details accordingly.
