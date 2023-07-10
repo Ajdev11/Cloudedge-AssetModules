@@ -10,7 +10,7 @@
  
  `mysql(DB)`
  
- README provides description to a asset feature added to the main application. 
+ EADME provides description to a asset feature added to the main application. 
 
 
 .git`
