@@ -10,7 +10,7 @@
  
  `mysql(DB)`
  
-Ts README provides description to a asset feature added to the main application. 
+s README provides description to a asset feature added to the main application. 
 
 
 p.git`
