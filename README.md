@@ -12,7 +12,7 @@
  
  
  
- provides description to a asset feature added to the main application. 
+ rovides description to a asset feature added to the main application. 
 
 
 .git`
