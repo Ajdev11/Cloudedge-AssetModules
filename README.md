@@ -11,8 +11,7 @@
  `mysql(DB)`
  
  
- 
- rovides description to a asset feature added to the main application. 
+ ovides description to a asset feature added to the main application. 
 
 
 .git`
