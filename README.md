@@ -10,7 +10,9 @@
  
  `mysql(DB)`
  
- E provides description to a asset feature added to the main application. 
+ 
+ 
+ provides description to a asset feature added to the main application. 
 
 
 .git`
