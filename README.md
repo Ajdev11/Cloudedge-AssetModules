@@ -10,7 +10,7 @@
  
  `mysql(DB)`
  
- ADME provides description to a asset feature added to the main application. 
+ ME provides description to a asset feature added to the main application. 
 
 
 .git`
