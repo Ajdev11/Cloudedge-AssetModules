@@ -12,7 +12,7 @@
  
 
  
-ides description to a asset feature added to the main application. 
+des description to a asset feature added to the main application. 
 
 
 git`
