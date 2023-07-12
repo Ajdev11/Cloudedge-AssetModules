@@ -12,8 +12,7 @@
  
 es description to a asset feature added to the main application. 
 
-git`
-your web server to point to the cloned repository's directory.
+gityour web server to point to the cloned repository's directory.
 - Create a new MySQL database for the chat application.
 - Rename the db file to your prefer named db and update the database connection details accordingly.
 - Start your web server, and you're ready to go 🚀
