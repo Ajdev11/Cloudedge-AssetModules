@@ -12,7 +12,7 @@
  
 
  
- vides description to a asset feature added to the main application. 
+ides description to a asset feature added to the main application. 
 
 
 git`
