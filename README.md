@@ -11,8 +11,7 @@
  `mysql(DB)`
  
 
- 
-des description to a asset feature added to the main application. 
+ es description to a asset feature added to the main application. 
 
 git`
 your web server to point to the cloned repository's directory.
