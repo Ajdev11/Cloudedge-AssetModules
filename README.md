@@ -14,7 +14,6 @@
  
 des description to a asset feature added to the main application. 
 
-
 git`
 your web server to point to the cloned repository's directory.
 - Create a new MySQL database for the chat application.
