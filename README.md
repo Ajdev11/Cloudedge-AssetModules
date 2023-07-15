@@ -10,7 +10,11 @@
  
  `mysql(DB)`
 
-et feature added to the main application.
+ 
+
+
+
+t feature added to the main application.
 gityour web server to point to the cloned repository's directory.
 - Create a new MySQL database for the chat application.
 - Rename the db file to your prefer named db and update the database connection details accordingly.
