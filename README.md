@@ -10,10 +10,9 @@
  
  `mysql(DB)`
 
- 
-'s directory.
+ directory.
 - Create a new MySQL database for the chat application.
-- Rename the db file to your prefer named db and update the database connection details accordingly.
+- Rename thttps://github.com/Ajdev11/cloudedgeMgt.githe db file to your prefer named db and update the database connection details accordingly.
 - Start your web server, and you're ready to go 🚀
 
 . Typing indicator and message read status
