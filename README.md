@@ -14,7 +14,7 @@
 
  
  tabase for the chat application.
-ene ttps://github.com/Ajdev11/cloudedgeMgt.githe db file to your prefer named db and update the database connection details accordingly.
+ttps://github.com/Ajdev11/cloudedgeMgt.githe db file to your prefer named db and update the database connection details accordingly.
 - Stayour web server, and you're ready to go 🚀
 
 . Typing indicator and message read status
