@@ -13,7 +13,7 @@
  
 
  
- tabases://github.com/Ajdev11/cloudedgeMgt.heile your prefer nd db and update the database connection details accordingly.
+ tabases://github.com/Ajdev11/cloudedgeMgt.heile your prefer ndand update the database connection details accordingly.
 - Stayour web server, and 're ready 
 . Typing indicator and messagest
 . Onlintion
