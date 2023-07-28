@@ -15,7 +15,7 @@
  
  tabases://github.com/Ajdev11/cloudedgeMgt.heile your prefer named db and update the database connection details accordingly.
 - Stayour web server, and 're ready 
-. Typing indicator and messagestatus
+. Typing indicator and messagest
 . Onlintion
 . Message history and conversation search
 . User profile man
