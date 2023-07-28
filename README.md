@@ -14,7 +14,7 @@
 
  
  tabases://github.com/Ajdev11/cloudedgeMgt.he db file to your prefer named db and update the database connection details accordingly.
-- Stayour web server, and 're ready to 
+- Stayour web server, and 're ready 
 . Typing indicator and message read status
 . Onlintion
 . Message history and conversation search
