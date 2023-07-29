@@ -14,7 +14,7 @@
 
  
  bases://github.com/Ajdev11/cudedgeMgt.heile yr prefer nda update the database connection details accordingly.
-- Stayour wserver, and 
+- Stayour wserver, an
 . Typing indicator and messagest
 . Onlintion
 . Message history and conversation search
