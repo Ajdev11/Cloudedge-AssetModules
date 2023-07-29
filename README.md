@@ -13,7 +13,7 @@
  
 
  
- bases://github.com/Ajdev11/cudeMgt.heile yr prefer nda update the database connection details accordingly.
+ bases://github.com/Ajdev11/cudeM.heile yr prefer nda update the database connection details accordingly.
 - Stayour wserver, an
 . Typing indicator and messagest
 . Onlintion
