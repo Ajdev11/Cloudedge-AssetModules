@@ -15,7 +15,7 @@
  
  bases://github.com/Ajdev11/cudeM.heile yr prefer update the database connection details accordingly.
 - Stayour wserver
-. Typing indicator and messagest
+. Typing indicator and messagt
 . Onlinti
 . Message history and conversation search
 . User profile man
