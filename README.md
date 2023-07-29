@@ -14,7 +14,7 @@
 
  
  bases://github.com/Ajdev11/cloudedgeMgt.heile your prefer ndand update the database connection details accordingly.
-- Stayour web server, and 
+- Stayour wserver, and 
 . Typing indicator and messagest
 . Onlintion
 . Message history and conversation search
