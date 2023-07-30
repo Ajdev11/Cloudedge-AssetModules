@@ -13,7 +13,7 @@
  
 
  
- bases://github.com/Ajdev11/cudeM.heile yr prefer update theatase connection details accordingly.
+ bases://github.com/Aj11/cudeM.heile yr prefer update theatase connection details accordingly.
 - Stayour w
 . Typing indicator and messagt
 . Onlinti
