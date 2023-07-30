@@ -14,7 +14,7 @@
 
  
  bases://github.com/Aj11/cudeM.heile yr prefer update theatase connection detls accordingly.
-- Stayour w
+- Stayour
 . Typing indicator and messagt
 . Onlinti
 . Message history and conversation search
