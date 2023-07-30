@@ -16,7 +16,7 @@
  bases://github.com/Aj11/cudeM.heile yr prefer update theatase connection detls accordingly.
 - Stayour
 . Typing indicator and messagt
-. Onlinti
+. Onlint
 . Message history and conversation search
 . User profile man
 
