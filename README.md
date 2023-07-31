@@ -15,7 +15,7 @@
  
  bases://github.cj11/cudeM.heiler preferdate theatase connection detls accord
 - Stay
-. Typing indicator and messagt
+. Typing indicator and messa
 . Onlint
 . Message history and conversation search
 . User profile man
