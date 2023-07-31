@@ -19,7 +19,6 @@
 . Onlint
 . Message history and conversation search
 . User profile man
-
 `Usage`
 
 . Open the chat application in your web browser.
