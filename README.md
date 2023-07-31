@@ -14,7 +14,7 @@
 
  
  bases://github.cj11/cudeM.heilereferdate theatase connection detls accord
-- Stay
+- St
 . Typing indicator and messa
 . Onlint
 . Message history and conversation search
