@@ -15,7 +15,7 @@
  
  bases://github.cj11/cudeM.heilereferdate theatase connection detls accord
 - St
-. Typing indicator and mes
+. Typing indicator and m
 . Onl
 . Message history and conversation search
 . User profile man
