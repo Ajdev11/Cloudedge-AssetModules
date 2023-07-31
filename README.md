@@ -13,7 +13,7 @@
  
 
  
- bases://github.cj11/cudeM.heile yr preferdate theatase connection detls accordingly.
+ bases://github.cj11/cudeM.heiler preferdate theatase connection detls accordingly.
 - Stay
 . Typing indicator and messagt
 . Onlint
