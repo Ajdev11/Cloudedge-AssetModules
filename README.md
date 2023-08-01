@@ -13,8 +13,7 @@
  
 
  
- bases://github.cj11/deM.heilereferdate theatase connection detls accord
-- 
+ bases://github.cj11/deM.heilereferdate theatase connection detls accor
 . Typing indicator and
 .
 . Message history and conversation search
