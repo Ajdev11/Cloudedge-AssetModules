@@ -15,7 +15,6 @@
  
  bases://github.cj11/deM.heilereferdate theatase connection detls accor
 . Typing indicator and
-.
 . Message history and conversation sear
 . User profile man
 `Usage`
