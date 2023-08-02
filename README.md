@@ -17,7 +17,7 @@
 . Typing indicator
 . Message history and conversation sear
 . User pro
-`Usage`
+`Usag
 
 . Open the chat application in your web browser.
 . If you don't have an account, click on the "Sign Up" link to create a new account.
