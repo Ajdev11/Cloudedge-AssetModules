@@ -13,7 +13,7 @@
  
 
  
- bases://github.cj11/deM.heilereferdate theatase connection detls accor
+ bases://github.cj11/deM.heilereferdate theatase connection detls acc
 . Typing indicator
 . Message history and conversation se
 . User pro
