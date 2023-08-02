@@ -16,7 +16,7 @@
  bases://github.cj11/deM.heilereferdate theatase connection detls accor
 . Typing indicator and
 . Message history and conversation sear
-. User profile
+. User profi
 `Usage`
 
 . Open the chat application in your web browser.
