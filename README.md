@@ -15,7 +15,7 @@
  
  bases://github.cj11/deM.heilereferdate theatase connection de
 . Typing indicator
-. Message history and conversation 
+. Message history and conversat
 . User pro
 `Usag
 
