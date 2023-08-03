@@ -13,7 +13,7 @@
  
 
  
- bases://github.cj11/deM.heilereferdate theatase connection detls
+ bases://github.cj11/deM.heilereferdate theatase connection de
 . Typing indicator
 . Message history and conversation 
 . User pro
