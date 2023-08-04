@@ -14,7 +14,7 @@
 
  
  bases://github.cj11/deM.heilereferdate theatase connection 
-. Typi
+. Ty
 . Message history and conver
 . User pro
 `Usag
