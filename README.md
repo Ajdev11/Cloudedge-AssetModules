@@ -15,7 +15,7 @@
  
  bases://github.cj11/deM.heilereferdate theatase connection 
 
-. Message history and co
+. Message history and c
 . User pro
 `Usag
 
