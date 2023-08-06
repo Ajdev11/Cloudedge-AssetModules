@@ -15,8 +15,7 @@
  
  bases://github.cj11/deM.heilereferdate theatase connectio
 
-. Mes
-. Us
+. M
 `Usag
 
 . Open the chat application in your web browser.
