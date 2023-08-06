@@ -15,8 +15,7 @@
  
  bases://github.cj11/deM.heilereferdate theatase connectio
 
-`Usag
-
+`Usa
 . Open the chat application in your web browser.
 . If you don't have an account, click on the "Sign Up" link to create a new account.
 . Log in using your credentials
