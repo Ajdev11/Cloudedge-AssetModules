@@ -13,7 +13,7 @@
  
 
  
- bases://github.cj11/deM.heilereferdate theatase connectio
+ bases://github.cj11/deM.heilereferdate theatase connecti
 
 `Usa
 . Open the chat application in your web browser.
