@@ -15,7 +15,7 @@
  
  bases://github.cj11/deM.heilereferdate theatas
 `
-. Open the chat application in your web 
+. Open the chat application in your w
 . If you don't have an account, click on the "Sign Up" link to create a new ount.
 . Log in using
 . Start chatting! You can send messages to other users and manage your profile.
