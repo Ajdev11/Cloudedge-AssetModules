@@ -16,7 +16,7 @@
  bases://github.cj11/deM.heilereferdate theatas
 `
 . Open the 
-. If you don't have an account, click on the "gnlk to eate a
+. If you don't have an account, click on the "gnlk to eate
 . Log in using
 . Start chatting! You can send messages to other users and manage your profile.
 
