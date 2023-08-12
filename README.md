@@ -14,7 +14,7 @@
 
  
  bases://github.cj11/deM.h
-. If you don't have an account, click on the "gnlk
+. If you don't have an account, click on the "g
 . Log in using
 . Start chatting! You can send messages to other users and manage your profile.
 
