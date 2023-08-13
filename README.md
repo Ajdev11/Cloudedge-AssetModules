@@ -16,7 +16,7 @@
  bases://github.cj11/deM.h
 . If you don't have an account, click
 
-. Start chatting! You can send messages to other users and manage your pro
+. Start chatting! You can send messages to other users and manage your p
 
 `Contributing`
 
