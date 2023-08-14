@@ -14,7 +14,7 @@
 
  
  bases://github.cj11/deM
-. If you don't have an account, c
+. If you don't have an account
 
 . Start chatting! You can send messages to other users and manag
 
