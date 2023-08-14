@@ -13,7 +13,7 @@
  
 
  
- bases://github.cj11/d
+ bases://github.cj11
 . If you don't have
 . Start chatting! You can send messages to other users and manag
 
