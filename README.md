@@ -14,7 +14,7 @@
 
  
  bases://github.cj11/deM
-. If you don't have an ac
+. If you don't have an
 . Start chatting! You can send messages to other users and manag
 
 `Contributing`
