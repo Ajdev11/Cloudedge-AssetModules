@@ -15,7 +15,7 @@
  
  bases://github.cj
 . If you don't have
-. Start chatting! You can send messages to other
+. Start chatting! You can send messages to
 
 `Contributing`
 
