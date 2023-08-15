@@ -13,7 +13,7 @@
  
 
  
- bases://github.cj
+ bases://github.
 . If you don't have
 . Start chatting! You can send messages to
 
