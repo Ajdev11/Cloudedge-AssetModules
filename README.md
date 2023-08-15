@@ -15,7 +15,7 @@
  
  bases://github.
 . If you don't have
-. Start
+. Star
 `Contributing`
 
 Contributions are always welcome 🙂! If you'd like to contribute to this project, please follow these steps:
