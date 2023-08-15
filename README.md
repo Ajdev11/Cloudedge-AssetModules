@@ -15,7 +15,7 @@
  
  bases://github.
 . If you don't have
-. Start chatting! You can send message
+. Start chatting! You can send
 
 `Contributing`
 
