@@ -14,7 +14,7 @@
 
  
  bases://github
-. If y
+. If 
 
 `Contributing`
 
