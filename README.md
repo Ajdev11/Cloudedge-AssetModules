@@ -14,7 +14,7 @@
 
  
  bases://github
-. 
+
 
 `Contributing`
 
