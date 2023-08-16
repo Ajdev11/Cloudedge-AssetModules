@@ -13,7 +13,7 @@
  
 
  
- bases://github.
+ bases://github
 . If yo
 
 `Contributing`
