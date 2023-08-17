@@ -13,8 +13,8 @@
  
 
  
- b
-Contributions are always welcome 🙂! If you'd like to contribute to this project, please follow these steps:
+
+Contributions are always welcome 🙂! If you'd like to contribute to this project, please follow these step
 
 . Fork the repository and create your branch:
 
