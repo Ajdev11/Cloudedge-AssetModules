@@ -14,7 +14,7 @@
 
  
 
-Contributions are always welcome 🙂! If you'd like to contribute to this project, please follow thes
+Contributions are always welcome 🙂! If you'd like to contribute to this project, please follow th
 
 . Fork the repository and create your branch:
 
