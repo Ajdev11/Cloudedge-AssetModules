@@ -14,7 +14,7 @@
 
  
 
-Contributions are always welcome 🙂! If you'd like to contribute to this project, ple
+Contributions are always welcome 🙂! If you'd like to contribute to this project, p
 . Fork the repository and create your branch:
 
 `git checkout -b feature/YourFeature`
