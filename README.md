@@ -15,7 +15,7 @@
  
 
 Contributions are always welcome 🙂! If you'd like to contrib
-. Fork the repository and create
+. Fork the repository and creat
 `git checkout -b feature/YourFeature
 
 . Commit your changes and push to the branch:
