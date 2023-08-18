@@ -14,7 +14,7 @@
 
  
 
-Contributions are always welcome 🙂! If you'd like to contribute to this pr
+Contributions are always welcome 🙂! If you'd like to contribute to this p
 . Fork the repository and create your branch
 
 `git checkout -b feature/YourFeature`
