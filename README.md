@@ -14,7 +14,7 @@
 
  
 
-Contributions are always welcome 🙂! If you'd like to contr
+Contributions are always welcome 🙂! If you'd like to cont
 . Fork the repository
 `git checkout -b feature/YourFeature
 
