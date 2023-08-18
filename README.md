@@ -14,7 +14,7 @@
 
  
 
-Contributions are always welcome 🙂! If you'd li
+Contributions are always welcome 🙂! If you'd l
 . Fork the repository
 `git checkout -b feature/YourFeature
 
