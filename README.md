@@ -14,7 +14,7 @@
 
  
 
-Contributions are always welcome 🙂! If you'd like to contribu
+Contributions are always welcome 🙂! If you'd like to contrib
 . Fork the repository and create your bra
 `git checkout -b feature/YourFeature
 
