@@ -16,8 +16,7 @@
 
 Contributions are always welcome 🙂! If you'd like to contribu
 . Fork the repository and create your bra
-
-`git checkout -b feature/YourFeature`
+`git checkout -b feature/YourFeature
 
 . Commit your changes and push to the branch:
 
