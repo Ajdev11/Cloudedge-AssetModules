@@ -15,7 +15,7 @@
  
 
 Contributions are always welcome 🙂!
-. Fork
+. Fo
 `git checkout -b feature/YourFeature
 
 . Commit your changes and push to the branch:
