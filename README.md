@@ -15,7 +15,7 @@
  
 
 Contributions are always welcome 🙂! If yo
-. Fork the reposi
+. Fork the rep
 `git checkout -b feature/YourFeature
 
 . Commit your changes and push to the branch:
