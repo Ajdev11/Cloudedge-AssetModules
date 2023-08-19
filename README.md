@@ -14,7 +14,7 @@
 
  
 
-Contributions are always welcome 🙂! If
+Contributions are always welcome 🙂!
 . Fork the rep
 `git checkout -b feature/YourFeature
 
