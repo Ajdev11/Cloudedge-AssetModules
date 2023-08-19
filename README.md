@@ -15,7 +15,7 @@
  
 
 Contributions are always welcome 🙂!
-. Fork the 
+. Fork t
 `git checkout -b feature/YourFeature
 
 . Commit your changes and push to the branch:
