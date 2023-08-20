@@ -15,7 +15,7 @@
  
 
 Contributions are always welcome 
-. F
+. 
 `git checkout -b feature/YurFeatur
 
 . Commit your changes and push to the branch:
