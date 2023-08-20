@@ -14,7 +14,7 @@
 
  
 
-Contributions are always welcome 🙂!
+Contributions are always welcome 🙂
 . Fo
 `git checkout -b feature/YourFeatur
 
