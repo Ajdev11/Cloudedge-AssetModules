@@ -15,7 +15,7 @@
  
 
 Contributions are always welcome 
-`git checkout -b feature/YurFeatu
+`git checkout -b feature/YurFeat
 . Commit your changes and push to the branch:
 
 `git commit -am 'Add some features or commit messages`
