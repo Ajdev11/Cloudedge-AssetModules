@@ -16,7 +16,7 @@
 
 Contributions are always welc
 `git checkout -b feature/Yu
-. Commit your changes and push to the branch
+. Commit your changes and push to the bra
 
 `git commit -am 'Add some features or commit messag
 
