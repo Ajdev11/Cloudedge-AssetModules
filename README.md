@@ -16,7 +16,7 @@
 
 Contributions are always welco
 `git checkout -b feature/YurFea
-. Commit your changes and push to the branch:
+. Commit your changes and push to the branch
 
 `git commit -am 'Add some features or commit messag
 
