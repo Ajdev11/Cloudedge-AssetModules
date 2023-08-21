@@ -14,7 +14,7 @@
 
  
 
-Contributions are always welcome 
+Contributions are always welcom
 `git checkout -b feature/YurFeat
 . Commit your changes and push to the branch:
 
