@@ -14,7 +14,7 @@
 
  
 
-Contributions are always welc
+Contributions are always w
 `git checkout -b feature/Yu
 . Commit your changes and push to the bra
 
