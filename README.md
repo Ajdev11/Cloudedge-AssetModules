@@ -14,7 +14,7 @@
 
  
 
-Contributions are always welcom
+Contributions are always welco
 `git checkout -b feature/YurFea
 . Commit your changes and push to the branch:
 
