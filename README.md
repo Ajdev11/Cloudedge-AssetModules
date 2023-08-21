@@ -16,7 +16,7 @@
 
 Contributions are always w
 `git checkout -b feature/
-. Commit your changes and push to th
+. Commit your changes and push to 
 
 `git commit -am 'Add some features or commit messag
 
