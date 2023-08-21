@@ -14,7 +14,7 @@
 
  
 
-Contributions are always w
+Contributions are always
 `git checkout -b featur
 . Commit your changes and
 
