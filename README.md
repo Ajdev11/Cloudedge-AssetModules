@@ -14,7 +14,7 @@
 
  
 
-Contributions are always welco
+Contributions are always welc
 `git checkout -b feature/YurFe
 . Commit your changes and push to the branch
 
