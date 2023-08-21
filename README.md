@@ -16,7 +16,7 @@
 
 Contributions are always w
 `git checkout -b featur
-. Commit your changes and pu
+. Commit your changes and
 
 `git commit -am 'Add some features or commit messag
 
