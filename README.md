@@ -18,7 +18,7 @@ Contributions are always welcom
 `git checkout -b feature/YurFea
 . Commit your changes and push to the branch:
 
-`git commit -am 'Add some features or commit messages`
+`git commit -am 'Add some features or commit messag
 
 `git push origin feature/YourFeature
 
