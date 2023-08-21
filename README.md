@@ -15,7 +15,7 @@
  
 
 Contributions are always welc
-`git checkout -b feature/YurFe
+`git checkout -b feature/YurF
 . Commit your changes and push to the branch
 
 `git commit -am 'Add some features or commit messag
