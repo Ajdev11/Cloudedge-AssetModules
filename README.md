@@ -14,7 +14,7 @@
 
  
 
-Contributions are alway
+Contributions are alwa
 `git checkou
 . Commit your 
 `git commit -am 'Add some features or commit mess
