@@ -15,7 +15,7 @@
  
 
 Contributions are alway
-`git checkout -b feat
+`git checkout -b fea
 . Commit your changes a
 `git commit -am 'Add some features or commit mess
 `git push origin feature/YourFeature
