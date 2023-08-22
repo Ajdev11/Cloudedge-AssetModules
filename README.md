@@ -17,7 +17,7 @@
 Contributions are al
 `git c
 . 
-`git commit -am 'Add some features or commit mess
+`git commit -am 'Add some features or commit mes
 `git push origin feature/YourFeatu
 
 
