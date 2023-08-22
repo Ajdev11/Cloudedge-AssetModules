@@ -15,7 +15,7 @@
  
 
 Contributions are alwa
-`git ch
+`git c
 . 
 `git commit -am 'Add some features or commit mess
 `git push origin feature/YourFeatu
