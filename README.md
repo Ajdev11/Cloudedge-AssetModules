@@ -14,7 +14,7 @@
 
  
 
-Contributions are alwa
+Contributions are al
 `git c
 . 
 `git commit -am 'Add some features or commit mess
