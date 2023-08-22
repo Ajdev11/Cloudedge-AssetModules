@@ -16,7 +16,7 @@
 
 Contributions are alwa
 `git ch
-. Co
+. 
 `git commit -am 'Add some features or commit mess
 `git push origin feature/YourFeatu
 
