@@ -16,7 +16,7 @@
 
 Contributions are alwa
 `git checkou
-. Commit your 
+. Commit you
 `git commit -am 'Add some features or commit mess
 `git push origin feature/YourFeature
 
