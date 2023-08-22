@@ -15,7 +15,7 @@
  
 
 Contributions are al
-`gi
+`
 . 
 `git commit -am 'Add some features or commit mes
 `git push origin feature/YourFeatu
