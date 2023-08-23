@@ -14,7 +14,7 @@
 
  
 
-Contributions are al
+Contributions are a
 `
 . 
 `git commit -am 'Add some features or commit mes
