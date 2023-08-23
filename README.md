@@ -16,7 +16,7 @@
 
 Contributions are 
 
-`git commit -am 'Add some features or commit mes
+`git commit -am 'Add some features or commit m
 `git push origin feature/You
 
 
