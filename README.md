@@ -14,7 +14,7 @@
 
  
 
-Contributions are 
+Contributions ar
 
 `git commit -am 'Add some features or commit
 `git push origin 
