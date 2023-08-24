@@ -14,7 +14,7 @@
 
  
 
-Contributions ar
+Contributions
 
 `git commit -am 'Add some fea
 `
