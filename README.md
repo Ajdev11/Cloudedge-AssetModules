@@ -16,7 +16,7 @@
 
 Contributions ar
 
-`git commit -am 'Add some features
+`git commit -am 'Add some featur
 `git push ori
 
 
