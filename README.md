@@ -15,7 +15,7 @@
  
 
 
-That's it! Now you have an awesome chat application up and running. Enjoy 😃 seamless com
+That's it! Now you have an awesome chat application up and running. Enjoy 😃 seamless co
 
 
 
