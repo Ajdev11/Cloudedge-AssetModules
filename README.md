@@ -15,5 +15,5 @@
  
 
 
-That's it! Now you have an awesome chat application up and
+That's it! Now you have an awesome chat application up an
 
