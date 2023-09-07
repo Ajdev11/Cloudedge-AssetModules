@@ -11,5 +11,4 @@
  `mysql(DB)`
 
  
-That's it! Now you have an awesome chat app
-
+That's it! Now you have an awesome chat
