@@ -11,4 +11,4 @@
  `mysql(DB)`
 
  
-That's it! Now you have an aweso
+That's it! Now you have an awes
